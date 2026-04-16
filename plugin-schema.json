@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://etak.dev/schemas/plugin.json",
+  "title": "Etak Plugin Manifest",
+  "description": "Schema for .claude-plugin/plugin.json — the manifest every marketplace plugin must provide.",
+  "type": "object",
+  "required": ["name", "description", "version", "author", "license", "categories"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique plugin identifier. Lowercase, alphanumeric, hyphens only."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "One-line summary shown in marketplace listings."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semver version string (e.g. 1.2.3)."
+    },
+    "author": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Author or organization name."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Author's website or profile."
+        }
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier (e.g. MIT, Apache-2.0) or UNLICENSED."
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "discovery",
+          "development",
+          "design",
+          "testing",
+          "devops",
+          "data",
+          "documentation",
+          "security",
+          "productivity",
+          "integration"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "One or more marketplace categories."
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "maxItems": 10,
+      "uniqueItems": true,
+      "description": "Free-form tags for search. Lowercase, hyphens only."
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source repository URL."
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "Documentation or landing page URL."
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Skill name as it appears in the SKILL.md frontmatter."
+          },
+          "description": {
+            "type": "string",
+            "description": "One-line summary of what the skill does."
+          },
+          "path": {
+            "type": "string",
+            "description": "Relative path from plugin root to the skill directory containing SKILL.md."
+          }
+        }
+      },
+      "description": "Skills provided by this plugin."
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Agent name as it appears in the SKILL.md frontmatter."
+          },
+          "description": {
+            "type": "string",
+            "description": "One-line summary of what the agent does."
+          },
+          "path": {
+            "type": "string",
+            "description": "Relative path from plugin root to the agent directory containing SKILL.md."
+          }
+        }
+      },
+      "description": "Agents provided by this plugin."
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "uniqueItems": true,
+      "description": "Other plugin names this plugin depends on."
+    },
+    "minClaudeCodeVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Minimum Claude Code version required."
+    }
+  }
+}

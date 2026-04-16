@@ -1,0 +1,57 @@
+{
+  "$schema": "./plugin-schema.json",
+  "plugins": [
+    {
+      "name": "etak-discovery",
+      "description": "Product discovery skills — explore customer needs, map the opportunity space, brainstorm solutions, surface and test assumptions.",
+      "version": "0.1.0",
+      "path": "discovery",
+      "author": {
+        "name": "Neal Audenaert"
+      },
+      "license": "UNLICENSED",
+      "categories": ["discovery"],
+      "keywords": [
+        "product-discovery",
+        "opportunity",
+        "brainstorm",
+        "assumptions",
+        "experiments",
+        "ost",
+        "continuous-discovery"
+      ],
+      "skills": [
+        {
+          "name": "orient",
+          "description": "Find your bearings — think out loud, reflect, make sense of half-formed observations."
+        },
+        {
+          "name": "explore",
+          "description": "See what's in the opportunity space, notice gaps, brainstorm possibilities."
+        },
+        {
+          "name": "sound",
+          "description": "Probe beneath the surface — surface and examine hidden assumptions."
+        },
+        {
+          "name": "critique",
+          "description": "Stress-test ideas and opportunities from multiple angles."
+        },
+        {
+          "name": "prioritize",
+          "description": "Converge — rank options and decide where to focus."
+        },
+        {
+          "name": "experiment",
+          "description": "Design tests, run them, record results, propagate learning."
+        }
+      ],
+      "agents": [
+        {
+          "name": "product-researcher",
+          "description": "Competitive research, market trends, and opportunity space analysis."
+        }
+      ]
+    }
+  ]
+}
