@@ -72,7 +72,7 @@ The body contains the full instructions Claude Code follows when the skill is in
 2. Add `.claude-plugin/plugin.json` conforming to the schema.
 3. Add at least one skill or agent with a `SKILL.md`.
 4. Add a `README.md` describing the plugin.
-5. Add an entry to `registry.json` with `name`, `description`, `version`, `path`, `author`, `license`, `categories`, `keywords`, `skills`, and `agents`.
+5. Add an entry for your plugin to `.claude-plugin/marketplace.json` (this is what Claude Code reads). Optionally add a richer entry to `registry.json` for extended metadata.
 6. Open a PR against `main`.
 
 ## Naming Conventions

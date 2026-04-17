@@ -1,0 +1,13 @@
+{
+  "name": "etak",
+  "owner": {
+    "name": "Neal Audenaert"
+  },
+  "plugins": [
+    {
+      "name": "discovery",
+      "source": "./discovery",
+      "description": "Product discovery skills — explore customer needs, map the opportunity space, brainstorm solutions, surface and test assumptions."
+    }
+  ]
+}

@@ -10,33 +10,49 @@ Etak runs in the terminal, alongside the rest of your development work. It write
 
 **Prerequisites.** Claude Code installed and authenticated. See [Claude Code setup](https://docs.claude.com/en/docs/claude-code/setup).
 
-**1. Clone the repo.**
+Etak is a plugin marketplace. You add the marketplace once, then install the `discovery` plugin from it.
 
-```bash
-git clone https://github.com/nealaudenaert/etak.git ~/etak
-```
+**1. Add the marketplace.**
 
-**2. Register the discovery plugin in your project's `.claude/settings.json`.**
-
-```json
-{
-  "plugins": [
-    { "path": "/home/you/etak/discovery" }
-  ]
-}
-```
-
-Use an absolute path. Restart Claude Code if it was running.
-
-**3. Confirm it loaded.**
+In Claude Code, run:
 
 ```
-/plugins
+/plugin marketplace add audenaert/etak
 ```
 
-You should see `etak-discovery` listed with six skills and one agent.
+**2. Install the discovery plugin.**
+
+```
+/plugin install discovery@etak
+```
+
+**3. Reload.**
+
+```
+/reload-plugins
+```
+
+**4. Confirm.** Run `/plugin` and open the *Installed* tab. You should see `discovery` with six skills and one agent.
 
 That is the whole install. There is no database, no web service, and no account to create. Discovery artifacts land in `docs/discovery/` in whatever repo you point Claude Code at.
+
+### Installing from a local clone
+
+If you want to hack on the plugin rather than just use it:
+
+```bash
+git clone https://github.com/audenaert/etak.git ~/etak
+```
+
+Then point the marketplace command at your local path:
+
+```
+/plugin marketplace add ~/etak
+/plugin install discovery@etak
+/reload-plugins
+```
+
+Edits to `~/etak/discovery/` take effect on the next reload.
 
 ## Thirty-second orientation
 
