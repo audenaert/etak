@@ -8,7 +8,7 @@ This repo is a plugin marketplace — a registry of Claude Code plugins (skills 
 <plugin-name>/                 # one top-level dir per plugin
   .claude-plugin/plugin.json   # manifest (see plugin-schema.json)
   skills/<skill>/SKILL.md      # skill definitions
-  agents/<agent>/SKILL.md      # agent definitions
+  agents/<agent>.md            # agent definitions (single markdown file with frontmatter)
   docs/                        # plugin documentation
   README.md                    # plugin overview
 registry.json                  # central catalog of all plugins

@@ -24,7 +24,7 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 | `skills/prioritize/` | Converge on what matters |
 | `skills/experiment/` | Design, run, and propagate tests |
 | `skills/_internal/` | Internal artifact-writing skills |
-| `agents/product-researcher/` | Autonomous competitive and market research |
+| `agents/product-researcher.md` | Autonomous competitive and market research |
 
 ## License
 

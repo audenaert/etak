@@ -15,44 +15,5 @@
     "experiments",
     "ost",
     "continuous-discovery"
-  ],
-  "skills": [
-    {
-      "name": "orient",
-      "description": "Find your bearings — think out loud, reflect, make sense of half-formed observations.",
-      "path": "skills/orient"
-    },
-    {
-      "name": "explore",
-      "description": "See what's in the opportunity space, notice gaps, brainstorm possibilities.",
-      "path": "skills/explore"
-    },
-    {
-      "name": "sound",
-      "description": "Probe beneath the surface — surface and examine hidden assumptions.",
-      "path": "skills/sound"
-    },
-    {
-      "name": "critique",
-      "description": "Stress-test ideas and opportunities from multiple angles.",
-      "path": "skills/critique"
-    },
-    {
-      "name": "prioritize",
-      "description": "Converge — rank options and decide where to focus.",
-      "path": "skills/prioritize"
-    },
-    {
-      "name": "experiment",
-      "description": "Design tests, run them, record results, propagate learning.",
-      "path": "skills/experiment"
-    }
-  ],
-  "agents": [
-    {
-      "name": "product-researcher",
-      "description": "Competitive research, market trends, and opportunity space analysis.",
-      "path": "agents/product-researcher"
-    }
   ]
 }

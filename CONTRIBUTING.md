@@ -13,8 +13,7 @@ your-plugin/
 │       ├── SKILL.md          # skill definition (frontmatter + instructions)
 │       └── references/       # optional supporting docs
 ├── agents/
-│   └── your-agent/
-│       └── SKILL.md          # agent definition
+│   └── your-agent.md         # agent definition (single file with frontmatter)
 ├── docs/                     # optional documentation
 └── README.md                 # required — plugin overview
 ```
