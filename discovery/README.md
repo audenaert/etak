@@ -1,63 +1,30 @@
-# Etak Discovery
+# etak-discovery
 
-Product discovery plugin for Claude Code. A thinking partner for product managers and
-designers — explore customer needs, map the opportunity space, brainstorm solutions,
-surface assumptions, and test your riskiest bets.
+The discovery plugin for Etak. A thinking partner for product managers and designers: explore customer needs, map the opportunity space, brainstorm solutions, surface assumptions, and test your riskiest bets.
 
-## Installation
+This directory holds the plugin manifest, skill definitions, and agent definitions. Documentation for using the plugin lives in the repo-wide docs tree.
 
-Add to your project's `.claude/settings.json`:
+## Start here
 
-```json
-{
-  "plugins": [
-    { "path": "/path/to/etak/discovery" }
-  ]
-}
-```
+- [**Install**](../README.md#install) — how to register this plugin with Claude Code.
+- [**Quick start**](../docs/quickstart.md) — five-minute orientation for a busy PM.
+- [**Tutorials**](../docs/tutorials/) — runnable walkthroughs.
+- [**Skills reference**](../docs/skills/) — what each skill does and when to reach for it.
+- [**Artifacts reference**](../docs/artifacts/) — the things this plugin builds.
 
-## Skills
+## Contents
 
-Six skills, progressing from fluid to structured:
-
-| Skill | Stance | What it does |
-|-------|--------|-------------|
-| **orient** | Receptive | Find your bearings — think out loud, reflect, make sense of half-formed observations |
-| **explore** | Generative | See the opportunity space, notice gaps, brainstorm possibilities |
-| **sound** | Exploratory | Probe beneath the surface — surface and examine hidden assumptions |
-| **critique** | Adversarial | Stress-test ideas and opportunities from multiple angles |
-| **prioritize** | Evaluative | Converge — rank options and decide where to focus |
-| **experiment** | Rigorous | Design tests, run them, record results, propagate learning |
-
-You don't need to invoke skills by name. Describe what you want — "I have an idea",
-"what are we assuming?", "which should we focus on?" — and the right skill activates.
-
-## Agent
-
-| Agent | Description |
-|-------|-------------|
-| **product-researcher** | Competitive research, market trends, and opportunity space analysis |
-
-## Artifacts
-
-Discovery builds an opportunity space as linked markdown artifacts in `docs/discovery/`:
-
-| Artifact | Description |
-|----------|-------------|
-| Objective | Business outcome or strategic direction |
-| Opportunity | Customer need framed as a "How might we..." question |
-| Idea | Proposed solution addressing an opportunity |
-| Assumption | Testable belief underlying an idea |
-| Experiment | Method to test an assumption |
-
-## The Discovery Rhythm
-
-**Explore → Sound → Critique → Prioritize → Experiment** — and back again.
-
-Generate options, reveal what they rest on, stress-test them, decide where to focus,
-and test your riskiest bets. The rhythm applies at every level: opportunities, ideas,
-assumptions. Orient is your home base — the place to pause, reflect, and decide where
-to go next.
+| Directory | Purpose |
+|-----------|---------|
+| `.claude-plugin/plugin.json` | Plugin manifest |
+| `skills/orient/` | Home base — find your bearings |
+| `skills/explore/` | See the space, generate options |
+| `skills/sound/` | Surface hidden assumptions |
+| `skills/critique/` | Stress-test from outside |
+| `skills/prioritize/` | Converge on what matters |
+| `skills/experiment/` | Design, run, and propagate tests |
+| `skills/_internal/` | Internal artifact-writing skills |
+| `agents/product-researcher/` | Autonomous competitive and market research |
 
 ## License
 
