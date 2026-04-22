@@ -2,7 +2,7 @@
 
 Etak builds two linked graphs, one for discovery and one for development. Each node is an **artifact**: a typed, linked markdown file with a YAML header. This reference describes both sets.
 
-## The five discovery types
+## Discovery artifact types
 
 | Artifact | Role in the graph |
 |----------|-------------------|
@@ -11,6 +11,9 @@ Etak builds two linked graphs, one for discovery and one for development. Each n
 | [**Idea**](idea.md) | Proposed solution that addresses an opportunity |
 | [**Assumption**](assumption.md) | Testable belief that must be true for an idea to work |
 | [**Experiment**](experiment.md) | Test that produces evidence about an assumption |
+| [**Critique**](critique.md) | Structured examination of an idea or opportunity from an outside perspective |
+
+The discovery artifact set is intentionally open. These six types are the current shape of the discovery model, not a closed enumeration. As Etak's discovery discipline evolves — and as practice reveals artifact shapes that are systematically absent — new types will be added. Critique is the first addition beyond the original five, and it establishes the pattern: each addition ships as a file-based schema doc (here in `docs/artifacts/`) and as a graph node type in the data model simultaneously, so both representations stay in lockstep. Future additions follow the same discipline.
 
 ## How they connect
 
