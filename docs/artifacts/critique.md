@@ -40,6 +40,7 @@ about_idea: offline-first-reading  # slug of the idea being critiqued; set one o
 # about_opportunity: null         # slug of the opportunity being critiqued; set one of these, not both
 session: q2-discovery-push        # optional grouping slug
 summary: ""
+body: ""
 findings:
   - name: "Assumes users trust the sync indicator"
     kind: risk          # risk | strength
@@ -74,6 +75,7 @@ findings:
 | `about_opportunity` | conditional | Slug of the opportunity being critiqued. Set exactly one of `about_idea` or `about_opportunity`. |
 | `session` | no | Optional grouping slug to cluster related critique rounds. |
 | `summary` | no | The tool's read on what this round found. Populated after the round completes. |
+| `body` | no | Narrative context for the critique session — framing, goals, or anything that doesn't fit in individual findings. |
 
 Exactly one of `about_idea` or `about_opportunity` must be set. The graph enforces this at write time — a critique with zero targets or two targets is rejected by the write resolver. The file schema relies on the same rule: set one, leave the other commented out or absent.
 
