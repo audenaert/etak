@@ -1,8 +1,8 @@
 # Artifacts reference
 
-Etak builds an opportunity graph. The nodes are **artifacts** — typed, linked markdown files with YAML headers. This reference describes each artifact type, its role in the graph, its schema, and the actions that are useful to take on it.
+Etak builds two linked graphs — one for discovery and one for development. Each node is an **artifact**: a typed, linked markdown file with a YAML header. This reference describes the discovery artifacts. For the development graph (initiative, project, epic, story, task, workstream, milestone, spec, ADR, spike, bug, chore, enhancement), see [the develop overview](../develop.md) and the schema in [`develop/skills/_internal/core/references/schemas.md`](../../develop/skills/_internal/core/references/schemas.md).
 
-## The five types
+## The five discovery types
 
 | Artifact | Role in the graph |
 |----------|-------------------|

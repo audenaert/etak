@@ -1,6 +1,8 @@
-# Skills reference
+# Discovery skills reference
 
-Etak exposes six user-facing skills. You do not invoke them by name. You describe the move you want to make, and Etak picks the right one. The purpose of this reference is to make the menu legible so you recognize which move fits which moment in your own work.
+The `discovery` plugin exposes six user-facing skills. You do not invoke them by name. You describe the move you want to make, and Etak picks the right one. The purpose of this reference is to make the menu legible so you recognize which move fits which moment in your own work.
+
+For the `develop` plugin's skills, see [the develop overview](../develop.md).
 
 ## The six skills
 

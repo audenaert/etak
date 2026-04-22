@@ -1,0 +1,19 @@
+{
+  "name": "etak-develop",
+  "description": "Software development skills — scope validated ideas into work items, plan and sequence delivery, write technical specs and ADRs, implement with TDD.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Neal Audenaert"
+  },
+  "license": "UNLICENSED",
+  "categories": ["development"],
+  "keywords": [
+    "software-development",
+    "technical-design",
+    "specs",
+    "adrs",
+    "tdd",
+    "planning",
+    "implementation"
+  ]
+}

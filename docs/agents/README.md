@@ -2,11 +2,19 @@
 
 Agents are autonomous workers. Unlike skills, which you converse with interactively, agents do longer-running work on their own and return a structured result. You invoke them when you want external context, bulk analysis, or synthesis that would be tedious to drive turn by turn.
 
-The [skills](../skills/) are the interactive tools. Agents feed them.
+The skills are the interactive tools. Agents feed them.
 
-## Available agents
+## Discovery agents
 
 - [**product-researcher**](product-researcher.md) — autonomous competitive research, market trend analysis, and opportunity-space structural review. The thing you reach for when you need outside evidence before a discovery session.
+
+## Develop agents
+
+Defined in the `develop` plugin under [`develop/agents/`](../../develop/agents/). See [the develop overview](../develop.md) for context.
+
+- **architect** — produces a complete technical design for a project or epic. Reads the codebase deeply, considers alternatives, drafts spec and ADRs.
+- **tech-lead** — orchestrates delivery. Breaks work into concrete items, fills gaps, dispatches other agents, parallelizes independent work.
+- **developer** — autonomous TDD implementation in isolated git worktrees. Handles stories, bugs, and spikes. Honest self-review before submitting the PR.
 
 ## How agents fit with skills
 

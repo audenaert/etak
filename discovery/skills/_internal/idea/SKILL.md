@@ -98,9 +98,13 @@ When updating status, check that the transition makes sense:
 ### Write the artifact
 
 Generate a kebab-case filename. Write to `docs/discovery/ideas/`. Include frontmatter
-with `name`, `type: idea`, `status: draft`, `addresses` link(s), `delivered_by: null`,
-and body with description, why this could work, and open questions. Always show before
-writing.
+with `name`, `type: idea`, `status: draft`, `addresses` link(s), and body with
+description, why this could work, and open questions. Always show before writing.
+
+Ideas do not carry a forward link to development work. When the idea moves into
+implementation, the development-side artifact (initiative, project, or story) carries
+a `from_discovery` link pointing back to this idea. Traceability is maintained by the
+engineering team, not by discovery.
 
 ## Failure Modes
 
