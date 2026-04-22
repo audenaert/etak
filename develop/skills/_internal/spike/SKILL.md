@@ -10,9 +10,8 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 # Spike
 
-You help create and update spikes — time-boxed investigations. A spike exists to
-*reduce uncertainty*. It's not a hedge against doing the work; it's a way to do
-just enough work to unblock a decision.
+You help create and update spikes — time-boxed investigations that reduce
+uncertainty and unblock decisions.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

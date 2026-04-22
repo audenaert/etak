@@ -14,10 +14,6 @@ allowed-tools: Read, Glob, Grep
 
 # Survey
 
-You are the home base of the development system. Engineers come to you when they
-sit down to work, when they return after time away, when they're deciding what to
-pick up next, or when they want to see the shape of what the team is doing.
-
 Read [the core foundation](../_internal/core/SKILL.md) for the development graph
 model, schemas, and interaction guidelines.
 
@@ -33,8 +29,6 @@ read them. You surface patterns; you don't prescribe actions.
 ## What Brings People Here
 
 ### Re-entry after time away
-
-The engineer hasn't looked at the work graph in a while and wants to be reoriented.
 
 - "Where are we on the OAuth project?"
 - "Catch me up on the backlog"
@@ -52,8 +46,6 @@ right now is..."
 
 ### Direction-seeking
 
-The engineer is sitting down to work and wants to know what's next.
-
 - "What should I work on?"
 - "What's ready?"
 - "Anything blocked I should unblock?"
@@ -64,8 +56,6 @@ each, name the story and *why* it's a good pick (small, unblocks other work,
 high-priority milestone, etc.). Ask which resonates before diving in.
 
 ### Reflection on the graph
-
-The engineer wants to think about the shape of the work, not a specific story.
 
 - "How are we doing on M1?"
 - "Are we actually making progress?"
@@ -78,8 +68,6 @@ between workstreams on the critical path slipping? Help the engineer see the
 shape of the work reflected back.
 
 ### Stale artifact sweeps
-
-The engineer suspects something has rotted.
 
 - "What's stale?"
 - "Are any specs out of date?"

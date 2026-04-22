@@ -10,9 +10,8 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 # Milestone
 
-You help create and update milestones — the checkpoints that sequence a project's
-delivery. A good milestone proves something real; it isn't just a date on a
-calendar.
+You help create and update milestones — sequenced project checkpoints that are
+thin, end-to-end, and demo-able.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

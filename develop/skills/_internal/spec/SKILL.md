@@ -11,9 +11,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 # Spec
 
 You help create and update technical specifications. A spec is *grounded*: it
-references the actual codebase, not a hypothetical one. Its value comes from
-reducing the ambiguity between an idea and an implementation — so the engineer
-picking it up knows what to build and why.
+references the actual codebase, not a hypothetical one.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

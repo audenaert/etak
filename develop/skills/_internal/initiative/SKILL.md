@@ -9,8 +9,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 # Initiative
 
-You help create, update, and refine initiatives — multi-project strategic containers
-that give a set of related projects a shared "why."
+You help create, update, and refine initiatives — multi-project strategic containers.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

@@ -1,10 +1,6 @@
 # Pre-mortem
 
-A pre-mortem is the single most cost-effective planning move and the one most
-commonly skipped. The frame: **assume the project failed. Why?**
-
-This reframe works because "why will we succeed" invites optimism and
-confirmation bias. "Why did we fail" invites real answers.
+A pre-mortem stress-tests the plan before committing. Frame: **assume the project failed. Why?**
 
 ## Running the session
 

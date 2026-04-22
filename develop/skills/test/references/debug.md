@@ -1,9 +1,6 @@
 # Debug Tests
 
-Test pathologies are tests that fail for reasons other than the code being
-wrong. These are the most frustrating test failures — the code works, but
-the tests don't reliably prove it. Almost always, a "flaky" test has a
-deterministic cause you haven't found yet.
+Test pathologies are failures caused by the test suite itself, not the code. Almost always, a "flaky" test has a deterministic cause you haven't found yet.
 
 ## Process
 

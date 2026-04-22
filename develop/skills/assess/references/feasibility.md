@@ -1,11 +1,8 @@
 # Feasibility
 
 Feasibility is a *grounded* assessment: what exists, what must change, where
-the risks are. It's not estimation — it's the input to estimation. And it's
-not a design — it's the reading that has to happen before design is honest.
-
-The distinguishing feature: **you read the code before you write the
-assessment.** An ungrounded feasibility note is a guess.
+the risks are. **Read the code before writing the assessment.** Without it,
+every dimension below is a guess.
 
 ## Running the assessment
 

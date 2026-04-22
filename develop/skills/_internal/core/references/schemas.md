@@ -382,27 +382,9 @@ Body sections:
 
 ## Traceability and Compliance
 
-Development work is responsible for maintaining traceability back to the change
-request that initiated it. This is a **one-way** link — discovery does not point
-forward into development. The reasons:
+`from_discovery` is a **one-way** link: development points back to discovery, discovery never points forward. Populate on any artifact that originated from a validated discovery idea. Omit for bugs, chores, and enhancements from production, ops, or engineering judgment.
 
-- **Ownership matches responsibility.** The engineering team owns the change to
-  production; they own the audit trail.
-- **Compliance alignment.** Regulated environments require production changes to
-  trace back to a change request. `from_discovery` on initiatives, projects, and
-  stories satisfies this directly.
-- **Discovery stays fluid.** Ideas remain explorable without carrying operational
-  state. Whether an idea shipped, was paused, or got cut is visible from the
-  development side via links; the idea itself stays stable.
-
-Populate `from_discovery` on any development artifact that originated from a
-validated discovery idea. For bugs, chores, and enhancements that originate from
-production, ops, or engineering judgment, `from_discovery` is omitted — they have
-no discovery parent.
-
-When compliance matters, pair `from_discovery` with task-level granularity
-(one PR per task) to produce a full chain from change request → user-facing story
-→ specific technical change → merged commit.
+For compliance, pair `from_discovery` with task-level granularity (one PR per task) to produce the full chain: discovery idea → story → task → merged commit.
 
 ## Readiness Rules of Thumb
 

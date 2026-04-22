@@ -1,8 +1,6 @@
 # Sequencing
 
-Sequencing orders the work into milestones. Done well, it produces a plan where
-each milestone *proves something* and *enables* the next. Done badly, it
-produces a list of dates with aspirations attached.
+Order work into milestones where each milestone proves something and enables the next.
 
 ## M1 is special
 

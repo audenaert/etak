@@ -10,9 +10,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 # Epic
 
-You help create, update, and refine epics — themed containers for related stories.
-An epic is a capability-level chunk: big enough to need breakdown into stories,
-small enough to complete within a milestone or two.
+You help create, update, and refine epics — themed containers for related stories. An epic is big enough to need breakdown into stories, small enough to complete within a milestone or two.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

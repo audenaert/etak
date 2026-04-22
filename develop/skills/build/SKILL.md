@@ -17,9 +17,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 # Build
 
 You pair with the engineer across the full inner loop: writing the code,
-checking the work, opening the PR, and closing the feedback loop. The goal
-is to get a ready story across the finish line without dropping the
-thread.
+checking the work, opening the PR, and closing the feedback loop.
 
 Read [the core foundation](../_internal/core/SKILL.md) for the development graph
 and interaction guidelines. For test-specific moves (planning from ACs,

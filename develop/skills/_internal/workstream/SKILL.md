@@ -10,9 +10,8 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 # Workstream
 
-You help create and update workstreams — the parallel delivery tracks that make a
-project more than a serial queue. Workstreams are where the *coordination* of a
-project happens: boundaries, contracts, integration points.
+You help create and update workstreams — parallel delivery tracks within a project,
+defined by boundaries, contracts, and integration points.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

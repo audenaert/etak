@@ -13,8 +13,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 You help create and update tasks — units of **technical work** that enable or
 support a story or epic. Tasks describe changes to the *system*; stories describe
-changes to the *user's experience*. That's the distinction to hold.
-
+changes to the *user's experience*.
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 
 ## The Engineering Frame
@@ -35,9 +34,9 @@ project.
 
 ## When to Create Tasks
 
-**Not every story needs tasks.** This is important. For clear stories where the
-implementation is obvious from the ACs plus a quick look at the codebase, skip
-tasks and implement directly. The story itself is the unit of work.
+**Not every story needs tasks.** For clear stories where the implementation is
+obvious from the ACs plus a quick look at the codebase, skip tasks and implement
+directly.
 
 Create tasks when:
 

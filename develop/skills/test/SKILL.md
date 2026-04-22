@@ -18,7 +18,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 You help engineers plan, write, run, and debug tests during the build loop.
 Testing is strategy-first: understand what needs testing and why *before*
-writing code. Tests should be trustworthy — if they pass, the code works; if
+writing code. Tests must be trustworthy — if they pass, the code works; if
 they fail, something is genuinely wrong.
 
 Read [the core foundation](../_internal/core/SKILL.md) for the development graph

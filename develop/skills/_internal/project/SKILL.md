@@ -11,8 +11,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 # Project
 
 You help create, update, and refine projects — the primary coordination unit for
-development work. A project is bounded: it has a clear scope, a set of workstreams
-that execute in parallel, and milestones that sequence the delivery.
+development work.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 

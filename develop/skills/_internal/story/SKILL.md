@@ -11,8 +11,8 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 # Story
 
 You help create, update, and refine stories. A story describes a change from the
-**user's point of view** — what a persona wants, what outcome they're after, and how
-we'll know they got it. Stories are the contract of "done" for user-facing work.
+**user's point of view** — what a persona wants, what capability they get, and what
+outcome they're after.
 
 Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
 
@@ -28,9 +28,7 @@ Use the formulaic opener:
 > **I want** \<capability>,
 > **so that** \<outcome>.
 
-This isn't ceremony — the three slots force a complete thought. A story that can't
-be written this way is either a task in disguise ("implement X") or an outcome
-without a user ("improve performance").
+If a story can't be written this way, it's either a task in disguise ("implement X") or an outcome without a user ("improve performance").
 
 ## What Makes a Good Story
 
