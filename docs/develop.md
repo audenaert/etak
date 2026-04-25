@@ -68,8 +68,7 @@ and review the result.
 Development work is tracked as a graph of typed artifacts under
 `docs/development/`:
 
-- **Initiative / Project / Epic / Story / Task** — the hierarchy. One
-  owner, one parent.
+- **Project / Epic / Story / Task** — the hierarchy. One owner, one parent.
 - **Workstream / Milestone** — parallel tracks and shipping checkpoints
   that cut across the hierarchy.
 - **Spec / ADR** — technical design and hard-to-reverse decisions.
@@ -87,8 +86,8 @@ auditors ask "why was this change made?"
 build it and ships it*.
 
 Validated ideas in `docs/discovery/` flow into development via the
-`from_discovery` link on the artifact that takes up the work (usually an
-initiative, project, or story). The link is one-way: development reads
+`from_discovery` link on the artifact that takes up the work (usually a project
+or story). The link is one-way: development reads
 discovery context, but discovery never reaches forward into execution
 state.
 

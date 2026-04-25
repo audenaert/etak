@@ -10,11 +10,11 @@ The skills are the interactive tools. Agents feed them.
 
 ## Develop agents
 
-Defined in the `develop` plugin under [`develop/agents/`](../../develop/agents/). See [the develop overview](../develop.md) for context.
+See [the develop overview](../develop.md) for context on how these fit together.
 
-- **architect** — produces a complete technical design for a project or epic. Reads the codebase deeply, considers alternatives, drafts spec and ADRs.
-- **tech-lead** — orchestrates delivery. Breaks work into concrete items, fills gaps, dispatches other agents, parallelizes independent work.
-- **developer** — autonomous TDD implementation in isolated git worktrees. Handles stories, bugs, and spikes. Honest self-review before submitting the PR.
+- [**architect**](architect.md) — produces a complete technical design for a project or epic. Reads the codebase deeply, considers alternatives, drafts spec and ADRs, stress-tests through multi-lens critique.
+- [**tech-lead**](tech-lead.md) — orchestrates delivery. Breaks work into concrete items, fills gaps, creates an execution plan, dispatches the other agents, parallelizes independent work.
+- [**developer**](developer.md) — autonomous TDD implementation in isolated git worktrees. Handles stories, bugs, and spikes. Honest self-review before submitting the PR.
 
 ## How agents fit with skills
 

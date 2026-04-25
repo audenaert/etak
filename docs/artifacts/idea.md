@@ -35,7 +35,7 @@ addresses:
 | `status` | yes | Current lifecycle state. |
 | `addresses` | yes | Slugs of opportunities this idea serves. |
 
-Ideas do not carry forward links into development. When the idea moves into implementation, the development-side artifact (initiative, project, or story in etak-develop) records a `from_discovery` link pointing back to this idea. Traceability is the engineering team's responsibility — this matches how compliance audit trails work in practice, where changes to production systems must trace back to the change request that initiated them.
+Ideas do not carry forward links into development. When the idea moves into implementation, the development-side artifact (project or story in etak-develop) records a `from_discovery` link pointing back to this idea. Traceability is the engineering team's responsibility — this matches how compliance audit trails work in practice, where changes to production systems must trace back to the change request that initiated them.
 
 ## Status lifecycle
 
