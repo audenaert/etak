@@ -10,6 +10,7 @@ docs/discovery/
   assumptions/
   experiments/
   critiques/
+  memos/
 ```
 
 ## File Naming
@@ -31,6 +32,7 @@ Links reference other nodes by filename (without extension):
 | Experiment   | `result_informs`| Idea(s), Opportunity(ies) |
 | Critique     | `about_idea`    | Idea (set exactly one of about_idea or about_opportunity) |
 | Critique     | `about_opportunity` | Opportunity (set exactly one of about_idea or about_opportunity) |
+| Memo         | `supports`      | Objective(s), Opportunity(ies) — optional |
 
 Discovery nodes do not point forward into development. When a validated idea is
 scoped into implementation, the traceability link is maintained from the
@@ -153,6 +155,22 @@ findings:
 
 A risk finding that articulates a testable belief can graduate into an assumption — the originating finding's `status` becomes `addressed` with the new assumption slug recorded in `resolution`. The finding's `resolution` field is the authoritative file-side representation of the `BECAME_ASSUMPTION` edge in the graph; provenance on the assumption side lives in the body.
 
+## Memo
+
+Memos capture in-depth analytical work that informs the opportunity space — frameworks, surveys, literature reviews, structured arguments — without being a gap to fill or a solution to build.
+
+```yaml
+---
+name: "Human-readable name"
+type: memo
+status: draft  # draft | active | archived
+supports:        # optional — slugs of objectives or opportunities this memo informs
+  - opportunity-filename-without-ext
+---
+```
+
+Body: Free-form analytical content. Format varies by purpose — structured sections, tables, running argument, or a combination.
+
 ## Status Values Summary
 
 | Type        | Statuses                                                    |
@@ -163,3 +181,4 @@ A risk finding that articulates a testable belief can graduate into an assumptio
 | Assumption  | untested, validated, invalidated                            |
 | Experiment  | planned, running, complete                                  |
 | Critique    | planned, running, complete                                  |
+| Memo        | draft, active, archived                                     |
