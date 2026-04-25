@@ -49,6 +49,8 @@ Every finding comes with a severity: **fatal** (the idea cannot work as framed),
 
 Generic findings get demoted to minor or dropped. "Users might not like this" is not a finding. "The skeptical user will compare this to three AI tools they already turned off and look for whichever button makes this one go away" is. Push for specificity.
 
+Each finding has its own lifecycle: `open → addressed | dismissed`, with a required resolution. Risk findings that articulate testable beliefs can graduate into tracked assumptions — the originating critique becomes the assumption's provenance, and the finding records where it went. The session is not done when the artifact is written; it's done when each finding has a resolution.
+
 ## How to use it well
 
 **Pick the right perspectives.** Three persona rounds from perspectives that genuinely challenge your thinking beat six rounds from perspectives that don't. Ask yourself whose opinion you most fear. That is the persona to start with.
@@ -82,6 +84,10 @@ A feature that works for one user segment often breaks for another. Run critique
 - **Critique as theater.** Running critique to demonstrate rigor, without being willing to change what you do, is worse than not critiquing. If no finding could change your mind, don't run the session.
 - **Critiquing ideas that haven't been sounded.** If critique keeps hitting "this rests on belief X," go to [sound](sound.md) and examine the belief first. Critique examines the idea. Sound examines what the idea rests on.
 - **Critique without capture.** The session produced twelve findings. You acted on three and forgot the rest. Save the critique summary; future-you will need it.
+
+## Sessions and persistence
+
+Each round produces one critique artifact in `docs/discovery/critiques/`, capturing one stance examining one target. Multi-round sessions share an optional `session` slug so they can be queried together later. You do not need to write the artifacts yourself — Etak writes each round as it completes and updates finding status as resolutions arrive.
 
 ## Transitions
 

@@ -105,7 +105,7 @@ Two things to watch.
 
 **Strengths matter too.** Ideas that survive serious critique get stronger, not weaker. A critique session that finds three solid reasons the idea holds up under pressure is as valuable as one that finds three risks. Both inform the next decision.
 
-When new rounds produce diminishing returns, stop. Propagate the findings: some become new assumptions, some point toward alternative ideas worth capturing, some confirm existing assumptions need testing with higher urgency.
+When new rounds produce diminishing returns, stop. Propagate each finding to a resolution. Risk findings that articulate testable beliefs get promoted to assumption artifacts — the originating critique becomes the assumption's provenance, and the finding is marked `addressed` with the new assumption slug recorded as its resolution. Other findings fold into the idea body, point toward alternative ideas worth capturing in [explore](../skills/explore.md), or get dismissed with a reason. The audit trail is the point: every finding ends with an outcome, and the graph remembers what came from where.
 
 See the [critiquing an idea tutorial](critiquing-an-idea.md) for more on running useful critique sessions.
 
