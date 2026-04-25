@@ -12,7 +12,7 @@ You don't stop to "do discovery." You keep doing your job. Etak captures what yo
 
 ## What it gives you
 
-A living **opportunity graph** in `docs/discovery/` with six kinds of artifact:
+A living **opportunity graph** in `docs/discovery/` with seven kinds of artifact:
 
 - [**Objectives**](artifacts/objective.md) — business outcomes you are on the hook for.
 - [**Opportunities**](artifacts/opportunity.md) — customer needs framed as *how might we* questions.
@@ -20,6 +20,7 @@ A living **opportunity graph** in `docs/discovery/` with six kinds of artifact:
 - [**Assumptions**](artifacts/assumption.md) — the beliefs an idea is resting on.
 - [**Experiments**](artifacts/experiment.md) — tests that turn beliefs into evidence.
 - [**Critiques**](artifacts/critique.md) — structured examination rounds that stress-test an idea or opportunity from outside perspectives.
+- [**Memos**](artifacts/memo.md) — in-depth analytical documents (frameworks, surveys, research syntheses) that inform the opportunity space without being a gap to fill or a solution to build.
 
 Every artifact is a markdown file with a YAML header. You can read them, edit them, grep them, put them in git. Etak uses them to answer questions like "what are we betting on?" and "what should we work on next?"
 
