@@ -94,14 +94,20 @@ the session will cover so there are no surprises.
 
 ### During Rounds
 
-Each round uses one persona or one framework. For each round, produce:
-- **3-5 specific points** — concrete, not vague. "Users might not like it" is
+Each round uses one persona or one framework and produces one critique artifact.
+For each round, produce:
+- **3-5 specific findings** — concrete, not vague. "Users might not like it" is
   useless. "First-time users won't understand what 'semantic similarity' means
-  in the results header" is actionable.
-- **Severity for each point** — fatal (this could kill the idea), serious
-  (significant risk, needs addressing), or minor (worth noting, not blocking)
+  in the results header" is actionable. Each finding has a `name` (the claim, one
+  sentence) and a `body` (the reasoning).
+- **Kind for each finding** — `risk` (something that could go wrong) or `strength`
+  (something that holds up under scrutiny). Both belong in a balanced round.
+- **Severity for each risk** — `fatal` (the idea cannot be saved in its current
+  form), `serious` (must be addressed before the idea advances), `moderate` (real
+  problem worth addressing, but the idea survives it), or `minor` (worth noting,
+  unlikely to determine the outcome). Strengths do not have severity.
 - **Theme tag** — feasibility, desirability, viability, usability, or a
-  domain-specific tag
+  domain-specific tag.
 
 ### Tracking Coverage
 
@@ -128,16 +134,50 @@ Critique should serve those decisions, not hypothetical future ones.
 
 After rounds are complete, consolidate:
 
-- **Organized by severity** — fatal concerns first, then serious, then minor
+- **Organized by severity** — fatal concerns first, then serious, then moderate,
+  then minor
 - **Include strengths** — what held up under scrutiny. This matters. It tells
   the PM what they can be confident about, and it makes the critique credible
   rather than reflexively negative.
 - **Theme patterns** — if multiple rounds flagged feasibility concerns, that's
   a pattern worth naming explicitly
 - **Assumptions surfaced** — critique often reveals assumptions the PM hasn't
-  examined. Offer to create assumption artifacts from these: "This critique
-  surfaced three beliefs we haven't tested. Want me to create assumption
-  artifacts so we can track and test them?"
+  examined. Offer to promote them: "This critique surfaced three beliefs we
+  haven't tested. Want me to promote those findings to assumption artifacts so
+  we can track and test them?"
+
+## Persisting the Round
+
+A round is not done until it is written. Each round produces one critique artifact
+in `docs/discovery/critiques/`. Rounds in the same session share a `session` slug
+so they can be queried together later.
+
+Call the internal `critique` skill to write the artifact. Pass the round's stance
+(persona or framework), the perspective text, the target (`about_idea` or
+`about_opportunity` — exactly one), the findings list, and the session slug if one
+exists. Always show the artifact before writing.
+
+The session-level `summary` field is your read on what the round found. Populate it
+as part of synthesis — it is what someone reviewing the critique later will read
+first.
+
+## Promoting a Finding to an Assumption
+
+When a risk finding articulates a testable belief, offer to promote it. The flow:
+
+1. Confirm with the PM which findings to promote.
+2. Call the internal `assumption` skill to create the assumption, passing the
+   finding text, the originating critique slug, and the finding's name. The
+   assumption's body records its origin.
+3. Call the internal `critique` skill to update the originating finding —
+   `status: addressed`, with `resolution` set to a sentence naming the new
+   assumption slug.
+
+This two-step move keeps both sides of the link in sync. The assumption knows where
+it came from; the critique finding knows where it went.
+
+Strengths do not graduate into assumptions. If a strength is worth tracking forward,
+it belongs in the idea body, not as a new artifact.
 
 ## Moves for Specific Situations
 
