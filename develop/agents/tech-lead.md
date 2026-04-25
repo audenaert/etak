@@ -10,7 +10,7 @@ description: >
 when_to_use: >
   "lead this project", "coordinate delivery", "run the project",
   "deliver this epic", "manage this milestone", "tech lead", "orchestrate"
-model: sonnet
+model: opus
 effort: high
 context: fork
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent

@@ -9,7 +9,7 @@ when_to_use: >
   "architect this", "design the project", "technical design for", "propose
   an approach", "how should we build this project", "architecture review",
   "design review"
-model: sonnet
+model: opus
 effort: high
 context: fork
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
