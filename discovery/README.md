@@ -26,6 +26,12 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 | `skills/_internal/` | Internal artifact-writing skills |
 | `agents/product-researcher.md` | Autonomous competitive and market research |
 
+## Relationship to other etak plugins
+
+- **etak-design** (future) — sibling. UX and interaction design; often draws on discovery's opportunity space but is a separate concern.
+- **etak-develop** — downstream. When an idea is ready to build, development picks it up and references the source via the `from_discovery` link on projects and stories. Discovery never points forward; traceability is owned by the development side.
+- **etak-deliver** (future) — further downstream. Code review, QE verification, CI, security audit, release, docs.
+
 ## License
 
 Copyright (c) Neal Audenaert. All rights reserved.
