@@ -4,8 +4,6 @@ Etak ships two plugins today: `etak-discovery` and `etak-develop`. Each exposes 
 
 ## Discovery
 
-For plugin-level context, see [the discovery overview](../discovery.md).
-
 | Skill | Stance | The move it supports |
 |-------|--------|----------------------|
 | [**orient**](orient.md) | Receptive | Think out loud, find your bearings, decide where to go next |
@@ -70,7 +68,6 @@ You rarely need to think this through explicitly. Describe what you want in plai
 
 ## Related reference
 
-- [**Discovery overview**](../discovery.md) — the plugin-level context for the discovery skills.
 - [**Develop overview**](../develop.md) — the plugin-level context for the develop skills, including the artifact hierarchy and agents.
 - [**Artifacts reference**](../artifacts/) — the things the discovery skills produce.
 - [**Product-researcher agent**](../agents/product-researcher.md) — autonomous research that feeds the interactive skills.

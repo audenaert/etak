@@ -42,6 +42,21 @@ For each:
 When batch-creating, ask: "I've identified N assumptions. Want me to create artifacts
 for all of them, or just the high-priority ones?"
 
+### Promote a critique finding
+
+When called from critique to promote a risk finding, you receive the finding text,
+the originating critique slug, and the finding's name within that critique. Create
+the assumption artifact normally and include a body note recording its origin —
+the critique slug and the finding's name. The frontmatter follows the standard
+assumption schema; provenance lives in the body, not as a new field.
+
+The forward link from the finding to this assumption (recorded in the finding's
+`resolution` field by the critique skill) is the authoritative file-side
+representation of the `BECAME_ASSUMPTION` edge in the graph.
+
+Decline if the calling skill tries to promote a strength finding — strengths are not
+testable beliefs.
+
 ### Update status
 
 Status lifecycle: `untested → validated → invalidated`

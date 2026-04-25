@@ -57,8 +57,20 @@ Each round produces specific, severity-rated findings. The session tracks covera
 across themes and stops when new rounds produce diminishing returns — restating
 concerns already raised rather than finding new ones.
 
-When critique surfaces assumptions worth tracking, it calls the internal
-**assumption** skill to create proper artifacts linked to the relevant idea.
+## Persistence
+
+One round, one artifact. Each round you run produces a critique artifact in
+`docs/discovery/critiques/` with the round's stance (persona or framework), the
+specific perspective applied, the target (`about_idea` or `about_opportunity` —
+exactly one), and the embedded `findings` list. Multi-round sessions share an
+optional `session` slug so the rounds can be queried together later.
+
+Call the internal **critique** skill to write rounds and to update finding status
+(open → addressed/dismissed). Call the internal **assumption** skill to promote a
+risk finding into a tracked assumption — the assumption's body records its origin,
+and the originating finding is updated to `addressed` with the new assumption slug
+recorded in `resolution`. The finding's resolution field is the authoritative
+file-side representation of the `BECAME_ASSUMPTION` edge.
 
 ## Transitions
 

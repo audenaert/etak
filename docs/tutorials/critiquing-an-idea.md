@@ -84,13 +84,15 @@ An idea that survives critique is stronger than an idea that hasn't been critiqu
 
 ## Step 5. Decide what the findings mean
 
-Critique findings fall into three buckets. For each, a different next step.
+Each finding has its own lifecycle: `open → addressed | dismissed`. A round is not done when the artifact is written; it's done when each finding has a resolution. Critique findings fall into three buckets, each with a different next step.
 
-**New assumptions.** A finding often reveals a belief you hadn't surfaced. "The skeptical user test assumes users give the tool a full week to prove itself" is a new assumption worth capturing. Move to [sound](../skills/sound.md) or just add it to the graph.
+**New assumptions.** A finding often reveals a testable belief you hadn't surfaced. "Assumes users give the tool a full week to prove itself" is a belief that could be true or false — that's an assumption, not a critique. Promote it. Etak creates an assumption artifact whose body records the originating critique, then marks the finding `addressed` with the new assumption slug recorded as its resolution. The promotion is the audit trail: months later you can see why the assumption exists and what it came from.
 
-**Design refinements.** Some findings point at changes to the idea itself — adjusting scope, rethinking an interaction, handling an edge case explicitly. Update the idea's description. Note what changed and why.
+**Design refinements.** Some findings point at changes to the idea itself — adjusting scope, rethinking an interaction, handling an edge case explicitly. Update the idea's description. Mark the finding `addressed` and record what changed.
 
 **Fatal concerns.** If critique surfaces a genuinely fatal concern, the right move is not to build. Go back to [explore](../skills/explore.md) and generate alternative approaches from the same opportunity. This is an uncomfortable outcome and the whole point of running critique early.
+
+Findings that don't apply — out of scope for the artifact's stage, or duplicates of findings raised in earlier rounds — get `dismissed` with a one-sentence reason. Silence is not a state.
 
 ## Step 6. Know when to stop
 
@@ -100,11 +102,15 @@ The goal is not to find every possible flaw. The goal is to find the flaws signi
 
 ## Step 7. Capture the session
 
+Each round becomes its own artifact in `docs/discovery/critiques/`, written as the round completes. The artifact captures the stance (persona or framework), the specific perspective, the target idea or opportunity, and the embedded findings list — each finding with severity, status, and resolution. Rounds run as part of the same session share an optional `session` slug so they can be queried together later.
+
+You don't write the artifacts yourself. Etak writes each round as it finishes; if you've been running a multi-round session, just say:
+
 ```
-Save the critique summary.
+Group these rounds under session "ai-sidebar-stress-test".
 ```
 
-Etak writes a short artifact: which idea was critiqued, what perspectives were used, the top findings with severity ratings, what changed in the idea as a result. This becomes part of the idea's history. When someone asks in three months "did we think about this from a finance perspective?", the answer is in the graph.
+The result: months from now, when someone asks "did we think about this from a finance perspective?", the answer is in the graph. Each finding shows whether it was promoted to an assumption, folded into the idea, or dismissed — and why.
 
 ## Go back to your original questions
 
