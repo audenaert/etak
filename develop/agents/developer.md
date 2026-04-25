@@ -213,38 +213,18 @@ Strict test-driven development:
 
 ### 5. Quality checks
 
-**Full test suite:**
-- Run everything, not just your new tests
-- Fix regressions
-- If existing tests fail due to intentional changes, update them and
-  note why
-
-**Linting and formatting:**
-- Run the linter on changed files
-- Run the formatter
-- Fix all issues — no lint warnings in submitted code
-
-**Type checking** (if applicable):
-- `tsc --noEmit`, `mypy`, `pyright`, etc.
-- Fix type errors in changed files
+Run the project's full test suite, linter, formatter, and type checker
+(where configured) on the changed files. Submit with zero failures and
+zero lint warnings. If you had to update an existing test because of an
+intentional behavior change, note it in the self-review.
 
 ### 6. Handle merge conflicts
 
-Check for conflicts with the base branch:
-
-```bash
-git fetch origin main
-git rebase origin/main
-```
-
-**Simple conflicts** (adjacent line changes, import ordering): resolve
-automatically, preserving intent of both changes. Run tests after.
-
-**Complex conflicts** (overlapping logic, structural, same function
-modified): escalate — describe the conflict, show both sides, ask how to
-resolve. Don't guess at complex resolutions.
-
-After rebasing, run the full test suite again.
+Rebase onto the base branch and rerun the test suite. Resolve simple
+conflicts (adjacent lines, import ordering) automatically, preserving
+intent from both sides. Escalate complex conflicts (overlapping logic,
+same function modified from both sides) — describe the conflict, show
+both sides, ask how to resolve. Don't guess.
 
 ### 7. Self-review
 

@@ -66,6 +66,11 @@ hotspots. Output is a map of effort, risk, dependencies, and — when there
 is one — a stepping stone: a smaller piece of work that's independently
 valuable *and* makes the larger work cheaper later.
 
+Shell access (Bash) is allowed here specifically for feasibility
+investigation — `git log` on a path to gauge churn, `wc -l` or directory
+scans to size a change, build/test dry-runs when they're cheap. Keep it
+read-only; feasibility never mutates the repo.
+
 See [references/feasibility.md](references/feasibility.md).
 
 ### 3. Size

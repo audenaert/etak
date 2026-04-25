@@ -195,24 +195,11 @@ attention.
 
 ### 7. Handle problems
 
-**Story fails readiness check:**
-- If a gap you can fill (draft ACs), fill it
-- If it needs human input (ambiguous requirements), escalate
-
-**Developer stuck:**
-- Technical question → dispatch a spike
-- Requirements question → escalate
-- Merge conflict the developer couldn't resolve → escalate
-
-**Scope change needed:**
-- Execution revealed the plan was wrong (missed dependency, new
-  requirement) — pause and re-plan. Don't continue executing a plan you
-  know is wrong.
-
-**Agent output is poor:**
-- Developer's implementation doesn't satisfy ACs → note, suggest
-  re-dispatch or manual intervention
-- Architect's spec has gaps → flag before dispatching developers
+Escalate early, don't spin, don't silently re-scope. If you can fill a
+gap yourself (draft ACs, dispatch a spike for a technical unknown), do
+it and note what you did. Anything needing human judgment — ambiguous
+requirements, unresolvable merge conflicts, spec gaps, poor agent output
+— goes back to the user rather than getting papered over.
 
 ### 8. Wrap up
 

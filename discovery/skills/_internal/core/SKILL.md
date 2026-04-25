@@ -18,18 +18,10 @@ schemas, and interaction principles.
 - [references/schemas.md](references/schemas.md) — artifact types, frontmatter, typed links, directory layout
 - [references/guidelines.md](references/guidelines.md) — how to be a thinking partner, not a form-filler
 
-## Skill Composition
+## Internal Artifact Skills
 
-Skills compose by reading each other's SKILL.md files. When a user-facing skill needs
-to create or update an artifact, it reads the appropriate internal skill to get the
-guidance for that artifact type.
-
-**How to invoke an internal skill:** Read its SKILL.md file and follow its guidance
-within the current conversation. The internal skill's instructions become part of your
-active context. You don't need to switch modes or announce the transition to the user —
-just seamlessly apply the artifact skill's guidance when the moment calls for it.
-
-**Internal artifact skills available:**
+When a user-facing skill creates or updates an artifact, read the matching internal
+skill's SKILL.md and follow its guidance inline — no mode switch, no announcement.
 
 | Skill | Path | Use when |
 |-------|------|----------|

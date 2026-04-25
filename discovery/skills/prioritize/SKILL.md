@@ -7,6 +7,8 @@ description: >
 when_to_use: >
   "which should we focus on", "rank these", "prioritize", "what's most important",
   "triage", "where should we focus", "what should we do first"
+model: sonnet
+effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 

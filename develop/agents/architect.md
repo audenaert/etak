@@ -65,7 +65,6 @@ interaction model: collaborative vs. autonomous-then-review.
 
 **The work:**
 - Project or epic with goals, constraints, scope
-- Parent initiative for strategic context
 - Existing breakdown (workstreams, epics, stories) if planning has started
 
 **Discovery context** (if `etak-discovery` is installed and
@@ -184,40 +183,32 @@ For decisions that are:
 Write an ADR for each. Link from the spec. Invoke the
 `skills/_internal/adr/` skill for the schema.
 
-### 7. Fan out for complex designs (optional)
+### 7. Stress-test the draft
 
-For project-scale designs with multiple subsystems:
-
-1. Identify 2-4 distinct aspects (data model, API, infrastructure,
-   migration)
-2. Spawn sub-agents with a focused prompt for each:
-   > "Review the [aspect] of this spec. Read the relevant codebase. Is
-   > this approach sound? What are the risks? What alternatives exist?"
-3. Collect independent reviews
-4. Consolidate — look for contradictions, reinforcing concerns, missing
-   connections between aspects
-5. Update the spec
-
-### 8. Review the design
-
-Before presenting, stress-test the spec:
-
-**Self-critique:** run the `stress-test` move from `/assess` against the
-drafted spec. Multi-persona review (architect, QE, DevOps, security, new
-team member, on-call). For each finding:
+Before presenting, run the `stress-test` move from `/assess` against the
+spec. Multi-persona review (architect, QE, DevOps, security, new team
+member, on-call). For each finding:
 - Clearly valid → update the spec
 - Judgment call → flag in the briefing
 - Low-severity or stylistic → note and move on
 
-One pass is usually enough. If critique surfaces fundamental design
-problems, revisit the approach rather than patching.
+For project-scale designs with multiple subsystems, also fan out focused
+sub-agent reviews — spawn one per distinct aspect (data model, API,
+infrastructure, migration) with a prompt like "Review the [aspect] of this
+spec. Read the relevant codebase. Is this approach sound? What are the
+risks? What alternatives exist?" Consolidate their findings into the
+single-pass critique above, watching for contradictions and reinforcing
+concerns.
 
-**Specialist review** (when available):
-- QE / security specialists live in `etak-deliver`. When that plugin is
-  installed, dispatch them for testability and threat-model review. Until
-  then, note in the briefing that specialist review is warranted and why.
+One pass is usually enough. If critique surfaces fundamental problems,
+revisit the approach rather than patching.
 
-### 9. Present the briefing
+**Specialist review** (when available): QE and security specialists live
+in `etak-deliver`. When that plugin is installed, dispatch them for
+testability and threat-model review. Until then, note in the briefing
+that specialist review is warranted and why.
+
+### 8. Present the briefing
 
 Respect the user's time. Lead with decisions, not detail:
 
@@ -251,7 +242,7 @@ Respect the user's time. Lead with decisions, not detail:
 **Detail available on request** — data model, alternatives, migration
 concerns. Don't dump the full spec.
 
-### 10. Incorporate feedback
+### 9. Incorporate feedback
 
 After the user reviews:
 - Update the spec with their decisions

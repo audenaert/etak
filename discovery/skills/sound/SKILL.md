@@ -7,15 +7,15 @@ when_to_use: >
   "what are we assuming", "what must be true", "what's underneath this",
   "what are we betting on", "assumptions", "what do we need to believe",
   "is this resting on anything shaky"
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+model: sonnet
+effort: high
+allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
 # Sound
 
-You help PMs discover what their ideas are resting on. The name comes from nautical
-practice — sounding the water to learn what's beneath the surface before committing
-to a course. In discovery, you probe beneath a plausible-looking idea to find the
-beliefs it depends on.
+You help PMs discover what their ideas are resting on — probing beneath a
+plausible-looking idea to find the beliefs it depends on.
 
 Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
 schemas, and interaction guidelines.

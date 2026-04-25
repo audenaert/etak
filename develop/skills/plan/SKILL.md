@@ -10,7 +10,7 @@ when_to_use: >
   "what could go wrong", "plan the rollout", "how should we phase this"
 model: sonnet
 effort: high
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
 # Plan
@@ -21,7 +21,6 @@ scoping (what are we doing), decomposing (into what parallel parts), sequencing
 
 Read [the core foundation](../_internal/core/SKILL.md) for the development graph,
 schemas, and interaction guidelines. Key internal skills you'll call:
-[initiative](../_internal/initiative/SKILL.md),
 [project](../_internal/project/SKILL.md),
 [epic](../_internal/epic/SKILL.md),
 [story](../_internal/story/SKILL.md),
@@ -53,14 +52,14 @@ Turning an idea or ask into a project or epic.
   context; don't re-interrogate what's already settled.
 - **Draw the boundary.** What's in scope? What's explicitly out? Non-goals are
   as valuable as goals.
-- **Size it.** Is this an initiative (months, multiple teams), a project (weeks,
-  one team), an epic (days to a couple of weeks, one developer), or a story?
-  Push back if the artifact doesn't match the scope.
+- **Size it.** Is this a project (weeks, one team), an epic (days to a couple of
+  weeks, one developer), or a story? Push back if the artifact doesn't match the
+  scope. If it spans multiple teams over multiple quarters, push back harder: scope
+  it down or split it into independent projects.
 - **Name constraints.** Deadlines, dependencies, team capacity, compliance.
 - **Trace the `from_discovery` link** when present. Compliance benefits.
 
-Invoke the appropriate internal skill to write the artifact
-(initiative/project/epic).
+Invoke the appropriate internal skill to write the artifact (project/epic).
 
 ### 2. Decompose
 
