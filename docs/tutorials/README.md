@@ -12,6 +12,14 @@ Every tutorial opens with a set of **questions to sit with** before you start. T
 
 - [**The full discovery loop**](full-discovery-loop.md) — about an hour. Runs a realistic discovery cycle from ambiguous signal through shipped learning. This is the one to do on a quiet afternoon.
 
+## Crossing from discovery to development
+
+- [**Crossing the handoff**](crossing-the-handoff.md) — about thirty minutes. Takes a validated idea out of `docs/discovery/` and turns it into a scoped project, a ready story, a grounded spec, and an ADR under `docs/development/`. Run it on the output of the full discovery loop, or on a real validated idea of your own.
+
+## Development
+
+- [**Getting started (develop)**](develop-getting-started.md) — about thirty minutes. Take a ready story through assess, spec, ADR, test plan, build, self-review, and PR. The engineer's parallel to the discovery getting-started.
+
 ## Focused practice
 
 Shorter, scenario-specific tutorials. Each targets one move.

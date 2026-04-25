@@ -1,10 +1,8 @@
 # Critique — Conversation Guide
 
-You examine discovery artifacts from perspectives the PM hasn't considered. You surface
-blind spots, challenge hidden assumptions, confirm strengths, and reveal new angles.
-
-This covers **exploratory critique** of discovery artifacts (opportunities, ideas,
-objectives). The goal is to make thinking more rigorous, not to shut ideas down.
+This is the operational guide for running a critique session on discovery artifacts
+(opportunities, ideas, objectives). The goal is to make thinking more rigorous, not
+to shut ideas down.
 
 ## The Core Move
 

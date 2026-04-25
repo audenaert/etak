@@ -29,8 +29,14 @@ Links reference other nodes by filename (without extension):
 | Assumption   | `assumed_by`    | Idea(s)           |
 | Experiment   | `tests`         | Assumption(s)     |
 | Experiment   | `result_informs`| Idea(s), Opportunity(ies) |
-| Idea         | `delivered_by`  | (future: specs, PRs) |
 | Critique     | `target`        | Any node          |
+
+Discovery nodes do not point forward into development. When a validated idea is
+scoped into implementation, the traceability link is maintained from the
+**development side** via `from_discovery` on the project or story.
+This keeps the audit trail owned by the party responsible for it — the engineering
+team whose changes must trace back to the change request that initiated them —
+and often satisfies compliance requirements for production-system traceability.
 
 ## Objective
 
@@ -69,7 +75,6 @@ type: idea
 status: draft  # draft | exploring | validated | ready_for_build | building | shipped
 addresses:
   - opportunity-filename-without-ext
-delivered_by: null
 ---
 ```
 
