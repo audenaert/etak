@@ -11,7 +11,7 @@ This repo is a plugin marketplace — a registry of Claude Code plugins (skills 
   agents/<agent>.md            # agent definitions (single markdown file with frontmatter)
   docs/                        # plugin documentation
   README.md                    # plugin overview
-registry.json                  # central catalog of all plugins
+.claude-plugin/marketplace.json  # catalog Claude Code reads on install
 plugin-schema.json             # JSON Schema for plugin manifests
 ```
 
@@ -19,6 +19,5 @@ plugin-schema.json             # JSON Schema for plugin manifests
 
 - Every plugin directory must contain `.claude-plugin/plugin.json` conforming to `plugin-schema.json`.
 - Plugin names use the `etak-` prefix in manifests (e.g. `etak-discovery`), but directory names omit it (e.g. `discovery/`).
-- When adding or modifying a plugin, keep `registry.json` in sync with the plugin's `plugin.json`.
 - Do not modify plugins without updating their version number.
-- See `CONTRIBUTING.md` for the full submission guide.
+- See `docs/meta/skill-design-guide.md` for authoring conventions.
