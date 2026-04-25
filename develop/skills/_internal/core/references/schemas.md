@@ -5,7 +5,6 @@ organized by type:
 
 ```
 docs/development/
-  initiatives/
   projects/
   epics/
   stories/
@@ -36,7 +35,7 @@ Every work item shares a small common header:
 ```yaml
 ---
 name: "Human-readable title"
-type: initiative | project | epic | story | task | bug | chore | enhancement | spike | spec | adr | workstream | milestone
+type: project | epic | story | task | bug | chore | enhancement | spike | spec | adr | workstream | milestone
 status: <varies by type>
 parent: <slug of parent work item, if any>
 children: []  # slugs of child work items
@@ -69,24 +68,6 @@ project.
 | Milestone   | `project`                 | Containing project                     |
 | Milestone   | `workstream_deliverables` | What each workstream delivers          |
 
-## Initiative
-
-Multi-project strategic container.
-
-```yaml
----
-name: "Platform authentication overhaul"
-type: initiative
-status: proposed  # proposed | active | paused | complete | abandoned
-parent: null
-children:
-  - project-oauth2-migration
-from_discovery: idea-modern-auth-flow
----
-```
-
-Body: Strategic context, success criteria, timeline constraints.
-
 ## Project
 
 Bounded deliverable. The coordination hub for most work.
@@ -96,7 +77,7 @@ Bounded deliverable. The coordination hub for most work.
 name: "OAuth2 migration"
 type: project
 status: scoping  # scoping | planning | in_progress | complete | abandoned
-parent: initiative-platform-auth-overhaul
+parent: null
 children:
   - epic-oauth2-provider-integration
   - epic-token-management
@@ -253,7 +234,7 @@ enables), approach, open questions.
 
 ## Work Items (Bug, Chore, Enhancement)
 
-Standalone work items that don't require the initiative/project/epic hierarchy. They
+Standalone work items that don't require the project/epic hierarchy. They
 live together in `docs/development/work-items/` and differ by `type` and lifecycle.
 
 ### Bug
@@ -366,7 +347,6 @@ Body sections:
 
 | Type        | Statuses                                                  |
 |-------------|-----------------------------------------------------------|
-| Initiative  | proposed, active, paused, complete, abandoned             |
 | Project     | scoping, planning, in_progress, complete, abandoned       |
 | Epic        | draft, ready, in_progress, complete                       |
 | Story       | draft, ready, in_progress, complete                       |

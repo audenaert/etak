@@ -17,15 +17,14 @@ Read [the core foundation](../core/SKILL.md) for schemas and interaction guideli
 
 ## What Makes a Good Project
 
-- **Bounded scope** — a project has an end. If it doesn't, it's a workstream or an
-  initiative.
+- **Bounded scope** — a project has an end. If it doesn't, it's a workstream or needs
+  to be split into independent projects.
 - **Decomposable into workstreams** — parallel tracks with clear interface contracts.
   If everything must happen serially, the project is too small or the decomposition
   is wrong.
 - **Sequenced milestones** — M1 is thin and proves architecture end-to-end. Later
   milestones add capability.
-- **Traceable** — `from_discovery` if it originated there; `parent` initiative if it
-  belongs to one.
+- **Traceable** — `from_discovery` if it originated from a validated discovery idea.
 
 ## Moves
 
@@ -58,14 +57,13 @@ back via the plan skill for decomposition. The project's `workstreams` and
 ### Write the artifact
 
 Generate a kebab-case filename. Write to `docs/development/projects/`. Include
-frontmatter with `name`, `type: project`, `status: scoping`, `parent` (initiative
-or null), `children: []`, `workstreams: []`, `milestones: []`, `from_discovery` if
-applicable. Body: overview, goals, constraints, team, non-goals. Always show before
+frontmatter with `name`, `type: project`, `status: scoping`, `parent: null`,
+`children: []`, `workstreams: []`, `milestones: []`, `from_discovery` if applicable. Body: overview, goals, constraints, team, non-goals. Always show before
 writing.
 
 ## Failure Modes
 
-- Project scope is too big (multi-team, multi-quarter) — probably an initiative.
+- Project scope is too big (multi-team, multi-quarter) — split into independent projects with explicit dependencies.
 - No natural workstreams — either too small for a project, or decomposition is wrong.
 - M1 is "all the hard parts" — that's a big-bang, not a milestone.
 - Project children never populated — the work is happening but ungraphed.

@@ -99,7 +99,7 @@ of the development rhythm without having to learn it upfront.
 
 ## Display Conventions
 
-Use the emoji prefixes from the guidelines (🎯 initiative, 📦 project, 🧭
+Use the emoji prefixes from the guidelines (📦 project, 🧭
 workstream, 🏁 milestone, 📚 epic, 📖 story, ✅ task, 🐛 bug, 🧹 chore, ✨
 enhancement, 🔬 spike, 📐 spec, 📜 adr). Show status in parentheses. For stories,
 collapse ACs unless specifically asked. When the graph is large, summarize by

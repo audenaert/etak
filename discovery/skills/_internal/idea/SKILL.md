@@ -102,7 +102,7 @@ with `name`, `type: idea`, `status: draft`, `addresses` link(s), and body with
 description, why this could work, and open questions. Always show before writing.
 
 Ideas do not carry a forward link to development work. When the idea moves into
-implementation, the development-side artifact (initiative, project, or story) carries
+implementation, the development-side artifact (project or story) carries
 a `from_discovery` link pointing back to this idea. Traceability is maintained by the
 engineering team, not by discovery.
 

@@ -33,7 +33,7 @@ Links reference other nodes by filename (without extension):
 
 Discovery nodes do not point forward into development. When a validated idea is
 scoped into implementation, the traceability link is maintained from the
-**development side** via `from_discovery` on the initiative, project, or story.
+**development side** via `from_discovery` on the project or story.
 This keeps the audit trail owned by the party responsible for it — the engineering
 team whose changes must trace back to the change request that initiated them —
 and often satisfies compliance requirements for production-system traceability.

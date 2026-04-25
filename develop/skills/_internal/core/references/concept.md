@@ -5,7 +5,7 @@ Artifacts live in `docs/development/` organized by type. See [schemas.md](schema
 ## Work item hierarchy
 
 ```
-Initiative → Project → Epic → Story → Task
+Project → Epic → Story → Task
 ```
 
 Standalones (no parent required): Bug, Chore, Enhancement, Spike.
@@ -23,4 +23,4 @@ Standalones (no parent required): Bug, Chore, Enhancement, Spike.
 
 ## Traceability
 
-`from_discovery` links a development artifact to the discovery idea it originated from. One-way: development points back, discovery never points forward. Populate on initiatives, projects, and stories from validated ideas. Omit for bugs, chores, and enhancements from production or engineering judgment.
+`from_discovery` links a development artifact to the discovery idea it originated from. One-way: development points back, discovery never points forward. Populate on projects and stories from validated ideas. Omit for bugs, chores, and enhancements from production or engineering judgment.

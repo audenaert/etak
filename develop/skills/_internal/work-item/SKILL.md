@@ -2,7 +2,7 @@
 name: work-item
 description: >
   Create and update standalone work items — bugs, chores, and enhancements that
-  don't require the full initiative/project/epic hierarchy. Internal skill called
+  don't require the full project/epic hierarchy. Internal skill called
   by survey and build; never invoked directly by users.
 user-invocable: false
 allowed-tools: Read, Write, Edit, Glob, Grep

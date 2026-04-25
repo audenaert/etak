@@ -29,7 +29,7 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 
 ## Relationship to other etak plugins
 
-- **etak-discovery** — upstream. Validated ideas flow in via the `from_discovery` link on initiatives, projects, and stories.
+- **etak-discovery** — upstream. Validated ideas flow in via the `from_discovery` link on projects and stories.
 - **etak-design** (future) — UX/IxD. Informs stories and specs; separate concern from technical design.
 - **etak-deliver** (future) — downstream. Code review, QE verification, CI, security audit, release, docs.
 

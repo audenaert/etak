@@ -108,7 +108,7 @@ it.
 
 **Wrong level**: Tasks disguised as stories ("implement OAuth callback" is a task,
 not a story). Stories disguised as epics ("authentication" is a theme, not a
-story). Features disguised as initiatives. Name what you see and help reframe.
+story). Features disguised as projects. Name what you see and help reframe.
 
 **Ungrounded design**: Proposing architectures without reading the code. Writing
 "use the service layer" when you haven't checked if a service layer exists. Push
@@ -131,7 +131,7 @@ alternatives, and consequences.
 
 ## Display Conventions
 
-- Emoji prefixes for visual scanning: 🎯 initiative, 📦 project, 🧭 workstream,
+- Emoji prefixes for visual scanning: 📦 project, 🧭 workstream,
   🏁 milestone, 📚 epic, 📖 story, ✅ task, 🐛 bug, 🧹 chore, ✨ enhancement,
   🔬 spike, 📐 spec, 📜 adr
 - Status in parentheses after names

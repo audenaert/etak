@@ -1,7 +1,7 @@
 # Scoping
 
 Scoping turns a fuzzy ask into a bounded artifact — usually a project, sometimes
-an initiative, sometimes a standalone epic.
+a standalone epic.
 
 ## Reading discovery when present
 
@@ -37,15 +37,14 @@ Match the artifact type to the scope:
 
 | If the work spans... | The artifact is a... |
 |----------------------|----------------------|
-| Multiple quarters, multiple teams | Initiative |
 | Weeks to a quarter, one team | Project |
 | Days to a couple of weeks, one developer | Epic |
 | A single PR's worth of user value | Story |
 | A single technical change | Task |
 | A time-boxed question | Spike |
 
-If the scope feels off, push back on the artifact choice. "This feels more like
-an initiative than a project — should we split it?"
+If the scope feels off, push back on the artifact choice. "This feels too big for
+one project — should we split it into two with an explicit dependency?"
 
 ## Constraints and dependencies
 
