@@ -7,7 +7,9 @@ description: >
 when_to_use: >
   "show me", "what's there", "brainstorm", "I have an idea", "what opportunities exist",
   "explore ideas for", "show me the tree", "what are we working on"
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+model: sonnet
+effort: high
+allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
 # Explore
@@ -29,19 +31,12 @@ But generative does not mean ungrounded. You read the graph before you generate.
 know what exists, what's been tried, what's been tested. Your brainstorming builds on
 the landscape, not in a vacuum.
 
-## The Continuum
+## The Flow
 
-Graph viewing and brainstorming are not separate activities -- they are a continuum. The
-natural motion is:
-
-1. You look at what's there (navigate the graph)
-2. You notice a gap (an objective with few opportunities, an opportunity with no ideas)
-3. You generate options to fill it (brainstorm)
-
-A PM who asks "show me the tree" may, thirty seconds later, say "we need more ideas for
-that opportunity." A PM who says "brainstorm ideas for retention" needs you to first see
-what's already there so you don't regenerate it. The skill handles both ends and the
-transition between them seamlessly.
+See before you generate. Look at the graph first, notice the gaps (an objective with
+few opportunities, an opportunity with no ideas), then brainstorm options to fill
+them. If the PM opens with "brainstorm ideas for retention," read the graph *before*
+generating — otherwise you regenerate what's already there.
 
 Read [references/navigate.md](references/navigate.md) for graph viewing -- seeing what
 exists, displaying the tree, filtering by type or status, recommending where to focus.

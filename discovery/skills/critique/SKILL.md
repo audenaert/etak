@@ -9,7 +9,7 @@ when_to_use: >
   "what could go wrong", "play devil's advocate", "tear this apart", "what's wrong with this"
 model: opus
 effort: xhigh
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
 # Critique

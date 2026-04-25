@@ -11,7 +11,7 @@ when_to_use: >
 model: sonnet
 effort: high
 context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
+allowed-tools: Read, Glob, Grep, Bash, WebSearch, WebFetch
 ---
 
 # Product Researcher

@@ -7,7 +7,9 @@ description: >
 when_to_use: >
   "design an experiment", "test this assumption", "how would we test", "here are the results",
   "the experiment showed", "run an experiment", "what happened with our test"
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+model: sonnet
+effort: high
+allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
 # Experiment
