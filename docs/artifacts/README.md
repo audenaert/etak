@@ -1,8 +1,8 @@
 # Artifacts reference
 
-Etak builds an opportunity graph. The nodes are **artifacts** — typed, linked markdown files with YAML headers. This reference describes each artifact type, its role in the graph, its schema, and the actions that are useful to take on it.
+Etak builds two linked graphs, one for discovery and one for development. Each node is an **artifact**: a typed, linked markdown file with a YAML header. This reference describes both sets.
 
-## The five types
+## The five discovery types
 
 | Artifact | Role in the graph |
 |----------|-------------------|
@@ -30,7 +30,7 @@ Opportunities support one or more objectives. Ideas address one or more opportun
 
 ## Where they live
 
-Artifacts are written to `docs/discovery/` in your repo, one subdirectory per type:
+Discovery artifacts are written to `docs/discovery/` in your repo, one subdirectory per type:
 
 ```
 docs/discovery/
@@ -43,6 +43,72 @@ docs/discovery/
 
 Each file is a markdown document with a YAML frontmatter header. The header carries the typed fields (name, status, relationships). The body holds free-form description, evidence, context. Both are readable and editable without Etak.
 
+## The development artifacts
+
+When a validated idea moves into execution, work is tracked as a second graph under `docs/development/`. The development graph has a containment hierarchy (project, epic, story, task), plus parallel tracks and sync points (workstream, milestone), design artifacts (spec, ADR), time-boxed investigation (spike), and standalone work items (bug, chore, enhancement).
+
+| Artifact | Role in the graph |
+|----------|-------------------|
+| [**Project**](project.md) | Bounded deliverable; the coordination hub for most work |
+| [**Epic**](epic.md) | Themed group of related stories |
+| [**Story**](story.md) | User-frame increment with testable acceptance criteria |
+| [**Task**](task.md) | Engineering-frame technical change. Optional. |
+| [**Workstream**](workstream.md) | Parallel delivery track within a project |
+| [**Milestone**](milestone.md) | Sequenced project checkpoint, thin and demo-able |
+| [**Spec**](spec.md) | Grounded technical design for a project, epic, or story |
+| [**ADR**](adr.md) | Hard-to-reverse architectural decision |
+| [**Spike**](spike.md) | Time-boxed investigation with a concrete outcome |
+| [**Bug**](bug.md) | Standalone defect |
+| [**Chore**](chore.md) | Standalone maintenance |
+| [**Enhancement**](enhancement.md) | Small standalone improvement |
+
+### How they connect
+
+```
+project ──── workstreams ──── milestones
+   │ parent
+   ▼
+epic
+   │ parent
+   ▼
+story
+   │ parent (optional)
+   ▼
+task
+```
+
+Project, epic, story, and task form the containment hierarchy: one parent, one owner at each level. Workstream and milestone cut across the hierarchy; an epic or story lives in one workstream and may target one milestone. Specs and ADRs attach to a work item via `for`, not `parent`. Spikes, bugs, chores, and enhancements stand alone unless they reference a related work item.
+
+### Tasks are optional
+
+A story describes a change from the user's point of view: persona, capability, outcome, testable ACs. A task describes a change to the *system*: files, schemas, interfaces. When a story's implementation is obvious from the ACs and a glance at the codebase, tasks add ceremony without adding clarity. Create tasks when the technical work isn't user-visible (migrations, feature flags, telemetry), when multiple PRs close a story, when a technical change enables multiple stories (parent to the epic), or when decomposition is real design work. Otherwise, implement the story directly.
+
+### From discovery to development
+
+Every development artifact can carry a `from_discovery` field that links back to a validated idea in `docs/discovery/`. The link is one-way: development points back; discovery never points forward. This matches how compliance audit trails work in practice, where changes to production systems trace back to the change request that initiated them.
+
+Populate `from_discovery` on the development artifact that first takes up the work, usually a project or story. Omit for bugs, chores, and enhancements that originate in production or engineering judgment.
+
+### Where they live
+
+Development artifacts are written to `docs/development/` in your repo, organized by type:
+
+```
+docs/development/
+  projects/
+  epics/
+  stories/
+  tasks/
+  work-items/    # bug, chore, enhancement
+  spikes/
+  specs/
+  adrs/
+  workstreams/
+  milestones/
+```
+
+Same shape as discovery artifacts: markdown body with YAML frontmatter. The authoritative schema for every type is in [`develop/skills/_internal/core/references/schemas.md`](../../develop/skills/_internal/core/references/schemas.md).
+
 ## The graph is a model, not a map
 
 Every artifact is part of an *evolving model of your team's current understanding.* It is not a specification of reality. It is not a comprehensive catalog of every need or idea. It is what you know, what you believe, and what you've chosen to track, at a given moment.
@@ -53,6 +119,7 @@ See [foundations](../context/foundations.md) for the longer argument.
 
 ## Related
 
+- [Develop overview](../develop.md) — the upstream view of the development graph.
 - [Skills reference](../skills/) — the skills that create, modify, and propagate artifacts.
 - [Quick start](../quickstart.md) — how to build your first artifacts.
 - [Getting started tutorial](../tutorials/getting-started.md) — walkthrough that produces each artifact type.

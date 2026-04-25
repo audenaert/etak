@@ -177,3 +177,5 @@ The three questions from the top of this tutorial.
 ## What to do with this
 
 Do the loop again on a real initiative this week. The first pass feels like overhead. The third pass feels like you're finally seeing what was always there.
+
+When you have a validated idea you want to actually build, run [**crossing the handoff**](crossing-the-handoff.md) next. It picks up from the adaptive-thresholds idea you just produced and walks it into `docs/development/` as a scoped project with a ready story, a grounded spec, and an ADR. The handoff is where discovery discipline either holds or quietly evaporates.
