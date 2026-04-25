@@ -1,0 +1,19 @@
+{
+  "name": "etak-deliver",
+  "description": "Software delivery skills — review code, verify stories, ship safely, audit security, operate infrastructure, keep docs in sync.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Neal Audenaert"
+  },
+  "license": "UNLICENSED",
+  "categories": ["development"],
+  "keywords": [
+    "code-review",
+    "testing",
+    "release-engineering",
+    "security",
+    "devops",
+    "documentation",
+    "ci-cd"
+  ]
+}
