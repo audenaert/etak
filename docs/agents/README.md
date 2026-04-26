@@ -16,6 +16,17 @@ See [the develop overview](../develop.md) for context on how these fit together.
 - [**tech-lead**](tech-lead.md) — orchestrates delivery. Breaks work into concrete items, fills gaps, creates an execution plan, dispatches the other agents, parallelizes independent work.
 - [**developer**](developer.md) — autonomous TDD implementation in isolated git worktrees. Handles stories, bugs, and spikes. Honest self-review before submitting the PR.
 
+## Deliver agents
+
+See [the deliver overview](../deliver.md) for context on how these fit together.
+
+- [**reviewer**](reviewer.md) — autonomous code review across six dimensions (problem fit, simplicity, critical zones, boundaries, security, tests). Posts findings to the PR.
+- [**quality-engineer**](quality-engineer.md) — verifies a story autonomously. Walks each AC, evaluates test coverage at the right layer, optionally writes E2E tests to close gaps.
+- [**release-engineer**](release-engineer.md) — diagnoses and fixes CI failures from logs; cuts releases, drafts notes in the user's frame.
+- [**security-lead**](security-lead.md) — autonomous threat modeling, code audit, security test design, and a persistent risk registry.
+- [**tech-writer**](tech-writer.md) — autonomous documentation drift correction across API docs, architecture, user docs, and screenshots.
+- [**devops**](devops.md) — designs and implements IaC, CI/CD, containerization, observability, and environment management. Never applies to live infrastructure without explicit approval.
+
 ## How agents fit with skills
 
 A useful pattern:

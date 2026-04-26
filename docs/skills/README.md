@@ -1,6 +1,6 @@
 # Skills reference
 
-Etak ships two plugins today: `etak-discovery` and `etak-develop`. Each exposes six user-facing skills. You do not invoke them by name. You describe the move you want to make, and Etak picks the right one. The purpose of this reference is to make the menu legible so you recognize which move fits which moment in your own work.
+Etak ships three plugins today: `etak-discovery`, `etak-develop`, and `etak-deliver`. Each exposes six user-facing skills. You do not invoke them by name. You describe the move you want to make, and Etak picks the right one. The purpose of this reference is to make the menu legible so you recognize which move fits which moment in your own work.
 
 ## Discovery
 
@@ -66,9 +66,37 @@ Match the skill to the state of the work.
 
 You rarely need to think this through explicitly. Describe what you want in plain language and the tool will route.
 
+## Deliver
+
+For plugin-level context, see [the deliver overview](../deliver.md).
+
+| Skill | Stance | The move it supports |
+|-------|--------|----------------------|
+| [**review**](review.md) | Rigorous senior colleague | Self-review your own work, run a structured review on a PR, respond to feedback |
+| [**verify**](verify.md) | Adversarial QE | Confirm a story is actually done — walk each AC against the implementation, check coverage |
+| [**ship**](ship.md) | Pragmatic release engineer | Diagnose CI failures, fix them, cut releases, draft notes in the user's frame |
+| [**secure**](secure.md) | Adversarial security partner | Walk the attack surface a change opens, identify specific threats, propose tests |
+| [**operate**](operate.md) | Structural ops partner | Read existing infrastructure before proposing change, preview blast radius |
+| [**docs**](docs.md) | Receptive technical writer | Audit drift between code and docs, generate new docs, update existing pages |
+
+### The deliver rhythm
+
+Deliver does not have a single rhythm. Each skill maps to a moment that recurs naturally in the engineer's work — review when something's about to push, verify when a story claims done, ship when CI is red or a release is ready, secure when a change opens new attack surface, operate when infrastructure changes, docs when behavior the docs describe has shifted.
+
+### How to choose a deliver move
+
+- **You finished implementing and want to push** → review (self-review)
+- **A PR needs review** → review (PR review)
+- **You want to confirm a story is done** → verify
+- **CI is red or a release is ready** → ship
+- **You want to know what could go wrong if an attacker tried** → secure
+- **You need infrastructure, monitoring, or a runbook** → operate
+- **The docs and the code disagree** → docs
+
 ## Related reference
 
 - [**Develop overview**](../develop.md) — the plugin-level context for the develop skills, including the artifact hierarchy and agents.
+- [**Deliver overview**](../deliver.md) — the plugin-level context for the deliver skills, including how they pair with develop.
 - [**Artifacts reference**](../artifacts/) — the things the discovery skills produce.
 - [**Product-researcher agent**](../agents/product-researcher.md) — autonomous research that feeds the interactive skills.
 - [**Foundations**](../context/foundations.md) — why the skills are arranged this way.
