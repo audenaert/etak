@@ -12,8 +12,9 @@ Etak builds two linked graphs, one for discovery and one for development. Each n
 | [**Assumption**](assumption.md) | Testable belief that must be true for an idea to work |
 | [**Experiment**](experiment.md) | Test that produces evidence about an assumption |
 | [**Critique**](critique.md) | Structured examination of an idea or opportunity from an outside perspective |
+| [**Memo**](memo.md) | In-depth analytical document that informs the opportunity space |
 
-The discovery artifact set is intentionally open. These six types are the current shape of the discovery model, not a closed enumeration. As Etak's discovery discipline evolves — and as practice reveals artifact shapes that are systematically absent — new types will be added. Critique is the first addition beyond the original five, and it establishes the pattern: each addition ships as a file-based schema doc (here in `docs/artifacts/`) and as a graph node type in the data model simultaneously, so both representations stay in lockstep. Future additions follow the same discipline.
+The discovery artifact set is intentionally open. These seven types are the current shape of the discovery model, not a closed enumeration. As Etak's discovery discipline evolves — and as practice reveals artifact shapes that are systematically absent — new types will be added. Each addition ships as a file-based schema doc (here in `docs/artifacts/`) and as a graph node type in the data model simultaneously, so both representations stay in lockstep. Future additions follow the same discipline.
 
 ## How they connect
 
@@ -31,6 +32,8 @@ experiment
 
 Opportunities support one or more objectives. Ideas address one or more opportunities. Assumptions are held by one or more ideas. Experiments test one or more assumptions. The graph is not a tree — an idea can serve multiple opportunities, an assumption can underlie multiple ideas, and an experiment can inform multiple assumptions. That is deliberate. See [foundations](../context/foundations.md) on why the graph model is honest about shared structure that a tree cannot represent.
 
+Memos sit outside the main hierarchy. They connect via `supports` to objectives or opportunities they inform, but they are not required to link anywhere — a foundational memo may inform the whole space rather than a specific artifact.
+
 ## Where they live
 
 Discovery artifacts are written to `docs/discovery/` in your repo, one subdirectory per type:
@@ -42,6 +45,8 @@ docs/discovery/
   ideas/
   assumptions/
   experiments/
+  critiques/
+  memos/
 ```
 
 Each file is a markdown document with a YAML frontmatter header. The header carries the typed fields (name, status, relationships). The body holds free-form description, evidence, context. Both are readable and editable without Etak.
