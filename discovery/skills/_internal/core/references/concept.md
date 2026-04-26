@@ -16,7 +16,9 @@ The opportunity space captures this knowledge in a structured, navigable form th
 
 ## The Structure
 
-The opportunity space is a directed graph with five node types:
+The opportunity space has a five-node core hierarchy plus two peripheral types.
+
+The core hierarchy:
 
 ```
 Objective          Why — the business outcome you're pursuing
@@ -26,7 +28,12 @@ Objective          Why — the business outcome you're pursuing
                  └─ Experiment   How we test whether it's true
 ```
 
-Typed links connect them: opportunities `support` objectives, ideas `address` opportunities, assumptions are `assumed_by` ideas, experiments `test` assumptions. Critiques can target any node.
+The peripheral types extend the graph without being part of the spine:
+
+- **Critique** — a single round of structured examination targeting an idea or opportunity. Findings can graduate into assumptions.
+- **Memo** — a sustained analytical document (framework, survey, literature review, structured argument) that informs the opportunity space without being a gap to fill or a solution to build. Optionally `supports` an opportunity or objective; may be foundational and link to nothing.
+
+Typed links connect them: opportunities `support` objectives, ideas `address` opportunities, assumptions are `assumed_by` ideas, experiments `test` assumptions. Critiques target ideas or opportunities; memos optionally `support` objectives or opportunities.
 
 ## How to Work With It
 

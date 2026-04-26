@@ -86,5 +86,5 @@ readout of how well a team understands their problem space...
 
 - [Opportunity](opportunity.md) — the most common `supports` target for a memo.
 - [Objective](objective.md) — for memos that inform strategic direction rather than a specific problem area.
-- [Critique](../artifacts/README.md) — for adversarial stress-testing of a specific artifact. A memo is generative; a critique is adversarial.
+- [Critique](critique.md) — for adversarial stress-testing of a specific artifact. A memo is generative; a critique is adversarial.
 - [Artifacts overview](README.md)

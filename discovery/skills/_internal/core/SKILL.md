@@ -30,3 +30,5 @@ skill's SKILL.md and follow its guidance inline — no mode switch, no announcem
 | idea | [../idea/SKILL.md](../idea/SKILL.md) | Creating, developing, or refining a solution idea |
 | assumption | [../assumption/SKILL.md](../assumption/SKILL.md) | Creating or updating an assumption |
 | experiment-record | [../experiment-record/SKILL.md](../experiment-record/SKILL.md) | Writing or updating an experiment artifact |
+| critique | [../critique/SKILL.md](../critique/SKILL.md) | Writing a critique round or updating finding status |
+| memo | [../memo/SKILL.md](../memo/SKILL.md) | Writing or updating a memo (framework, survey, analytical synthesis) |
