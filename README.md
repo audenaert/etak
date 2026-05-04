@@ -85,7 +85,7 @@ You do not need to learn skill names. Describe the move you want to make. Etak p
 ## Read next
 
 - [**Quick start**](docs/quickstart.md) — five minutes, grounded in how a busy PM actually works.
-- [**Quick start for engineers**](docs/quickstart-engineer.md) — the same five-minute shape, adapted for a senior engineer evaluating `etak-develop`.
+- [**Quick start for engineers**](docs/quickstart-engineer.md) — the same five-minute shape, adapted for a senior engineer evaluating `develop`.
 - [**Tutorials**](docs/tutorials/) — runnable walkthroughs, each paired with a set of questions worth thinking about first.
 - [**Discovery skills**](docs/skills/) — what each discovery skill does and when to reach for it.
 - [**Develop overview**](docs/develop.md) — the development plugin's skills, agents, and artifacts.

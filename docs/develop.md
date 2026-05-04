@@ -1,6 +1,6 @@
 # Develop
 
-The `etak-develop` plugin turns validated ideas into shipped software. It is
+The `develop` plugin turns validated ideas into shipped software. It is
 the engineer's thinking partner: a tech lead in the terminal. You describe
 the move you want to make, it picks the right skill and pairs with you.
 
@@ -80,9 +80,9 @@ back to a validated idea in `docs/discovery/`. Discovery never points
 forward — development owns traceability. That matters when compliance
 auditors ask "why was this change made?"
 
-## Relationship to etak-discovery
+## Relationship to discovery
 
-`etak-discovery` validates *what to build*. `etak-develop` decides *how to
+`discovery` validates *what to build*. `develop` decides *how to
 build it and ships it*.
 
 Validated ideas in `docs/discovery/` flow into development via the
@@ -93,9 +93,9 @@ state.
 
 ## Future
 
-- **etak-design** (planned) — UX and interaction design. Informs stories
+- **design** (planned) — UX and interaction design. Informs stories
   and specs; distinct from technical design.
-- **etak-deliver** (planned) — downstream quality, operations, release.
+- **deliver** (planned) — downstream quality, operations, release.
   Code review, QE verification, CI/CD, security audits, release notes,
   docs updates. `tech-lead` is already wired to dispatch its agents
   (quality-engineer, devops, security-lead, reviewer, tech-writer) when

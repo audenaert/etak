@@ -1,6 +1,6 @@
 # Deliver
 
-The `etak-deliver` plugin handles the work that turns a green local build into safely running production. Where `etak-develop` builds the change, `etak-deliver` does the parallel things that have to happen *around* the change before and after it ships: code review, story verification, CI/release engineering, security review, infrastructure and operations, and documentation.
+The `deliver` plugin handles the work that turns a green local build into safely running production. Where `develop` builds the change, `deliver` does the parallel things that have to happen *around* the change before and after it ships: code review, story verification, CI/release engineering, security review, infrastructure and operations, and documentation.
 
 These six surfaces are not a sequential pipeline. A team uses some of them on every PR (review, verify), others when the work warrants it (secure for high-risk changes), and others continuously (operate, docs as drift accumulates).
 
@@ -55,22 +55,22 @@ Each agent pairs with a skill. The skill is the collaborative version (you in th
 
 Deliver works on the change after the design is set. Things that belong elsewhere:
 
-- **Specs, ADRs, scoping, sequencing** → [`etak-develop`](develop.md)
-- **Implementation (writing the production code)** → [`etak-develop`](develop.md)
-- **Discovery and validation** → `etak-discovery`
-- **UX and interaction design** → `etak-design` (planned)
+- **Specs, ADRs, scoping, sequencing** → [`develop`](develop.md)
+- **Implementation (writing the production code)** → [`develop`](develop.md)
+- **Discovery and validation** → `discovery`
+- **UX and interaction design** → `design` (planned)
 
-Deliver agents may *invoke* etak-develop's `developer` to make a code change when their work surfaces one (for example, the `quality-engineer` agent finds a missing implementation, or the `reviewer` finds a security issue that needs fixing). That dispatch only happens when `etak-develop` is installed; otherwise the deliver agent surfaces the issue and the engineer decides what to do.
+Deliver agents may *invoke* develop's `developer` to make a code change when their work surfaces one (for example, the `quality-engineer` agent finds a missing implementation, or the `reviewer` finds a security issue that needs fixing). That dispatch only happens when `develop` is installed; otherwise the deliver agent surfaces the issue and the engineer decides what to do.
 
 ## Standalone install vs combined
 
-Deliver works on its own. You can install only `etak-deliver` and use review, verify, ship, secure, operate, and docs as a focused quality and release toolkit. When `etak-develop` is also installed, the deliver skills and agents pick up additional context: the linked story, the spec, the ADR, the work-item graph. Each cross-plugin reference has a fallback — if `etak-develop` isn't there, the deliver skill or agent reads the diff, the PR description, or asks the engineer interactively.
+Deliver works on its own. You can install only `deliver` and use review, verify, ship, secure, operate, and docs as a focused quality and release toolkit. When `develop` is also installed, the deliver skills and agents pick up additional context: the linked story, the spec, the ADR, the work-item graph. Each cross-plugin reference has a fallback — if `develop` isn't there, the deliver skill or agent reads the diff, the PR description, or asks the engineer interactively.
 
-`etak-discovery` integration is lighter. When discovery context is available, the riskiest assumptions inform what to verify hardest and what threats to model deepest. When it isn't, deliver works directly off the change.
+`discovery` integration is lighter. When discovery context is available, the riskiest assumptions inform what to verify hardest and what threats to model deepest. When it isn't, deliver works directly off the change.
 
 ## Future
 
-The deliver plugin currently exposes skills and agents but does not yet maintain its own persistent artifact graph (a risk registry, a release log, a runbook index). A v0.2 may introduce internal artifact writers — the same pattern `etak-develop` uses for stories, specs, and ADRs. For now, where artifacts make sense, the skills and agents write them in conventional locations (`docs/development/security/risk-registry.md`, release notes alongside tags) without enforcing a schema.
+The deliver plugin currently exposes skills and agents but does not yet maintain its own persistent artifact graph (a risk registry, a release log, a runbook index). A v0.2 may introduce internal artifact writers — the same pattern `develop` uses for stories, specs, and ADRs. For now, where artifacts make sense, the skills and agents write them in conventional locations (`docs/development/security/risk-registry.md`, release notes alongside tags) without enforcing a schema.
 
 ## Read next
 

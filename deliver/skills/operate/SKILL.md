@@ -66,12 +66,12 @@ When the engineer asks about a new endpoint, ask back: "What does success look l
 
 ## Cross-plugin context
 
-- **etak-develop installed:** specs name non-functional requirements (latency, throughput, availability). The observability you propose should match those NFRs. Read the spec before instrumenting.
-- **etak-develop not installed:** ask the engineer about NFRs interactively. Don't invent SLOs; surface that none were specified.
+- **develop installed:** specs name non-functional requirements (latency, throughput, availability). The observability you propose should match those NFRs. Read the spec before instrumenting.
+- **develop not installed:** ask the engineer about NFRs interactively. Don't invent SLOs; surface that none were specified.
 
 ## What Operate Does NOT Do
 
-- **Write the production application code.** Operate works on infrastructure, pipelines, and configuration. Application changes go to etak-develop's `build`.
+- **Write the production application code.** Operate works on infrastructure, pipelines, and configuration. Application changes go to develop's `build`.
 - **Diagnose green-the-build CI failures.** That's `ship`. Operate handles structural pipeline changes (cache, runner pool, secrets), not specific failed builds.
 - **Threat-model the infrastructure.** That's `secure` with infrastructure-shaped scope. Operate flags concerns; secure runs the model.
 - **Run incident response.** When prod is on fire, the runbook is the runbook. Operate writes the runbook; the responder uses it.

@@ -1,12 +1,12 @@
 {
-  "name": "etak-discovery",
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "discovery",
   "description": "Product discovery skills — explore customer needs, map the opportunity space, brainstorm solutions, surface and test assumptions.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Neal Audenaert"
   },
   "license": "UNLICENSED",
-  "categories": ["discovery"],
   "keywords": [
     "product-discovery",
     "opportunity",

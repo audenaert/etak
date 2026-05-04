@@ -9,7 +9,7 @@ The interactive [`/review`](../skills/review.md) skill pairs with the engineer t
 - **You created a PR and want a review pass before requesting human review.** The reviewer agent runs the dimensions, posts findings, and you address them before anyone else looks.
 - **You're triaging a backlog of PRs.** Dispatch the reviewer to walk each one and surface what matters.
 - **A PR touches multiple subsystems.** The reviewer reads each subsystem's surrounding code; running the dimensions across that surface area would be tedious to drive turn by turn.
-- **`developer` (when `etak-develop` is installed) just opened a PR.** It dispatches the reviewer automatically.
+- **`developer` (when `develop` is installed) just opened a PR.** It dispatches the reviewer automatically.
 
 ## What it does
 
@@ -37,7 +37,7 @@ By default, the reviewer posts a summary comment on the PR with batched inline c
 ### Suggest next steps
 
 Based on findings:
-- High-severity → "These need fixing before merge. Want me to delegate to `developer`?" (when `etak-develop` is installed)
+- High-severity → "These need fixing before merge. Want me to delegate to `developer`?" (when `develop` is installed)
 - Test integrity issues → "Want to dispatch `quality-engineer` for deeper acceptance verification?"
 - Clean → "Ready for human review."
 
@@ -45,7 +45,7 @@ Based on findings:
 
 - **Manufacture concerns.** Silence is valid. If a dimension is clean, the agent says so in one line and moves on.
 - **Duplicate linting.** If ESLint or ruff would flag it, the project already does.
-- **Refactor the code.** Findings are findings; refactors live in [`etak-develop /build`](../skills/build.md).
+- **Refactor the code.** Findings are findings; refactors live in [`develop /build`](../skills/build.md).
 - **Run automated tests.** CI does that. The reviewer reads tests and asserts honesty; it doesn't execute them.
 - **Decide acceptance.** Findings inform; the human decides what blocks merge.
 

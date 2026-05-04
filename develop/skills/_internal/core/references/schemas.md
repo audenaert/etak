@@ -53,7 +53,7 @@ project.
 |-------------|---------------------------|----------------------------------------|
 | Work item   | `parent`                  | Parent work item                       |
 | Work item   | `children`                | Child work items                       |
-| Work item   | `from_discovery`          | Discovery idea (etak-discovery)        |
+| Work item   | `from_discovery`          | Discovery idea (discovery)        |
 | Epic/Story  | `workstream`              | Workstream                             |
 | Epic/Story  | `milestone`               | Milestone                              |
 | Project     | `workstreams`             | Workstreams within the project         |

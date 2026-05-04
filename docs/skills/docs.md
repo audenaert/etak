@@ -43,7 +43,7 @@ The sharpest move docs makes is noticing when documentation describes intent rat
 
 ## What docs does NOT do
 
-- **Write specs.** Specs describe intent before implementation. That's [`etak-develop /spec`](../skills/spec.md). Docs describes what the code does after implementation.
+- **Write specs.** Specs describe intent before implementation. That's [`develop /spec`](../skills/spec.md). Docs describes what the code does after implementation.
 - **Generate API reference from inline comments.** That's a build tool's job. Docs handles the human-curated layer.
 - **Maintain a marketing site.** Docs are technical documentation. Marketing copy lives elsewhere.
 - **Translate.** Localization is a separate workflow.
@@ -58,9 +58,9 @@ The sharpest move docs makes is noticing when documentation describes intent rat
 
 ## Transitions
 
-- Drift reveals a missing spec → [**etak-develop /spec**](../skills/spec.md) ("The behavior here was never specified. Want to write the spec while we're documenting?")
-- Drift reveals a code bug → [**etak-develop /build**](../skills/build.md) ("The code does X, the docs say Y. The docs are right — Y is what the spec promised. Want to fix the code?")
-- New feature with no spec or docs → [**etak-develop /spec**](../skills/spec.md) ("Let's spec this before documenting; otherwise the doc is all we have.")
+- Drift reveals a missing spec → [**develop /spec**](../skills/spec.md) ("The behavior here was never specified. Want to write the spec while we're documenting?")
+- Drift reveals a code bug → [**develop /build**](../skills/build.md) ("The code does X, the docs say Y. The docs are right — Y is what the spec promised. Want to fix the code?")
+- New feature with no spec or docs → [**develop /spec**](../skills/spec.md) ("Let's spec this before documenting; otherwise the doc is all we have.")
 - Audit reveals widespread drift → schedule a focused doc sweep rather than fixing inline ("Five pages drifted — worth a doc sweep, not five small PRs?")
 - Long-running drift correction → [**tech-writer agent**](../agents/tech-writer.md) for autonomous sweep
 

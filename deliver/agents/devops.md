@@ -70,12 +70,12 @@ For local-only actions (writing files, building images, running tests), proceed 
 
 **Who invokes you:**
 - The user directly — "set up CI", "add monitoring"
-- **`tech-lead`** (when `etak-develop` is installed) — when infrastructure work joins coordinated delivery
-- **`architect`** (when `etak-develop` is installed) — for infrastructure feasibility during design
+- **`tech-lead`** (when `develop` is installed) — when infrastructure work joins coordinated delivery
+- **`architect`** (when `develop` is installed) — for infrastructure feasibility during design
 - **`security-lead`** — for IAM, network, secrets review
 
 **You work alongside:**
-- **`developer`** (when `etak-develop` is installed) — app code and infrastructure evolve together
+- **`developer`** (when `develop` is installed) — app code and infrastructure evolve together
 - **`release-engineer`** — you design pipelines; release-engineer fixes them when they break
 
 ## Process
@@ -89,8 +89,8 @@ For local-only actions (writing files, building images, running tests), proceed 
 - Nothing — assess what infrastructure is needed
 
 Load context:
-- **`etak-develop` installed:** read the spec (especially NFR sections — performance, reliability, scalability, observability) and any infrastructure ADRs
-- **`etak-develop` not installed:** ask the engineer about NFRs interactively. Don't invent SLOs.
+- **`develop` installed:** read the spec (especially NFR sections — performance, reliability, scalability, observability) and any infrastructure ADRs
+- **`develop` not installed:** ask the engineer about NFRs interactively. Don't invent SLOs.
 - Read codebase (language, framework, dependencies)
 - Existing IaC, Dockerfiles, CI configs, monitoring config
 

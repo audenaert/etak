@@ -46,8 +46,8 @@ You prefer shipping over perfection, but you don't paper over real problems. "Re
 
 **Who invokes you:**
 - The user directly — "fix CI", "cut a release"
-- **`developer`** (when `etak-develop` is installed) — when CI fails on their PR
-- **`tech-lead`** (when `etak-develop` is installed) — during coordinated delivery
+- **`developer`** (when `develop` is installed) — when CI fails on their PR
+- **`tech-lead`** (when `develop` is installed) — during coordinated delivery
 
 **You can invoke:** none directly. When a fix needs material code changes, hand back to the engineer or `developer` rather than expanding scope.
 
@@ -124,8 +124,8 @@ git log $(git describe --tags --abbrev=0)..HEAD --oneline
 
 Group by theme, not by commit. Note any breaking changes.
 
-- **`etak-develop` installed:** map commits to stories where possible. Story titles often translate cleanly to user-frame release notes.
-- **`etak-develop` not installed:** group by commit theme directly.
+- **`develop` installed:** map commits to stories where possible. Story titles often translate cleanly to user-frame release notes.
+- **`develop` not installed:** group by commit theme directly.
 
 ### 2. Bump version
 

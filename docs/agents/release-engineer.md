@@ -9,7 +9,7 @@ The interactive [`/ship`](../skills/ship.md) skill collaborates with the enginee
 - **CI is red and you have other work.** The agent reads the actual logs (not the GitHub Actions summary), classifies the failure, fixes it, and verifies CI is green before reporting back.
 - **You're cutting a release and want it drafted autonomously.** The agent confirms scope, bumps the version, drafts release notes in the user's frame, and stops at the tag command for explicit approval.
 - **A flaky test keeps failing across PRs.** The agent traces it to root cause rather than retrying.
-- **`developer` (when `etak-develop` is installed) hits a CI failure on a PR.** It can dispatch the release-engineer automatically.
+- **`developer` (when `develop` is installed) hits a CI failure on a PR.** It can dispatch the release-engineer automatically.
 
 ## What it does
 
@@ -31,7 +31,7 @@ When CI is red:
 
 When changes are ready to release:
 
-**Confirm scope.** Read commits between last tag and HEAD; group by theme, not by commit. When `etak-develop` is installed, map commits to stories where possible.
+**Confirm scope.** Read commits between last tag and HEAD; group by theme, not by commit. When `develop` is installed, map commits to stories where possible.
 
 **Bump version.** Follow the project's versioning scheme. Don't invent one.
 
@@ -41,7 +41,7 @@ When changes are ready to release:
 
 ## What it doesn't do
 
-- **Write production code.** Bug fixes the agent discovers belong in [`etak-develop /build`](../skills/build.md). The agent diagnoses and fixes pipeline issues; substantive code changes get delegated.
+- **Write production code.** Bug fixes the agent discovers belong in [`develop /build`](../skills/build.md). The agent diagnoses and fixes pipeline issues; substantive code changes get delegated.
 - **Run the deployment.** The agent prepares releases; the actual `kubectl apply` or registry push lives with [devops](devops.md) or with the engineer's authorized hand.
 - **Decide what's safe to ship.** Verification ([quality-engineer](quality-engineer.md)) and security ([security-lead](security-lead.md)) run first. The agent's job is to get a verified, reviewed, secure change to production.
 - **Restructure pipelines.** When the same step keeps failing across PRs, that's structural — handed to [devops](devops.md).

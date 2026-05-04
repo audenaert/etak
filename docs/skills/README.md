@@ -1,6 +1,6 @@
 # Skills reference
 
-Etak ships three plugins today: `etak-discovery`, `etak-develop`, and `etak-deliver`. Each exposes six user-facing skills. You do not invoke them by name. You describe the move you want to make, and Etak picks the right one. The purpose of this reference is to make the menu legible so you recognize which move fits which moment in your own work.
+Etak ships three plugins today: `discovery`, `develop`, and `deliver`. Each exposes six user-facing skills. You do not invoke them by name. You describe the move you want to make, and Etak picks the right one. The purpose of this reference is to make the menu legible so you recognize which move fits which moment in your own work.
 
 ## Discovery
 

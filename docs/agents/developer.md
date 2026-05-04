@@ -33,7 +33,7 @@ Before submitting, systematically verifies each AC against the tests that cover 
 
 ### PR creation
 
-Title under 70 characters, imperative, specific. Body covers summary, changes grouped by purpose, AC verification, testing, and optional reviewer notes. Mermaid diagrams only when they genuinely help. Offers to run review (once `etak-deliver` is installed) or a `/build self-review` pass.
+Title under 70 characters, imperative, specific. Body covers summary, changes grouped by purpose, AC verification, testing, and optional reviewer notes. Mermaid diagrams only when they genuinely help. Offers to run review (once `deliver` is installed) or a `/build self-review` pass.
 
 ## What it doesn't do
 

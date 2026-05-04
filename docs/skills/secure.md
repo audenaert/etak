@@ -60,13 +60,13 @@ When test depth gets serious — fuzzing, penetration testing, full security aud
 
 **Match severity to the realistic adversary.** A critical vulnerability that requires physical server access is less urgent than a medium vulnerability exploitable by any authenticated user. Severity = impact × likelihood.
 
-**Hand off mitigation.** Secure proposes mitigations; [`etak-develop /build`](../skills/build.md) (when installed) implements them. Secure proposes tests; [`etak-develop /test`](../skills/test.md) writes them.
+**Hand off mitigation.** Secure proposes mitigations; [`develop /build`](../skills/build.md) (when installed) implements them. Secure proposes tests; [`develop /test`](../skills/test.md) writes them.
 
 **For deeper work, dispatch the agent.** When you need a full audit, persistent risk registry maintenance, or a security test suite, the [security-lead agent](../agents/security-lead.md) takes that on.
 
 ## What secure does NOT do
 
-- **Write the production code.** Mitigations get implemented in [`etak-develop /build`](../skills/build.md). Hand off; don't write the auth code.
+- **Write the production code.** Mitigations get implemented in [`develop /build`](../skills/build.md). Hand off; don't write the auth code.
 - **Run a generic OWASP scan.** Generic scans go through `operate` or external tooling. Secure does threat modeling grounded in the change.
 - **Compliance attestation.** SOC 2, HIPAA, PCI-DSS are formal frameworks with their own requirements. Secure flags what looks like a gap; the formal work belongs elsewhere.
 - **Maintain a risk registry.** That's the [security-lead agent](../agents/security-lead.md). Durable risk tracking is autonomous work. The skill produces threats and proposed mitigations for *this* change.
@@ -81,9 +81,9 @@ When test depth gets serious — fuzzing, penetration testing, full security aud
 
 ## Transitions
 
-- A threat is actually a testable belief → [**etak-discovery /sound**](sound.md) to surface it as an assumption
-- Mitigation needs implementation → [**etak-develop /build**](../skills/build.md)
-- Threat needs a regression test → [**etak-develop /test**](../skills/test.md)
+- A threat is actually a testable belief → [**discovery /sound**](sound.md) to surface it as an assumption
+- Mitigation needs implementation → [**develop /build**](../skills/build.md)
+- Threat needs a regression test → [**develop /test**](../skills/test.md)
 - Recurring threat pattern across PRs → [**security-lead agent**](../agents/security-lead.md) for a deeper audit
 - Infrastructure threats surface → [**operate**](operate.md) for IaC and IAM review
 

@@ -45,7 +45,7 @@ Tests at the wrong layer give false confidence. A unit test passes by mocking th
 - Does the test fail if the implementation breaks? Try mentally mutating the implementation; does the test catch it?
 - Are the right edge cases covered? Empty input, malformed input, very large input, concurrent calls, network failures — pick the ones plausible for this code, not all of them.
 
-When the testing question gets deeper than "is this covered" — when the question is "how should we test this?" — hand off to etak-develop's `test`.
+When the testing question gets deeper than "is this covered" — when the question is "how should we test this?" — hand off to develop's `test`.
 
 ### 3. Identify gaps
 
@@ -60,22 +60,22 @@ The verdict: **done**, **almost done** (specific gaps), or **not done** (materia
 
 ## Cross-plugin context
 
-- **etak-develop installed:** read the story (`docs/development/stories/`) and walk each AC. Read the spec if present for non-functional requirements.
-- **etak-develop not installed:** read the branch name, PR description, and any explicit AC list the engineer provides. Treat the PR description as the AC list. State this fallback in the report.
-- **etak-discovery installed:** if the story has `from_discovery` linking to assumptions, the riskiest assumptions are the ones to verify hardest. A high-importance, low-evidence assumption is a place where verification depth matters most.
+- **develop installed:** read the story (`docs/development/stories/`) and walk each AC. Read the spec if present for non-functional requirements.
+- **develop not installed:** read the branch name, PR description, and any explicit AC list the engineer provides. Treat the PR description as the AC list. State this fallback in the report.
+- **discovery installed:** if the story has `from_discovery` linking to assumptions, the riskiest assumptions are the ones to verify hardest. A high-importance, low-evidence assumption is a place where verification depth matters most.
 
 ## What Verify Does NOT Do
 
-- **Write tests.** Verify identifies gaps. Writing the tests is etak-develop's `test`. Hand off when the gap is material.
-- **Refine ACs.** If ACs are unclear or unverifiable as written, surface that — but refining the story is etak-develop's `story` skill.
+- **Write tests.** Verify identifies gaps. Writing the tests is develop's `test`. Hand off when the gap is material.
+- **Refine ACs.** If ACs are unclear or unverifiable as written, surface that — but refining the story is develop's `story` skill.
 - **Code review.** Verify checks "is this done." Code review checks "is this good." They are different passes; both run, but `review` does the second.
 - **Sign off on releases.** Verify confirms a story; release readiness requires `ship`.
 
 ## Transitions
 
-- AC has no test → **etak-develop /test** ("AC #2 has no test. Want to write one?")
-- AC is unverifiable as written → **etak-develop /story** ("AC #3 — 'handles errors gracefully' — isn't testable. Worth refining.")
-- Verification reveals a missing assumption → **etak-discovery /sound** ("This relies on a behavior we never tested. Worth surfacing as an assumption.")
+- AC has no test → **develop /test** ("AC #2 has no test. Want to write one?")
+- AC is unverifiable as written → **develop /story** ("AC #3 — 'handles errors gracefully' — isn't testable. Worth refining.")
+- Verification reveals a missing assumption → **discovery /sound** ("This relies on a behavior we never tested. Worth surfacing as an assumption.")
 - All ACs satisfied, story complete → **ship** ("Story is done. Ready to think about release?")
 
 ## Failure Modes

@@ -35,7 +35,7 @@ addresses:
 | `status` | yes | Current lifecycle state. |
 | `addresses` | yes | Slugs of opportunities this idea serves. |
 
-Ideas do not carry forward links into development. When the idea moves into implementation, the development-side artifact (project or story in etak-develop) records a `from_discovery` link pointing back to this idea. Traceability is the engineering team's responsibility — this matches how compliance audit trails work in practice, where changes to production systems must trace back to the change request that initiated them.
+Ideas do not carry forward links into development. When the idea moves into implementation, the development-side artifact (project or story in develop) records a `from_discovery` link pointing back to this idea. Traceability is the engineering team's responsibility — this matches how compliance audit trails work in practice, where changes to production systems must trace back to the change request that initiated them.
 
 ## Status lifecycle
 
@@ -130,7 +130,7 @@ Large ideas should be split into smaller, independently-valuable ideas. "An AI a
 - **Ideas are cheap.** Capture them even if half-baked. `draft` exists for a reason.
 - **Bottom-up entry is valid.** If a colleague has an idea before the opportunity is defined, capture the idea and trace upward. Often the tracing reveals the real opportunity.
 - **Connect to opportunities.** Every idea should address at least one opportunity. If no opportunity exists, create a lightweight one first.
-- **Don't over-specify.** The idea level answers "what and why," not "how." Technical details belong in specs or design docs in etak-develop, which trace back to this idea via `from_discovery` — not the other way around.
+- **Don't over-specify.** The idea level answers "what and why," not "how." Technical details belong in specs or design docs in develop, which trace back to this idea via `from_discovery` — not the other way around.
 - **Surface assumptions early.** An idea with no assumptions surfaced is an untested bet. Every idea should have at least three or four assumptions before it leaves `draft`.
 
 ## Related

@@ -6,12 +6,12 @@ The interactive [`/operate`](../skills/operate.md) skill thinks through blast ra
 
 ## When to reach for it
 
-- **A new project needs infrastructure designed and built.** The agent reads the spec (when `etak-develop` is installed) for non-functional requirements and produces IaC, pipelines, and observability.
+- **A new project needs infrastructure designed and built.** The agent reads the spec (when `develop` is installed) for non-functional requirements and produces IaC, pipelines, and observability.
 - **A new service needs containerization.** Multi-stage Dockerfile, Compose for local dev, production deployment config.
 - **CI/CD needs setting up or extending.** GitHub Actions (default), GitLab CI, CircleCI — matching whatever the project uses.
 - **Observability needs wiring.** Logs, metrics, alerts, dashboards — defined as IaC, in the repo, not console-configured.
 - **A new environment is being created.** dev, staging, production — promoted via the same IaC with parameter differences.
-- **`tech-lead` (when `etak-develop` is installed) is dispatching infrastructure work alongside developers.**
+- **`tech-lead` (when `develop` is installed) is dispatching infrastructure work alongside developers.**
 
 ## What it does
 
@@ -54,7 +54,7 @@ For local-only actions (writing files, building images, running tests), the agen
 ## What it doesn't do
 
 - **Apply silently.** Never modifies live infrastructure without explicit approval.
-- **Write the production application code.** The agent works on infrastructure, pipelines, and configuration. Application code goes to [`etak-develop /build`](../skills/build.md).
+- **Write the production application code.** The agent works on infrastructure, pipelines, and configuration. Application code goes to [`develop /build`](../skills/build.md).
 - **Diagnose green-the-build CI failures.** That's [release-engineer](release-engineer.md). The agent handles structural pipeline changes (cache, runner pool, secrets), not specific failed builds.
 - **Threat-model the infrastructure.** That's [security-lead](security-lead.md) with infrastructure-shaped scope.
 - **Run incident response.** When prod is on fire, the runbook is the runbook. The agent writes the runbook; the responder uses it.

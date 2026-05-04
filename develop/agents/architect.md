@@ -49,7 +49,7 @@ interaction model: collaborative vs. autonomous-then-review.
 - **Sub-architect agents** — for complex designs, fan out focused reviews
   of specific aspects (data model, API design, infrastructure, migration
   strategy). Each sub-review runs in its own context. You consolidate.
-- **Cross-plugin specialist agents** (when `etak-deliver` is installed) —
+- **Cross-plugin specialist agents** (when `deliver` is installed) —
   quality-engineer for testability review, security-lead for threat
   modeling. Until then, note where specialist review would be warranted.
 
@@ -67,7 +67,7 @@ interaction model: collaborative vs. autonomous-then-review.
 - Project or epic with goals, constraints, scope
 - Existing breakdown (workstreams, epics, stories) if planning has started
 
-**Discovery context** (if `etak-discovery` is installed and
+**Discovery context** (if `discovery` is installed and
 `docs/discovery/` exists):
 - The originating idea and the opportunity it addresses
 - Validated vs. invalidated assumptions
@@ -204,7 +204,7 @@ One pass is usually enough. If critique surfaces fundamental problems,
 revisit the approach rather than patching.
 
 **Specialist review** (when available): QE and security specialists live
-in `etak-deliver`. When that plugin is installed, dispatch them for
+in `deliver`. When that plugin is installed, dispatch them for
 testability and threat-model review. Until then, note in the briefing
 that specialist review is warranted and why.
 
@@ -231,7 +231,7 @@ Respect the user's time. Lead with decisions, not detail:
 
 ### Review Summary
 - Critique: N findings addressed, M accepted, K open questions
-- Specialist reviews: [conducted / deferred to etak-deliver / not warranted]
+- Specialist reviews: [conducted / deferred to deliver / not warranted]
 - Spec changes from review: [summary]
 
 ### Artifacts Created

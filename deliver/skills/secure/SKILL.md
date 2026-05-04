@@ -62,22 +62,22 @@ When test depth gets serious — fuzzing, penetration testing, full security aud
 
 ## Cross-plugin context
 
-- **etak-develop installed:** read the spec (`docs/development/specs/`) for the system's intended trust boundaries and the ADRs for any prior security decisions. The spec often names the data model and user flow.
-- **etak-develop not installed:** read the diff and the relevant code. The threat model becomes diff-grounded rather than spec-grounded; flag in the report what wasn't checked.
-- **etak-discovery installed:** desirability and viability assumptions sometimes hide security assumptions ("users will trust this with their data" implies "we will hold their data securely"). When relevant, point at the assumption.
+- **develop installed:** read the spec (`docs/development/specs/`) for the system's intended trust boundaries and the ADRs for any prior security decisions. The spec often names the data model and user flow.
+- **develop not installed:** read the diff and the relevant code. The threat model becomes diff-grounded rather than spec-grounded; flag in the report what wasn't checked.
+- **discovery installed:** desirability and viability assumptions sometimes hide security assumptions ("users will trust this with their data" implies "we will hold their data securely"). When relevant, point at the assumption.
 
 ## What Secure Does NOT Do
 
-- **Write the production code.** Mitigations that secure proposes get implemented in etak-develop's `build`. Hand off; don't write the auth code.
+- **Write the production code.** Mitigations that secure proposes get implemented in develop's `build`. Hand off; don't write the auth code.
 - **Run a generic OWASP scan.** Generic scans go through `operate` or external tooling. Secure does threat modeling grounded in the change.
 - **Compliance attestation.** SOC 2, HIPAA, PCI-DSS are formal frameworks with their own requirements. Secure can flag what looks like a gap, but the formal work belongs elsewhere.
 - **Maintain a risk registry.** That's what the `security-lead` agent does — durable risk tracking is autonomous work. The skill produces threats and proposed mitigations for *this* change.
 
 ## Transitions
 
-- Threat that's actually a testable belief → **etak-discovery /sound** ("This rests on the assumption users will rotate keys quarterly. Worth surfacing.")
-- Threat needs implementation → **etak-develop /build** ("Mitigation requires changing the auth middleware. Want to pair on it?")
-- Threat needs a test → **etak-develop /test** ("Want to write the failing case for the malformed-JSON crash?")
+- Threat that's actually a testable belief → **discovery /sound** ("This rests on the assumption users will rotate keys quarterly. Worth surfacing.")
+- Threat needs implementation → **develop /build** ("Mitigation requires changing the auth middleware. Want to pair on it?")
+- Threat needs a test → **develop /test** ("Want to write the failing case for the malformed-JSON crash?")
 - Recurring threat pattern → **security-lead agent** ("This is the third PR opening a new auth path. Worth a deeper audit pass.")
 
 ## Failure Modes

@@ -67,19 +67,19 @@ If the project uses an automated release pipeline, the role shifts: read the aut
 
 ## Cross-plugin context
 
-- **etak-develop installed:** when diagnosing failures, the failing test name often points at a story or spec. Reading the spec helps distinguish "test was wrong" from "implementation drifted." Release notes can pull from completed stories' titles.
-- **etak-develop not installed:** read the diff and the failing log directly. Group release notes by commit theme rather than story.
+- **develop installed:** when diagnosing failures, the failing test name often points at a story or spec. Reading the spec helps distinguish "test was wrong" from "implementation drifted." Release notes can pull from completed stories' titles.
+- **develop not installed:** read the diff and the failing log directly. Group release notes by commit theme rather than story.
 
 ## What Ship Does NOT Do
 
-- **Write the production code.** Bug fixes that ship discovers belong in etak-develop's `build`. Ship diagnoses and fixes pipeline issues; substantive code changes get delegated.
+- **Write the production code.** Bug fixes that ship discovers belong in develop's `build`. Ship diagnoses and fixes pipeline issues; substantive code changes get delegated.
 - **Run the deployment.** Ship prepares the release; the actual `kubectl apply`, `terraform apply`, or registry push lives with `operate` or with the engineer's authorized hand.
 - **Decide what's safe to ship.** Verification and security review run first. Ship's job is to get a verified, reviewed, secure change to production — not to do the verifying or reviewing.
 
 ## Transitions
 
 - Recurring infrastructure flake → **operate** ("This pipeline keeps timing out at the same step. Worth a structural look at the runner config.")
-- A failing test reveals a real bug → **etak-develop /build** ("This isn't flaky — there's a race condition. Want to fix it properly?")
+- A failing test reveals a real bug → **develop /build** ("This isn't flaky — there's a race condition. Want to fix it properly?")
 - Release scope reveals a security concern → **secure** ("This release includes the new auth flow. Worth a threat-model pass before tagging.")
 - Release notes drift from docs → **docs** ("The notes mention a new API surface; the docs site doesn't reflect it.")
 

@@ -43,13 +43,13 @@ Your sharpest move: narrowing scope when the whole project is too much.
   and spikes (investigation mode)
 
 **Cross-plugin dispatch** (when the relevant plugin is installed):
-- **`quality-engineer`** (from `etak-deliver`) — test planning, acceptance
+- **`quality-engineer`** (from `deliver`) — test planning, acceptance
   verification
-- **`devops`** (from `etak-deliver`) — infrastructure, CI/CD, observability
-- **`security-lead`** (from `etak-deliver`) — security review when auth,
+- **`devops`** (from `deliver`) — infrastructure, CI/CD, observability
+- **`security-lead`** (from `deliver`) — security review when auth,
   user data, or external integrations are involved
-- **`reviewer`** (from `etak-deliver`) — automated code review
-- **`product-researcher`** (from `etak-discovery`) — product context
+- **`reviewer`** (from `deliver`) — automated code review
+- **`product-researcher`** (from `discovery`) — product context
 
 Until specialist agents are available, note in the plan where specialist
 review would be warranted and what risk is accepted by deferring.
@@ -112,7 +112,7 @@ architect for [epic]. Spec pending."
 ### Pre-work needed
 1. 📐 Architect: spec for [epic] — no technical design exists
 2. 🔬 Developer (spike): [name] — blocks [stories]
-3. [QE test plan — deferred until etak-deliver is installed]
+3. [QE test plan — deferred until deliver is installed]
 
 ### Ready for implementation
 4. 👩‍💻 Developer: [story] — ACs clear, spec exists, no blockers
@@ -155,7 +155,7 @@ offer to operate at epic or milestone level first.
 Pre-work first:
 1. Architect for missing specs
 2. Developer (investigation mode) for blocking spikes
-3. [QE for test planning when `etak-deliver` is installed]
+3. [QE for test planning when `deliver` is installed]
 
 Implementation after pre-work resolves:
 4. Run readiness checks before dispatching
@@ -216,7 +216,7 @@ requirements, unresolvable merge conflicts, spec gaps, poor agent output
 
 ### Quality
 - All PRs reviewed (once reviewer agent is available)
-- N/M stories verified by QE (deferred until etak-deliver is installed)
+- N/M stories verified by QE (deferred until deliver is installed)
 
 ### Open items
 - [anything deferred, blocked, or needing follow-up]
@@ -242,5 +242,5 @@ requirements, unresolvable merge conflicts, spec gaps, poor agent output
 - **Respect the trust gradient.** First time using this agent → story
   cadence. Trust builds → milestone cadence. Full auto is earned.
 - **Shift-left responsibility.** QE and security reviews belong to
-  `etak-deliver`. Until it's installed, note the risk and let the user
+  `deliver`. Until it's installed, note the risk and let the user
   decide whether to proceed without specialist review.

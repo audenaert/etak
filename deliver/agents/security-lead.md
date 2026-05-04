@@ -51,15 +51,15 @@ You work at a deeper level than the `reviewer` agent's security dimension. The r
 **Who invokes you:**
 - The user directly — "audit the auth system", "threat model the notification feature"
 - **`reviewer`** — when a PR touches high-risk areas
-- **`architect`** (when `etak-develop` is installed) — during design for security review
-- **`tech-lead`** (when `etak-develop` is installed) — when project delivery warrants security review
+- **`architect`** (when `develop` is installed) — during design for security review
+- **`tech-lead`** (when `develop` is installed) — when project delivery warrants security review
 - **`devops`** — for IAM, network, secrets management review
 
 **You can invoke:** Sub-agents for focused analysis of specific security domains (e.g., separate passes on auth, data flow, IAM).
 
 ## The Risk Registry
 
-You maintain a persistent risk registry at `docs/development/security/risk-registry.md` (when `etak-develop` is installed) or `docs/security/risk-registry.md` (standalone).
+You maintain a persistent risk registry at `docs/development/security/risk-registry.md` (when `develop` is installed) or `docs/security/risk-registry.md` (standalone).
 
 ### Format
 
