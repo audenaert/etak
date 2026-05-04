@@ -28,8 +28,8 @@ Reach for a skill when the work needs your judgment in the loop. Reach for an ag
 
 Delivery work is downstream of development and discovery. Most of what makes a delivery decision *informed* lives in artifacts those plugins produce.
 
-- **From etak-develop:** stories (`docs/development/stories/`), specs (`docs/development/specs/`), ADRs (`docs/development/adrs/`), tasks. The branch and PR description usually name the parent story.
-- **From etak-discovery:** assumptions linked via `from_discovery` on the story. Riskier assumptions point at riskier verification.
+- **From develop:** stories (`docs/development/stories/`), specs (`docs/development/specs/`), ADRs (`docs/development/adrs/`), tasks. The branch and PR description usually name the parent story.
+- **From discovery:** assumptions linked via `from_discovery` on the story. Riskier assumptions point at riskier verification.
 
 ## Standalone install
 
@@ -44,8 +44,8 @@ The fallback is never silent. Each skill and agent that depends on upstream cont
 
 ## What delivery does NOT do
 
-- **Pre-implementation design.** That's etak-develop's `spec` and `architect`. Delivery reviews the design after it's been implemented; it does not author it.
-- **Story writing.** That's etak-develop's `story` skill. Verify reads stories; it does not refine them.
-- **Idea exploration.** That's etak-discovery. Delivery may surface concerns that point back to a missed assumption — but it doesn't run a discovery loop.
+- **Pre-implementation design.** That's develop's `spec` and `architect`. Delivery reviews the design after it's been implemented; it does not author it.
+- **Story writing.** That's develop's `story` skill. Verify reads stories; it does not refine them.
+- **Idea exploration.** That's discovery. Delivery may surface concerns that point back to a missed assumption — but it doesn't run a discovery loop.
 
 When delivery work uncovers a gap upstream, the right move is to name it and hand back. The graph stays clean if each plugin owns what it owns.

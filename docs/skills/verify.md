@@ -41,12 +41,12 @@ The verdict: **done**, **almost done** (specific gaps), or **not done** (materia
 
 **Pick edge cases plausibly.** Defensive lists of every conceivable edge case are noise. Pick the ones plausible for this code: empty input, boundary values, concurrent calls, network failures — whichever apply.
 
-**When verify finds a coverage gap, hand off.** Verify identifies; `etak-develop`'s `test` writes. The handoff is the point.
+**When verify finds a coverage gap, hand off.** Verify identifies; `develop`'s `test` writes. The handoff is the point.
 
 ## What verify does NOT do
 
-- **Write tests.** When the gap is missing test coverage, hand off to [`etak-develop`'s `test` skill](../skills/test.md) (when installed). The autonomous [quality-engineer agent](../agents/quality-engineer.md) *can* write tests; the verify skill identifies and delegates.
-- **Refine ACs.** If ACs are unclear or unverifiable as written, surface that — but refining the story is `etak-develop`'s `story` skill.
+- **Write tests.** When the gap is missing test coverage, hand off to [`develop`'s `test` skill](../skills/test.md) (when installed). The autonomous [quality-engineer agent](../agents/quality-engineer.md) *can* write tests; the verify skill identifies and delegates.
+- **Refine ACs.** If ACs are unclear or unverifiable as written, surface that — but refining the story is `develop`'s `story` skill.
 - **Code review.** Verify checks "is this done." Code review checks "is this good." They are different passes; both run, but [`review`](review.md) handles the second.
 - **Sign off on releases.** Verify confirms a story; release readiness requires [`ship`](ship.md).
 
@@ -60,9 +60,9 @@ The verdict: **done**, **almost done** (specific gaps), or **not done** (materia
 
 ## Transitions
 
-- An AC has no test → [**etak-develop /test**](../skills/test.md) (when installed) to write one
-- An AC is unverifiable as written → [**etak-develop /story**](../skills/build.md) to refine it
-- Verification reveals a missing assumption → [**etak-discovery /sound**](sound.md) to surface it
+- An AC has no test → [**develop /test**](../skills/test.md) (when installed) to write one
+- An AC is unverifiable as written → [**develop /story**](../skills/build.md) to refine it
+- Verification reveals a missing assumption → [**discovery /sound**](sound.md) to surface it
 - All ACs satisfied → [**ship**](ship.md) for release readiness
 - Verification surfaces a security concern → [**secure**](secure.md)
 

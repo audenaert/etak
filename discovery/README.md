@@ -1,4 +1,4 @@
-# etak-discovery
+# discovery
 
 The discovery plugin for Etak. A thinking partner for product managers and designers: explore customer needs, map the opportunity space, brainstorm solutions, surface assumptions, and test your riskiest bets.
 
@@ -28,9 +28,9 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 
 ## Relationship to other etak plugins
 
-- **etak-design** (future) — sibling. UX and interaction design; often draws on discovery's opportunity space but is a separate concern.
-- **etak-develop** — downstream. When an idea is ready to build, development picks it up and references the source via the `from_discovery` link on projects and stories. Discovery never points forward; traceability is owned by the development side.
-- **etak-deliver** (future) — further downstream. Code review, QE verification, CI, security audit, release, docs.
+- **design** (future) — sibling. UX and interaction design; often draws on discovery's opportunity space but is a separate concern.
+- **develop** — downstream. When an idea is ready to build, development picks it up and references the source via the `from_discovery` link on projects and stories. Discovery never points forward; traceability is owned by the development side.
+- **deliver** (future) — further downstream. Code review, QE verification, CI, security audit, release, docs.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Getting started (develop)
 
-**Time:** about thirty minutes. **Prerequisite:** `etak-develop` installed ([develop overview](../develop.md)). A codebase you can write against, ideally one with a web API, some middleware, and a test suite you already trust.
+**Time:** about thirty minutes. **Prerequisite:** `develop` installed ([develop overview](../develop.md)). A codebase you can write against, ideally one with a web API, some middleware, and a test suite you already trust.
 
 You will walk a ready story through the develop loop: survey the graph, assess the story, ground a spec, record one ADR, plan tests, pair through implementation, self-review, and open the PR. By the end you will have a working mental model of the six develop skills and a PR whose description links back to the story, the spec, the ADR, and, if present, the discovery idea.
 
@@ -172,7 +172,7 @@ The three questions from the top of this page. Answer them again, in the languag
 - **When was the last time you wrote an ADR?** You just wrote one. It took five minutes. It will save a meeting in six months.
 - **How do you know a story is ready?** You run the readiness check and read what it surfaces. "Ready" is a verdict with findings, not a status anyone has to trust.
 
-That is the delta `etak-develop` is trying to produce.
+That is the delta `develop` is trying to produce.
 
 ## What to try next
 

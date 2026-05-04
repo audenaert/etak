@@ -57,21 +57,21 @@ When drift is found, update the page. Three rules:
 
 ## Cross-plugin context
 
-- **etak-develop installed:** read the relevant spec (`docs/development/specs/`) and ADRs. They provide intent; the code provides reality; the doc should match the code while honoring the intent's framing.
-- **etak-develop not installed:** read the code and the existing docs. Without the spec, intent is harder to recover — ask the engineer when in doubt.
+- **develop installed:** read the relevant spec (`docs/development/specs/`) and ADRs. They provide intent; the code provides reality; the doc should match the code while honoring the intent's framing.
+- **develop not installed:** read the code and the existing docs. Without the spec, intent is harder to recover — ask the engineer when in doubt.
 
 ## What Docs Does NOT Do
 
-- **Write specs.** Specs describe intent before implementation. That's etak-develop's `spec`. Docs describe what the code does after implementation.
+- **Write specs.** Specs describe intent before implementation. That's develop's `spec`. Docs describe what the code does after implementation.
 - **Generate API reference from inline comments.** That's a build tool's job. Docs handles the human-curated layer that sits above auto-generation.
 - **Maintain a marketing site.** Docs are technical documentation. Marketing copy lives elsewhere.
 - **Translate.** Localization is a separate workflow.
 
 ## Transitions
 
-- Drift reveals a missing spec → **etak-develop /spec** ("The behavior here was never specified. Want to write the spec while we're documenting?")
-- Drift reveals a code bug → **etak-develop /build** ("The code does X, the docs say Y. The docs are right — Y is what the spec promised. Want to fix the code?")
-- New feature with no spec or docs → **etak-develop /spec** ("Let's spec this before documenting; otherwise the doc is all we have.")
+- Drift reveals a missing spec → **develop /spec** ("The behavior here was never specified. Want to write the spec while we're documenting?")
+- Drift reveals a code bug → **develop /build** ("The code does X, the docs say Y. The docs are right — Y is what the spec promised. Want to fix the code?")
+- New feature with no spec or docs → **develop /spec** ("Let's spec this before documenting; otherwise the doc is all we have.")
 - Audit reveals widespread drift → schedule a focused doc sweep rather than fixing inline ("Five pages drifted — worth a doc sweep, not five small PRs?")
 
 ## Failure Modes

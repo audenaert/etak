@@ -9,7 +9,7 @@ The interactive [`/docs`](../skills/docs.md) skill collaborates on individual pa
 - **Documentation has drifted across many pages.** Walking each page interactively is tedious; the agent does the audit and fixes in one pass.
 - **A feature shipped without documentation.** The agent reads the code, detects the project's documentation conventions, and writes new pages in the matching style.
 - **A release is going out and screenshots need refreshing.** The agent navigates via Playwright, captures new screenshots in the project's existing format, replaces old ones.
-- **`developer` (when `etak-develop` is installed) just opened a PR.** It can dispatch the tech-writer to update docs for the change.
+- **`developer` (when `develop` is installed) just opened a PR.** It can dispatch the tech-writer to update docs for the change.
 
 ## What it does
 
@@ -37,7 +37,7 @@ A structured summary: what was updated per surface, screenshots captured, what c
 
 ## What it doesn't do
 
-- **Write specs.** Specs describe intent before implementation. That's [`etak-develop /spec`](../skills/spec.md). Docs describe what the code does after implementation.
+- **Write specs.** Specs describe intent before implementation. That's [`develop /spec`](../skills/spec.md). Docs describe what the code does after implementation.
 - **Generate API reference from inline comments.** That's a build tool's job. The agent handles the human-curated layer above auto-generation.
 - **Maintain a marketing site.** Docs are technical documentation. Marketing copy lives elsewhere.
 - **Translate.** Localization is a separate workflow.
@@ -72,7 +72,7 @@ Refresh screenshots for the settings UI.
 Document the new payments API.
 ```
 
-The agent reads the relevant code (and spec/story when `etak-develop` is installed), detects conventions, updates each affected surface, captures screenshots when possible, and reports back with what was updated and what needs manual action.
+The agent reads the relevant code (and spec/story when `develop` is installed), detects conventions, updates each affected surface, captures screenshots when possible, and reports back with what was updated and what needs manual action.
 
 ## Tips
 

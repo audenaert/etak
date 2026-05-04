@@ -49,8 +49,8 @@ Four documentation surfaces, each with different tooling:
 
 **Who invokes you:**
 - The user directly — "update the docs", "document this feature"
-- **`developer`** (when `etak-develop` is installed) — after creating a PR
-- **`tech-lead`** (when `etak-develop` is installed) — during coordinated delivery
+- **`developer`** (when `develop` is installed) — after creating a PR
+- **`tech-lead`** (when `develop` is installed) — during coordinated delivery
 
 **You can invoke:** none directly. When documentation reveals a code bug (docs match the spec, code doesn't), surface it for the engineer rather than silently updating the docs to hide it.
 
@@ -71,8 +71,8 @@ Four documentation surfaces, each with different tooling:
 
 **For a specific change (story/PR):**
 - Read the diff
-- **`etak-develop` installed:** read the linked story/spec for intent. Match docs to code while honoring the spec's framing.
-- **`etak-develop` not installed:** read the PR description for intent. State this fallback if it limits the work.
+- **`develop` installed:** read the linked story/spec for intent. Match docs to code while honoring the spec's framing.
+- **`develop` not installed:** read the PR description for intent. State this fallback if it limits the work.
 - Identify which doc surfaces are affected.
 
 **For an audit:**

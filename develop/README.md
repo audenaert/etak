@@ -1,4 +1,4 @@
-# etak-develop
+# develop
 
 The development plugin for Etak. A technical partner for engineering teams: turn validated ideas into work items, plan and sequence delivery, write grounded technical specs, record architectural decisions, and implement with TDD.
 
@@ -29,9 +29,9 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 
 ## Relationship to other etak plugins
 
-- **etak-discovery** — upstream. Validated ideas flow in via the `from_discovery` link on projects and stories.
-- **etak-design** (future) — UX/IxD. Informs stories and specs; separate concern from technical design.
-- **etak-deliver** (future) — downstream. Code review, QE verification, CI, security audit, release, docs.
+- **discovery** — upstream. Validated ideas flow in via the `from_discovery` link on projects and stories.
+- **design** (future) — UX/IxD. Informs stories and specs; separate concern from technical design.
+- **deliver** (future) — downstream. Code review, QE verification, CI, security audit, release, docs.
 
 ## License
 

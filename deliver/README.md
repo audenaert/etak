@@ -1,4 +1,4 @@
-# etak-deliver
+# deliver
 
 The delivery plugin for Etak. A specialist team in the terminal: code review, story verification, release engineering, security audit, infrastructure and operations, and documentation. Each phase has an interactive skill (you pair with it) and an autonomous agent (it works on its own and reports back).
 
@@ -32,9 +32,9 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 
 ## Relationship to other etak plugins
 
-- **etak-develop** — primary upstream. Stories, specs, ADRs, and tasks flow into deliver work via `from_discovery` and parent links. When etak-develop is not installed, deliver agents read the diff, branch name, and PR description directly.
-- **etak-discovery** — secondary upstream. `quality-engineer` follows `from_discovery` links from stories to assumptions when present, so verification can prefer the riskiest beliefs first. When etak-discovery is not installed, verification falls back to AC coverage alone.
-- **etak-design** (future) — UX/IxD. May inform reviewer's user-facing change pass.
+- **develop** — primary upstream. Stories, specs, ADRs, and tasks flow into deliver work via `from_discovery` and parent links. When develop is not installed, deliver agents read the diff, branch name, and PR description directly.
+- **discovery** — secondary upstream. `quality-engineer` follows `from_discovery` links from stories to assumptions when present, so verification can prefer the riskiest beliefs first. When discovery is not installed, verification falls back to AC coverage alone.
+- **design** (future) — UX/IxD. May inform reviewer's user-facing change pass.
 
 The plugin works standalone. It gets sharper when companions are installed.
 

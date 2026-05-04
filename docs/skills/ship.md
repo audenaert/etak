@@ -63,7 +63,7 @@ Each line in the user's frame, not the engineering frame. "Search now ranks by r
 
 ## What ship does NOT do
 
-- **Write the production code.** Bug fixes ship discovers belong in [`etak-develop /build`](../skills/build.md). Ship diagnoses and fixes pipeline issues; substantive code changes get delegated.
+- **Write the production code.** Bug fixes ship discovers belong in [`develop /build`](../skills/build.md). Ship diagnoses and fixes pipeline issues; substantive code changes get delegated.
 - **Run the deployment.** Ship prepares the release; the actual `kubectl apply`, `terraform apply`, or registry push lives with [`operate`](operate.md) or with the engineer's authorized hand.
 - **Decide what's safe to ship.** Verification ([`verify`](verify.md)) and security review ([`secure`](secure.md)) run first. Ship's job is to get a verified, reviewed, secure change to production.
 - **Restructure pipelines.** When the same step keeps timing out across PRs, that's a structural pipeline problem. Hand to [`operate`](operate.md).
@@ -78,7 +78,7 @@ Each line in the user's frame, not the engineering frame. "Search now ranks by r
 
 ## Transitions
 
-- A failing test reveals a real bug → [**etak-develop /build**](../skills/build.md) to fix it
+- A failing test reveals a real bug → [**develop /build**](../skills/build.md) to fix it
 - Recurring infrastructure flake → [**operate**](operate.md) for structural pipeline review
 - Release scope reveals a security concern → [**secure**](secure.md) before tagging
 - Release notes drift from docs → [**docs**](docs.md) to sync

@@ -58,7 +58,7 @@ If a dimension is clean, review says so in one line and moves on. Manufactured c
 - **Decide acceptance.** Review surfaces findings. The author and the team decide what to act on.
 - **Replace the reviewer agent for autonomous PR review.** When you want findings posted to the PR autonomously, dispatch the [reviewer agent](../agents/reviewer.md).
 - **Run automated tests.** Review reads code and tests; it doesn't execute them. CI does that.
-- **Refactor.** When review surfaces refactoring opportunities, those are findings, not actions. Refactors live in `etak-develop`'s `build` skill.
+- **Refactor.** When review surfaces refactoring opportunities, those are findings, not actions. Refactors live in `develop`'s `build` skill.
 
 ## Common failure modes
 
@@ -70,7 +70,7 @@ If a dimension is clean, review says so in one line and moves on. Manufactured c
 
 ## Transitions
 
-- A finding is a real bug → [**etak-develop /build**](../skills/build.md) (when installed) to fix it
+- A finding is a real bug → [**develop /build**](../skills/build.md) (when installed) to fix it
 - Review reveals testing gaps → [**verify**](verify.md) for AC-by-AC coverage analysis
 - Review surfaces a security concern that needs deeper analysis → [**secure**](secure.md)
 - The change touches infrastructure → [**operate**](operate.md) to assess blast radius

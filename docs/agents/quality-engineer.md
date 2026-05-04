@@ -9,7 +9,7 @@ The interactive [`/verify`](../skills/verify.md) skill walks ACs collaboratively
 - **A PR is open with an AC checklist.** The agent walks each AC independently rather than trusting the author's checkmarks.
 - **You want acceptance verification before merge.** The agent confirms each AC is satisfied, partially satisfied, or not satisfied — with cited evidence per AC.
 - **A story has high stakes.** The cost of one missed AC outweighs the cost of an explicit verification pass. Dispatch the agent.
-- **`developer` (when `etak-develop` is installed) just opened a PR.** It can dispatch the quality-engineer automatically.
+- **`developer` (when `develop` is installed) just opened a PR.** It can dispatch the quality-engineer automatically.
 
 ## What it does
 
@@ -54,7 +54,7 @@ If a PR exists, the agent posts a structured comment with AC coverage, tests wri
 ## What it doesn't do
 
 - **Trust without walking.** Coverage claims are checked AC by AC. "All ACs are covered" without naming the test for each is suspect.
-- **Refine ACs.** When ACs are unclear or unverifiable as written, the agent surfaces that — but refining the story is `etak-develop`'s `story` skill.
+- **Refine ACs.** When ACs are unclear or unverifiable as written, the agent surfaces that — but refining the story is `develop`'s `story` skill.
 - **Code review.** Verification checks "is this done." Code review checks "is this good." [reviewer](reviewer.md) does the latter.
 - **Sign off on releases.** Verification confirms a story; release readiness is [release-engineer](release-engineer.md)'s domain.
 
@@ -83,7 +83,7 @@ Walk the ACs on this PR. Write any missing tests.
 Is this story done?
 ```
 
-The agent loads the story (or PR description as fallback when `etak-develop` isn't installed), walks each AC, evaluates evidence, optionally writes missing tests, and posts the verdict.
+The agent loads the story (or PR description as fallback when `develop` isn't installed), walks each AC, evaluates evidence, optionally writes missing tests, and posts the verdict.
 
 ## Tips
 

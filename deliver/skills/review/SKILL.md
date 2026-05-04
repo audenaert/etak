@@ -58,16 +58,16 @@ When you disagree with a reviewer, draft the response — don't post silently. T
 
 ## Cross-plugin context
 
-- **etak-develop installed:** read the parent story (`docs/development/stories/`), spec (`docs/development/specs/`), and any relevant ADRs. Walk ACs against actual code.
-- **etak-develop not installed:** read the branch name, the PR description, and the diff. Treat the PR description as the AC list. Note in the review that no upstream story was available.
+- **develop installed:** read the parent story (`docs/development/stories/`), spec (`docs/development/specs/`), and any relevant ADRs. Walk ACs against actual code.
+- **develop not installed:** read the branch name, the PR description, and the diff. Treat the PR description as the AC list. Note in the review that no upstream story was available.
 
 When `secure` would add value (auth, crypto, payments, untrusted input), name it and offer to hand off rather than running a shallow security pass yourself.
 
 ## What Review Does NOT Do
 
-- **Design proposals.** Review evaluates what's there. If the design is wrong, surface that — but rewriting the architecture is etak-develop's `spec` skill, not review.
-- **Test writing.** Review can flag missing tests; it does not write them. Hand off to etak-develop's `test`.
-- **Story refinement.** If ACs are unclear, surface that — but refining the story is etak-develop's `story` skill.
+- **Design proposals.** Review evaluates what's there. If the design is wrong, surface that — but rewriting the architecture is develop's `spec` skill, not review.
+- **Test writing.** Review can flag missing tests; it does not write them. Hand off to develop's `test`.
+- **Story refinement.** If ACs are unclear, surface that — but refining the story is develop's `story` skill.
 - **Deep security review.** Review does the security pass that any senior engineer would run. Threat modeling and risk-registry work belong to `secure`.
 
 ## Transitions

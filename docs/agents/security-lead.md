@@ -46,13 +46,13 @@ For testing identified threats. The agent designs and implements tests for authe
 
 ### Mode: risk registry management
 
-The agent maintains a persistent registry at `docs/development/security/risk-registry.md` (when `etak-develop` is installed) or `docs/security/risk-registry.md` (standalone). Each risk has a category, severity, status, affected areas, attack scenario, mitigation, and last-reviewed date. Resolved risks move to the resolved section; accepted risks require explicit rationale.
+The agent maintains a persistent registry at `docs/development/security/risk-registry.md` (when `develop` is installed) or `docs/security/risk-registry.md` (standalone). Each risk has a category, severity, status, affected areas, attack scenario, mitigation, and last-reviewed date. Resolved risks move to the resolved section; accepted risks require explicit rationale.
 
 ## What it doesn't do
 
 - **Generic OWASP scans.** Threat models are grounded in *this* code, *this* data, *this* trust boundary.
 - **Compliance attestation.** SOC 2, HIPAA, PCI-DSS are formal frameworks with their own requirements. The agent flags what looks like a gap; the formal work belongs elsewhere.
-- **Implement mitigations.** Mitigations get implemented in [`etak-develop /build`](../skills/build.md). The agent surfaces and tracks; the engineer or developer agent fixes.
+- **Implement mitigations.** Mitigations get implemented in [`develop /build`](../skills/build.md). The agent surfaces and tracks; the engineer or developer agent fixes.
 - **Block on everything.** Critical and high need immediate attention; medium and low can be tracked and addressed on schedule.
 
 ## How it operates

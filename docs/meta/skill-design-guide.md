@@ -6,7 +6,7 @@ This guide is for anyone authoring skills or agents in the Etak marketplace. It 
 
 A skill file is not documentation. It's a prompt — it gets loaded into Claude's context every time the skill is invoked, and every line shapes behavior. A skill that reads well to humans but over-instructs the model will produce worse output than a skill that's sparer but better-targeted.
 
-The guidelines below come from auditing [`etak-discovery`](../../discovery/) and [`etak-develop`](../../develop/) against Claude Code best practices and Etak's philosophy. They take strong positions on purpose: a style guide that won't rule anything out doesn't help anyone ship good work.
+The guidelines below come from auditing [`discovery`](../../discovery/) and [`develop`](../../develop/) against Claude Code best practices and Etak's philosophy. They take strong positions on purpose: a style guide that won't rule anything out doesn't help anyone ship good work.
 
 ## Etak's philosophy in five lines
 
@@ -24,7 +24,7 @@ If a skill or agent drifts from this posture — e.g., becomes a silent automato
 
 ```
 <your-plugin>/
-├── .claude-plugin/plugin.json       # manifest (see plugin-schema.json)
+├── .claude-plugin/plugin.json       # manifest (Claude Code plugin schema)
 ├── README.md                        # overview + relationship to other etak plugins
 ├── skills/
 │   ├── <skill>/
@@ -39,7 +39,7 @@ If a skill or agent drifts from this posture — e.g., becomes a silent automato
 
 Conventions worth internalizing:
 
-- Plugin name in the manifest carries the `etak-` prefix; directory name omits it.
+- Plugin name in the manifest matches the directory name (e.g. directory `discovery/` ↔ name `discovery`) and the entry in `.claude-plugin/marketplace.json`.
 - User-facing skills live at the top of `skills/`. Internal skills (artifact writers, shared foundation) live under `skills/_internal/` and set `user-invocable: false`.
 - A skill's `references/` directory is loaded on demand — put long-form guidance there, not in `SKILL.md`.
 
@@ -252,7 +252,7 @@ Each failure mode names a specific pattern *and* why it's bad. Generic warnings 
 
 ### G15. Cross-plugin dispatch is explicit and graceful
 
-When an agent depends on another plugin ("`tech-lead` dispatches to `etak-deliver`'s `quality-engineer`"), the dependency is stated and the fallback when that plugin isn't installed is stated too.
+When an agent depends on another plugin ("`tech-lead` dispatches to `deliver`'s `quality-engineer`"), the dependency is stated and the fallback when that plugin isn't installed is stated too.
 
 **The plugin must work usefully on its own and get more useful when companions are installed.** Every skill that expects another plugin should say what happens if it's absent:
 
@@ -316,6 +316,6 @@ A skill writes files without previewing. The user ends up with artifacts they di
 - [`docs/plugin-design-review.md`](../plugin-design-review.md) — the audit that produced these guidelines
 - [`docs/context/foundations.md`](../context/foundations.md) — the research foundations Etak is built on
 - [`docs/context/about-the-name.md`](../context/about-the-name.md) — why "Etak" and what it implies
-- [`plugin-schema.json`](../../plugin-schema.json) — the manifest schema
+- [Claude Code plugin reference](https://code.claude.com/docs/en/plugins-reference) — authoritative field list for `plugin.json`
 
-When in doubt, read the existing plugins. `etak-discovery` and `etak-develop` are the reference implementations; any pattern you see there that *isn't* documented here is either an established convention or a bug worth flagging in a PR.
+When in doubt, read the existing plugins. `discovery` and `develop` are the reference implementations; any pattern you see there that *isn't* documented here is either an established convention or a bug worth flagging in a PR.

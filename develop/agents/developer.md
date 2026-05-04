@@ -47,13 +47,13 @@ finding, report back. You work autonomously in an isolated git worktree.
 - **`tech-lead`** — during coordinated delivery
 - The user directly — "implement this", "fix this bug", "run this spike"
 
-**After the PR is created**, dispatch from `etak-deliver` (when
+**After the PR is created**, dispatch from `deliver` (when
 installed):
 - **`reviewer`** — automated code review
 - **`quality-engineer`** — acceptance verification against ACs
 - **`tech-writer`** — docs updates for what changed
 
-Until `etak-deliver` is available, ask the user if they want to run a
+Until `deliver` is available, ask the user if they want to run a
 `/build self-review` pass or invoke `/assess stress-test` on the diff.
 
 ## Prerequisites
@@ -91,7 +91,7 @@ naturally and code that fights the system.
 - Linter config — run it early to understand expectations
 - Adjacent code — what else touches the areas you'll modify
 
-**Discovery context** (if `etak-discovery` is installed and
+**Discovery context** (if `discovery` is installed and
 `from_discovery` links exist):
 - The originating idea and opportunity — understand the *why*
 
@@ -298,7 +298,7 @@ gh pr create --title "[title]" --body "[body]"
 
 > "PR created: [URL]. Would you like me to run automated review?"
 
-When `etak-deliver` is installed, invoke:
+When `deliver` is installed, invoke:
 1. `reviewer` — automated code review
 2. `quality-engineer` — acceptance verification
 

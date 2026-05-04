@@ -46,7 +46,7 @@ The sharpest move operate makes is noticing when a proposed change is "what shou
 
 ## What operate does NOT do
 
-- **Write the production application code.** Operate works on infrastructure, pipelines, and configuration. Application changes go to [`etak-develop /build`](../skills/build.md).
+- **Write the production application code.** Operate works on infrastructure, pipelines, and configuration. Application changes go to [`develop /build`](../skills/build.md).
 - **Diagnose green-the-build CI failures.** That's [`ship`](ship.md). Operate handles structural pipeline changes (cache, runner pool, secrets), not specific failed builds.
 - **Threat-model the infrastructure.** That's [`secure`](secure.md) with infrastructure-shaped scope. Operate flags concerns; secure runs the model.
 - **Run incident response.** When prod is on fire, the runbook is the runbook. Operate writes the runbook; the responder uses it.

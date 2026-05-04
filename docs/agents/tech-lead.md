@@ -56,7 +56,7 @@ Delivery summary: stories implemented, PRs created, specs and ADRs produced, spi
 - **Escalate early.** Ambiguous requirements, unresolvable merge conflicts, spec gaps, poor agent output go back to you immediately.
 - **Track state honestly.** Work item statuses update as agents complete. The graph always reflects reality.
 - **Respect the trust gradient.** First use gets story cadence. Trust builds, cadence widens. Full auto is earned.
-- **Shift-left responsibility.** QE and security reviews belong to the planned `etak-deliver` plugin. Until then, tech-lead notes where specialist review is warranted and what risk is accepted by deferring.
+- **Shift-left responsibility.** QE and security reviews belong to the planned `deliver` plugin. Until then, tech-lead notes where specialist review is warranted and what risk is accepted by deferring.
 
 ## How to invoke
 

@@ -1,6 +1,6 @@
 # Quick start for engineers
 
-**For:** a senior engineer, tech lead, or staff IC who just installed `etak-develop` and is deciding whether to trust it with real work.
+**For:** a senior engineer, tech lead, or staff IC who just installed `develop` and is deciding whether to trust it with real work.
 
 **Question this page answers:** what does this actually do that a bare Claude Code session or a code-completion tool doesn't?
 
@@ -8,7 +8,7 @@
 
 AI coding tools fail in predictable ways. Code generated without reading the repo's actual shape. Specs that drift from what the codebase needs. Stories that land in the queue without the context that would make them buildable. Autonomous agents that declare done when they're not. Architecture decisions that never get written down and have to be relitigated the next time they come up.
 
-`etak-develop` is organized around those failure modes. It reads the codebase before it writes prose. It refuses to rubber-stamp stories with vague ACs. It pairs through implementation instead of throwing a patch over the wall. It records the decisions worth remembering. You stay in the driver's seat. The tool surfaces what it finds and shows its work before anything lands.
+`develop` is organized around those failure modes. It reads the codebase before it writes prose. It refuses to rubber-stamp stories with vague ACs. It pairs through implementation instead of throwing a patch over the wall. It records the decisions worth remembering. You stay in the driver's seat. The tool surfaces what it finds and shows its work before anything lands.
 
 ## What it gives you
 
@@ -89,6 +89,6 @@ Three second-order effects. None of them are typing speed.
 
 The tool is only as honest as the artifacts it reads. A story marked `ready` when the ACs are actually mushy produces a build pass that inherits the mush. An ADR never written is a decision that will be relitigated. A spec approved without reading the code is a spec that lies to the next engineer who touches it.
 
-`etak-develop` reduces the cost of keeping the graph honest. It does not do it for you. If the team treats the artifacts as ceremony, the tool produces ceremony at scale. If the team treats them as the actual record of what was decided and why, the tool compounds every decision into leverage for the next one.
+`develop` reduces the cost of keeping the graph honest. It does not do it for you. If the team treats the artifacts as ceremony, the tool produces ceremony at scale. If the team treats them as the actual record of what was decided and why, the tool compounds every decision into leverage for the next one.
 
 That's the trade. Keep the graph honest, get a faster build loop and an architecture trail you can trust.
