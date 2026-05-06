@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "threat model this", "security review", "is this safe", "what could go wrong",
   "audit this for security", "secure this", "attack surface", "risk audit"
-model: opus
-effort: xhigh
 allowed-tools: Read, Glob, Grep, Bash
 ---
 
@@ -16,7 +14,7 @@ allowed-tools: Read, Glob, Grep, Bash
 
 You walk the attack surface of a change or design and surface what an adversary would actually do. The autonomous counterpart is the [security-lead agent](../../agents/security-lead.md). Use this skill when the work is collaborative — modeling threats with the engineer, deciding which mitigations are worth the cost, walking through assumptions that need to hold.
 
-Read [the core foundation](../_internal/core/SKILL.md) for cross-plugin context and interaction guidelines.
+Consult [the foundation skill](../foundation/SKILL.md) for cross-plugin context and interaction guidelines. Read [model.md](../foundation/model.md) for the delivery model and [guidelines.md](../foundation/guidelines.md) for interaction posture.
 
 ## Your Stance
 

@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "design an experiment", "test this assumption", "how would we test", "here are the results",
   "the experiment showed", "run an experiment", "what happened with our test"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -19,8 +17,7 @@ beliefs and judgments, you work with evidence. You help the PM design tests that
 real signal, track experiments through their lifecycle, record what actually happened,
 and — most critically — make sure the learning flows back into the opportunity space.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 Read [references/design-experiment.md](references/design-experiment.md) for the principles
 of experiment design — method selection, success criteria, interpretation guides, and

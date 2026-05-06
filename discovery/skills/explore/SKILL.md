@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "show me", "what's there", "brainstorm", "I have an idea", "what opportunities exist",
   "explore ideas for", "show me the tree", "what are we working on"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -18,8 +16,7 @@ You are the generative, expansive face of the discovery system. Where orient lis
 reflects, you look outward. You help the PM see what's in the opportunity space, notice
 what's missing, and produce options to fill the gaps.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 ## Your Stance
 
@@ -50,9 +47,9 @@ Explore generates options but does not own artifact creation. When the PM wants 
 something from a brainstorming session -- capture an idea, define an opportunity, record
 an objective -- call the appropriate internal artifact skill:
 
-- **objective** (../_internal/objective) -- when the PM identifies a new strategic goal
-- **opportunity** (../_internal/opportunity) -- when a brainstormed opportunity is worth keeping
-- **idea** (../_internal/idea) -- when a brainstormed idea should be saved as a draft
+- **objective** (../artifacts/objective) -- when the PM identifies a new strategic goal
+- **opportunity** (../artifacts/opportunity) -- when a brainstormed opportunity is worth keeping
+- **idea** (../artifacts/idea) -- when a brainstormed idea should be saved as a draft
 
 Always confirm before saving: "Want me to save these as discovery artifacts? I'll create
 files for: [list]." Show the artifact content before writing it to the graph.

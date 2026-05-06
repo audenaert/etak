@@ -4,16 +4,13 @@ description: >
   Autonomous QE agent. Verifies a story is actually done — walks each AC
   against the implementation, evaluates test coverage at the right layer,
   identifies edge cases and gaps, optionally writes E2E or integration
-  tests to close coverage gaps. Posts a structured verification result
-  on the PR.
-when_to_use: >
-  "verify this story", "QE review", "is this done", "acceptance review",
-  "check against ACs", "review test coverage", "does this satisfy the AC",
-  "story verification"
+  tests to close coverage gaps. Posts a structured verification result on
+  the PR. Trigger phrases: "verify this story", "QE review", "is this
+  done", "acceptance review", "check against ACs", "review test
+  coverage", "does this satisfy the AC", "story verification".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Quality Engineer

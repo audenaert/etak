@@ -1,19 +1,37 @@
----
-name: experiment-record
-description: >
-  Create and update experiment artifacts. Handles writing experiment plans and recording
-  results. Internal skill called by the user-facing experiment skill.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Experiment Record
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You handle the artifact mechanics of experiments — writing experiment plans and recording
 results. The user-facing `experiment` skill handles the full lifecycle conversation;
 you handle the file operations.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "Prototype test: related works panel with 5 researchers"
+type: experiment
+status: planned  # planned | running | complete
+tests:
+  - researchers-trust-embedding-suggestions
+method: user_interview | prototype_test | fake_door | concierge_mvp | data_analysis | ab_test | survey
+success_criteria: "Specific, measurable criteria"
+duration: "Estimated duration"
+effort: low  # low | medium | high
+result: null  # validated | invalidated | inconclusive
+learnings: ""
+interpretation_guide: |
+  How to read results against success criteria.
+  Edge cases and ambiguities to watch for.
+action_plan:
+  if_validated: "What we'll do next"
+  if_invalidated: "What we'll reconsider or pivot to"
+  if_inconclusive: "Follow-up experiment or additional data needed"
+---
+```
+
+Body: detailed experiment plan, participant criteria, protocol, materials needed.
 
 ## Writing an Experiment Plan
 

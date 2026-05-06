@@ -1,22 +1,40 @@
----
-name: critique
-description: >
-  Create and update critique artifacts — structured examination rounds that surface
-  risks and strengths in ideas and opportunities. Handles writing rounds, updating
-  finding status, and coordinating with assumption when findings graduate. Internal
-  skill called by the user-facing critique skill.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Critique
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You handle the artifact mechanics of critiques — writing rounds, updating finding
 status, and coordinating with the assumption skill when risk findings graduate.
 The user-facing `critique` skill runs the session conversation; you handle the file
 operations.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+A critique captures one structured examination round — a single stance (persona or framework) examining a single target. Multi-round sessions are grouped via the `session` field rather than bundled into one file. Findings are embedded as a list within the round.
+
+```yaml
+---
+name: "Skeptical end-user critique of offline-first reading"
+type: critique
+status: complete  # planned | running | complete
+stance: persona  # persona | framework
+perspective: "skeptical user — researcher burned by sync failures before"
+about_idea: offline-first-reading  # set exactly one of about_idea or about_opportunity
+# about_opportunity: null
+session: q2-discovery-push  # optional grouping slug for multi-round sessions
+summary: ""
+body: ""
+findings:
+  - name: "Assumes users trust the sync indicator"
+    kind: risk          # risk | strength
+    severity: serious   # fatal | serious | moderate | minor — required when kind is risk
+    status: open        # open | addressed | dismissed
+    resolution: ""
+    body: |
+      Explanation, evidence, or elaboration.
+---
+```
+
+A risk finding that articulates a testable belief can graduate into an assumption — the originating finding's `status` becomes `addressed` with the new assumption slug recorded in `resolution`. The finding's `resolution` field is the authoritative file-side representation of the `BECAME_ASSUMPTION` edge in the graph; provenance on the assumption side lives in the body.
 
 ## What Makes a Good Critique Artifact
 

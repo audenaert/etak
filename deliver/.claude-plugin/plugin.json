@@ -2,11 +2,11 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "deliver",
   "description": "Software delivery skills — review code, verify stories, ship safely, audit security, operate infrastructure, keep docs in sync.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": {
     "name": "Neal Audenaert"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": [
     "code-review",
     "testing",

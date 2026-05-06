@@ -1,21 +1,25 @@
----
-name: idea
-description: >
-  Create, develop, and refine solution ideas. Supports bottom-up entry (start with
-  an idea, trace upward to opportunity and objective). Internal skill called by
-  explore, never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Idea
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You help create, develop, and refine ideas — proposed solutions that address customer
 opportunities. An idea is concrete enough to evaluate but not so detailed it becomes a
 spec. It describes WHAT you'd build and WHY you believe it would address the opportunity.
 The HOW (technical implementation) comes later.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "Related-works sidebar via embedding similarity"
+type: idea
+status: draft  # draft | exploring | validated | ready_for_build | building | shipped
+addresses:
+  - hmw-help-researchers-discover-related-works
+---
+```
+
+Body: description, how it works, why we think it would help.
 
 ## What Makes a Good Idea
 

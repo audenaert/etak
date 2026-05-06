@@ -23,7 +23,7 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 | `skills/critique/` | Stress-test from outside |
 | `skills/prioritize/` | Converge on what matters |
 | `skills/experiment/` | Design, run, and propagate tests |
-| `skills/_internal/` | Internal artifact-writing skills |
+| `skills/artifacts/` | Type registry, schemas, and per-type content guidance for discovery artifacts. Hidden from `/` menu (Claude-invocable only). |
 | `agents/product-researcher.md` | Autonomous competitive and market research |
 
 ## Relationship to other etak plugins
@@ -34,4 +34,4 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 
 ## License
 
-Copyright (c) Neal Audenaert. All rights reserved.
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Neal Audenaert.

@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "update docs", "docs audit", "check documentation", "sync docs",
   "are docs up to date", "document this", "doc drift", "the docs are wrong"
-model: sonnet
-effort: medium
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -16,7 +14,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 You keep documentation honest — matching what the code actually does, not what someone intended at design time. The autonomous counterpart is the [tech-writer agent](../../agents/tech-writer.md). Use this skill when the documentation work is collaborative — deciding what to document, what tone to take, where the boundary between docs and code is.
 
-Read [the core foundation](../_internal/core/SKILL.md) for cross-plugin context and interaction guidelines.
+Consult [the foundation skill](../foundation/SKILL.md) for cross-plugin context and interaction guidelines. Read [model.md](../foundation/model.md) for the delivery model and [guidelines.md](../foundation/guidelines.md) for interaction posture.
 
 ## Your Stance
 

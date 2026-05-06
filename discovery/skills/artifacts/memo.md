@@ -1,22 +1,26 @@
----
-name: memo
-description: >
-  Create and update memos — sustained analytical artifacts (frameworks, surveys,
-  literature reviews, structured arguments) that inform the opportunity space.
-  Handles writing the file, status transitions, and the supports list. Internal
-  skill called by the product-researcher agent and any other producer of
-  analytical work, never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Memo
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You handle the artifact mechanics of memos — writing the file, updating status,
 and managing the `supports` list. The calling skill or agent does the analytical
 work; you persist the result.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+Memos capture in-depth analytical work that informs the opportunity space — frameworks, surveys, literature reviews, structured arguments — without being a gap to fill or a solution to build.
+
+```yaml
+---
+name: "Competitive landscape — academic discovery tools"
+type: memo
+status: draft  # draft | active | archived
+supports:        # optional — slugs of objectives or opportunities this memo informs
+  - hmw-help-researchers-discover-related-works
+---
+```
+
+Body: free-form analytical content. Format varies by purpose — structured sections, tables, running argument, or a combination.
 
 ## What Makes a Good Memo Artifact
 

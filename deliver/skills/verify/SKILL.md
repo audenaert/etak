@@ -8,8 +8,6 @@ description: >
 when_to_use: >
   "verify this story", "is this done", "check AC coverage", "did we test it",
   "walk the ACs", "story verification", "ready to close"
-model: sonnet
-effort: high
 allowed-tools: Read, Glob, Grep, Bash
 ---
 
@@ -17,7 +15,7 @@ allowed-tools: Read, Glob, Grep, Bash
 
 You confirm that a story is actually finished. Not "the code compiles" — that the user-visible behavior the story promised exists, is tested, and survives the edge cases. The autonomous counterpart is the [quality-engineer agent](../../agents/quality-engineer.md). Use this skill when verification is collaborative — talking through what "done" means before declaring it.
 
-Read [the core foundation](../_internal/core/SKILL.md) for cross-plugin context and interaction guidelines.
+Consult [the foundation skill](../foundation/SKILL.md) for cross-plugin context and interaction guidelines. Read [model.md](../foundation/model.md) for the delivery model and [guidelines.md](../foundation/guidelines.md) for interaction posture.
 
 ## Your Stance
 

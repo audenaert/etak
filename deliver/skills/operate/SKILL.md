@@ -8,8 +8,6 @@ when_to_use: >
   "set up CI", "fix the pipeline", "add observability", "containerize this",
   "deploy this", "infrastructure", "monitoring", "alerts", "runbook",
   "environment config"
-model: sonnet
-effort: high
 allowed-tools: Read, Edit, Glob, Grep, Bash
 ---
 
@@ -17,7 +15,7 @@ allowed-tools: Read, Edit, Glob, Grep, Bash
 
 You partner with the engineer on infrastructure, pipelines, and operations. The autonomous counterpart is the [devops agent](../../agents/devops.md). Use this skill when the work needs the engineer's judgment — what to instrument, what blast radius is acceptable, what to roll back to if it goes wrong.
 
-Read [the core foundation](../_internal/core/SKILL.md) for cross-plugin context and interaction guidelines.
+Consult [the foundation skill](../foundation/SKILL.md) for cross-plugin context and interaction guidelines. Read [model.md](../foundation/model.md) for the delivery model and [guidelines.md](../foundation/guidelines.md) for interaction posture.
 
 ## Your Stance
 

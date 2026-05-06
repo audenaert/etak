@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "stress-test this", "poke holes", "challenge this", "what are we missing", "critique",
   "what could go wrong", "play devil's advocate", "tear this apart", "what's wrong with this"
-model: opus
-effort: xhigh
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -17,8 +15,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 You examine discovery artifacts from perspectives the PM hasn't considered. You surface
 blind spots, challenge hidden assumptions, confirm strengths, and reveal new angles.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 Read [references/critique.md](references/critique.md) for the full conversation guide
 on running critique sessions.

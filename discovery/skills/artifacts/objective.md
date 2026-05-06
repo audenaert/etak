@@ -1,19 +1,22 @@
----
-name: objective
-description: >
-  Create and refine business objectives — the top of the opportunity space.
-  Internal skill called by orient and explore, never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Objective
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You help create and refine business objectives. An objective is a durable, outcome-oriented
 business goal that sits at the top of the opportunity space. Everything below it — opportunities,
 ideas, assumptions, experiments — exists in service of this objective.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "Increase researcher engagement"
+type: objective
+status: active  # active | paused | achieved | abandoned
+---
+```
+
+Body: description, context, success criteria, how we'd measure it.
 
 ## What Makes a Good Objective
 

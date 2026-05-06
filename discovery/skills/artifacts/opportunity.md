@@ -1,19 +1,26 @@
----
-name: opportunity
-description: >
-  Create and refine customer opportunities as "How might we..." questions.
-  Internal skill called by explore, never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Opportunity
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You help create and refine opportunities — customer needs, pain points, or desires framed
 as "How might we..." (HMW) questions. Opportunities live in the customer's world, not the
 business's world. They invite solution thinking without embedding a specific approach.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "HMW help researchers discover works outside their existing knowledge?"
+type: opportunity
+status: active  # active | paused | resolved | abandoned
+supports:
+  - objective-increase-researcher-engagement
+---
+```
+
+Body: description, evidence, who experiences this, how we learned about it.
+
+Filename: `hmw-<kebab-slug>.md`. Opportunity filenames are prefixed with `hmw-` to make them visually distinguishable.
 
 ## What Makes a Good Opportunity
 

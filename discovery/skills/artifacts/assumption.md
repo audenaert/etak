@@ -1,21 +1,27 @@
----
-name: assumption
-description: >
-  Create and update assumptions — testable beliefs underlying ideas. Handles creation,
-  importance/evidence rating, and status updates. Internal skill called by sound,
-  critique, and experiment.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Assumption
+
+Reference loaded by [discovery:artifacts](SKILL.md). See [model.md](model.md) for the opportunity space: typed links, lifecycles, naming, traceability.
 
 You help create and update assumptions — testable beliefs that underlie ideas. An
 assumption is something that must be true for an idea to work. Making assumptions
 explicit is one of the most valuable things the discovery system does — it transforms
 invisible bets into testable hypotheses.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "Researchers will trust embedding-based suggestions"
+type: assumption
+status: untested  # untested | validated | invalidated
+importance: high  # high | medium | low — if wrong, does the idea fail?
+evidence: low     # high | medium | low — how much do we actually know?
+assumed_by:
+  - related-works-sidebar
+---
+```
+
+Body: description, why this matters, what evidence exists (or doesn't).
 
 ## What Makes a Good Assumption
 

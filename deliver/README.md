@@ -22,7 +22,7 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 | `skills/secure/` | Threat modeling and risk audit |
 | `skills/operate/` | Infrastructure as code, pipelines, observability |
 | `skills/docs/` | Keep docs in sync with reality |
-| `skills/_internal/core/` | Shared foundation referenced by every skill |
+| `skills/foundation/` | Shared delivery model + interaction guidelines (Claude-invocable, hidden from `/` menu) |
 | `agents/reviewer.md` | Autonomous code review across multiple dimensions |
 | `agents/quality-engineer.md` | Autonomous story and AC verification |
 | `agents/release-engineer.md` | Autonomous release and CI repair |
@@ -44,4 +44,4 @@ Deferred to a future version. The deliver-side artifacts that would benefit from
 
 ## License
 
-Copyright (c) Neal Audenaert. All rights reserved.
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Neal Audenaert.

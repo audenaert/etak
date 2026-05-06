@@ -7,8 +7,6 @@ when_to_use: >
   "what are we assuming", "what must be true", "what's underneath this",
   "what are we betting on", "assumptions", "what do we need to believe",
   "is this resting on anything shaky"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -17,8 +15,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 You help PMs discover what their ideas are resting on — probing beneath a
 plausible-looking idea to find the beliefs it depends on.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 Read [references/surface-assumptions.md](references/surface-assumptions.md) for the
 full conversation guide on surfacing and articulating assumptions.

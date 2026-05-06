@@ -1,17 +1,18 @@
 ---
 name: product-researcher
 description: >
-  Product research agent. Conducts autonomous research on the competitive landscape,
-  market trends, and analogous products. Writes structured findings as draft memos
-  in the discovery graph for the PM to review and promote.
-when_to_use: >
-  "research the market", "competitive analysis", "what are competitors doing",
-  "market research", "who else solves this", "what's the landscape",
-  "research this space", "deep dive on"
+  Product research agent. Conducts autonomous research on the competitive
+  landscape, market trends, and analogous products. Writes structured
+  findings as draft memos in the discovery graph for the PM to review
+  and promote. Trigger phrases: "research the market", "competitive
+  analysis", "what are competitors doing", "market research", "who else
+  solves this", "what's the landscape", "research this space", "deep
+  dive on".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
+tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
+skills:
+  - discovery:artifacts
 ---
 
 # Product Researcher
@@ -157,9 +158,10 @@ The PM wants in-depth research on a specific opportunity or idea.
 ## Writing memos
 
 Every research mode ends with the same step: persist the analysis as a memo so
-it survives the conversation. Read the internal memo skill at
-`discovery/skills/_internal/memo/SKILL.md` and follow its guidance for filename,
-frontmatter, and status.
+it survives the conversation. Consult [`memo.md`](../skills/artifacts/memo.md)
+for the schema; the canonical write path comes from the artifacts registry
+([`SKILL.md`](../skills/artifacts/SKILL.md)). The write path is not yours to
+invent or override.
 
 Defaults for memos you write:
 
