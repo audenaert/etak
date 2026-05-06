@@ -1,19 +1,27 @@
----
-name: spike
-description: >
-  Create and update spikes — time-boxed investigations that produce findings,
-  proofs of concept, or ADRs. Internal skill called by plan, spec, and survey;
-  never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Spike
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update spikes — time-boxed investigations that reduce
 uncertainty and unblock decisions.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "Evaluate OAuth libraries for multi-provider support"
+type: spike
+status: planned  # planned | in_progress | complete
+time_box: "2 days"
+question: "Which OAuth library best supports Google + GitHub + SAML with minimal custom code?"
+decision_criteria: "Supports all 3 providers, <500 lines of glue code, active maintenance"
+outcome: null  # finding | proof_of_concept | adr
+result: null
+---
+```
+
+Body: investigation plan, what to look at, how to evaluate. After completion,
+add a Results section with what was found and the recommendation.
 
 ## What Makes a Good Spike
 
@@ -61,7 +69,7 @@ Don't quietly extend. Either:
 
 ### Write the artifact
 
-Generate a kebab-case filename. Write to `docs/development/spikes/`. Include
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Include
 frontmatter with `name`, `type: spike`, `status: planned`, `time_box`, `question`,
 `decision_criteria`, `outcome: null`, `result: null`. Body: investigation plan,
 what to look at, how to evaluate. Always show before writing.

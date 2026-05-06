@@ -1,26 +1,46 @@
----
-name: story
-description: >
-  Create, update, and refine stories — user-frame increments of value with testable
-  acceptance criteria. The primary implementation unit. Internal skill called by
-  plan, assess, build, and survey; never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Story
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create, update, and refine stories. A story describes a change from the
 **user's point of view** — what a persona wants, what capability they get, and what
 outcome they're after.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "User can sign in with Google"
+type: story
+status: draft
+parent: epic-oauth2-provider-integration
+children: []  # optional — tasks, only when decomposition helps
+workstream: workstream-backend-auth
+milestone: milestone-m1-google-oauth-login
+from_discovery: idea-modern-auth-flow   # optional — compliance traceability
+user_story: |
+  As an unauthenticated visitor who already uses Google Workspace,
+  I want to sign in using my Google account,
+  so that I don't have to remember a separate password for this product.
+acceptance_criteria:
+  - "Given an unauthenticated user, when they click 'Sign in with Google', then they are redirected to Google's OAuth consent screen"
+  - "Given a user who completes Google OAuth, when redirected back, then they are authenticated and see their dashboard"
+  - "Given a user who cancels the Google consent screen, when they return to the app, then they see a clear message and can retry"
+---
+```
+
+Body sections:
+
+1. **Context** — what user journey this fits into, why it matters now
+2. **User goals** — what the persona is actually trying to accomplish
+3. **Notes** — related capabilities, edge cases worth mentioning, links to spec
+4. **Out of scope** — explicitly what this story does *not* cover
 
 ## The User Frame
 
 Stories live in the language of the product, not the language of the system. They
 answer "what will the user be able to do?" — they do not describe technical work.
-Technical work that enables a story belongs in [tasks](../task/SKILL.md).
+Technical work that enables a story belongs in [tasks](task.md).
 
 Use the formulaic opener:
 
@@ -90,7 +110,7 @@ Not every story needs tasks. Break down when:
 
 For clear, single-PR stories, skip tasks. Direct implementation is honest.
 
-When breaking down, read [../task/SKILL.md](../task/SKILL.md) for the task shape.
+When breaking down, read [task.md](task.md) for the task shape.
 Tasks under a story should describe **technical changes**, not restatements of ACs.
 If a task description sounds like "do the thing the AC describes," it's not adding
 value — just implement the story.
@@ -106,38 +126,7 @@ value — just implement the story.
 
 ### Write the artifact
 
-Generate a kebab-case filename reflecting the user-facing name. Write to
-`docs/development/stories/`. Frontmatter:
-
-```yaml
----
-name: "User can sign in with Google"
-type: story
-status: draft
-parent: epic-oauth2-provider-integration
-children: []  # optional — tasks, only when decomposition helps
-workstream: workstream-backend-auth
-milestone: milestone-m1-google-oauth-login
-from_discovery: idea-modern-auth-flow   # optional — compliance traceability
-user_story: |
-  As an unauthenticated visitor who already uses Google Workspace,
-  I want to sign in using my Google account,
-  so that I don't have to remember a separate password for this product.
-acceptance_criteria:
-  - "Given an unauthenticated user, when they click 'Sign in with Google', then they are redirected to Google's OAuth consent screen"
-  - "Given a user who completes Google OAuth, when redirected back, then they are authenticated and see their dashboard"
-  - "Given a user who cancels the Google consent screen, when they return to the app, then they see a clear message and can retry"
----
-```
-
-Body sections:
-
-1. **Context** — what user journey this fits into, why it matters now
-2. **User goals** — what the persona is actually trying to accomplish
-3. **Notes** — related capabilities, edge cases worth mentioning, links to spec
-4. **Out of scope** — explicitly what this story does *not* cover
-
-Always show before writing.
+Generate a kebab-case filename reflecting the user-facing name and write to the canonical path in the artifacts registry. Use the frontmatter and body sections from the Schema above. Always show before writing.
 
 ## Failure Modes
 

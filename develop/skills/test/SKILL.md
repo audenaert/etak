@@ -9,8 +9,6 @@ when_to_use: >
   "write tests", "test this", "TDD", "test plan", "plan tests from ACs",
   "run tests", "flaky test", "debug test", "ordering dependency", "passes
   alone but fails together", "what tests do we need"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -21,8 +19,8 @@ Testing is strategy-first: understand what needs testing and why *before*
 writing code. Tests must be trustworthy — if they pass, the code works; if
 they fail, something is genuinely wrong.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the development graph
-and interaction guidelines.
+Read [model.md](../artifacts/model.md) for the work-graph rules and
+[guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 ## Your Stance
 

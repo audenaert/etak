@@ -1,20 +1,29 @@
----
-name: adr
-description: >
-  Create architecture decision records — immutable-after-acceptance records of
-  hard-to-reverse technical decisions. Internal skill called by spec and
-  architect; never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # ADR
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update architecture decision records. An ADR captures a
 *hard-to-reverse* technical decision so that a future reader can understand what
 was chosen, why, and what it commits the project to.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "ADR-001: Use passport.js for OAuth provider abstraction"
+type: adr
+status: proposed  # proposed | accepted | deprecated | superseded
+for: project-oauth2-migration
+superseded_by: null
+---
+```
+
+Body sections: Context (the forces that drove the choice), Decision (in plain
+language), Alternatives considered (what else, why rejected), Consequences
+(what this commits us to, good and bad).
+
+Filename: `adr-NNN-<kebab-slug>.md` where `NNN` is sequential project-wide.
+Check existing ADRs (and unmerged branches) to find the next integer.
 
 ## When to Write an ADR
 
@@ -79,7 +88,7 @@ supersedes the old one.
 
 ### Write the artifact
 
-Filename: `adr-NNN-kebab-case-slug.md`. Write to `docs/development/adrs/`.
+Filename: `adr-NNN-kebab-case-slug.md`, written to the canonical path in the artifacts registry.
 Include frontmatter with `name` (starting with "ADR-NNN:"), `type: adr`,
 `status: proposed`, `for` (project slug), `superseded_by: null`. Body:
 

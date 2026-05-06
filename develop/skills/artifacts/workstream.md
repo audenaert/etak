@@ -1,19 +1,28 @@
----
-name: workstream
-description: >
-  Create and update workstreams — parallel delivery tracks within a project, each
-  owning interface contracts with its neighbors. Internal skill called by plan;
-  never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Workstream
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update workstreams — parallel delivery tracks within a project,
 defined by boundaries, contracts, and integration points.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "Backend auth services"
+type: workstream
+project: project-oauth2-migration
+owner: null
+status: active  # active | blocked | complete
+interface_contracts:
+  - "POST /auth/token — returns JWT, consumed by frontend workstream"
+integration_points:
+  - milestone: milestone-m1-google-oauth-login
+    description: "Backend must serve /auth/google endpoint before frontend can integrate"
+---
+```
+
+Body: scope boundary, what's included, what's excluded, key decisions.
 
 ## What Makes a Good Workstream
 
@@ -56,7 +65,7 @@ Contracts evolve. When they change:
 
 ### Write the artifact
 
-Generate a kebab-case filename. Write to `docs/development/workstreams/`. Include
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Include
 frontmatter with `name`, `type: workstream`, `project`, `owner`, `status: active`,
 `interface_contracts` (list of human-readable contract statements),
 `integration_points` (list of `{milestone, description}`). Body: scope, inclusions,

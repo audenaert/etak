@@ -1,19 +1,33 @@
----
-name: spec
-description: >
-  Create and update technical specifications — grounded design documents for a
-  project, epic, or story. Internal skill called by the spec user skill and by
-  architect agent; never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
----
-
 # Spec
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update technical specifications. A spec is *grounded*: it
 references the actual codebase, not a hypothetical one.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "OAuth2 token management design"
+type: spec
+status: draft  # draft | review | approved | superseded
+for: project-oauth2-migration
+adrs: []
+---
+```
+
+Body sections (recommended):
+
+1. **Context** — what problem, what constraints, why now
+2. **Current state** — what exists in the codebase today, relevant files and patterns
+3. **Proposed approach** — the design, grounded in existing code
+4. **Alternatives considered** — what was rejected and why
+5. **Non-functional requirements** — performance, reliability, security, observability, scalability, accessibility
+6. **Adjacent opportunities** *(project-scale specs)* — roadmap work this design enables or simplifies
+7. **Migration & evolution** *(when applicable)* — how the system evolves; data migration paths if schema or contracts change
+8. **Open questions** — what still needs resolution
+9. **Risks** — what could go wrong, likelihood, impact, mitigation
 
 ## What Makes a Good Spec
 
@@ -38,16 +52,9 @@ Always read the code first. Before writing prose, at minimum:
 - Check how similar features are implemented today
 - Note the testing pattern used by neighbors
 
-Then draft the spec through the standard sections:
-
-1. **Context** — what problem, what constraints, why now
-2. **Current state** — what exists today, with concrete file references
-3. **Proposed approach** — the design, referring to the current state
-4. **Non-functional requirements** — performance, reliability, security,
-   operability
-5. **Alternatives considered** — what was rejected and why
-6. **Open questions** — what still needs resolution (flag for assess)
-7. **Risks** — what could go wrong
+Then draft the spec through the body sections listed in the Schema above.
+Adjacent Opportunities and Migration & Evolution are project-scale; skip
+them for story- or epic-scoped specs.
 
 ### Update an existing spec
 
@@ -72,15 +79,12 @@ the spec body so a future reader understands what changed.
 
 When the spec introduces a hard-to-reverse decision (framework choice, data
 model commitment, protocol selection, third-party integration that's expensive
-to swap), read [../adr/SKILL.md](../adr/SKILL.md) and create the ADR. Link it in
+to swap), read [adr.md](adr.md) and create the ADR. Link it in
 the spec's `adrs` field.
 
 ### Write the artifact
 
-Generate a kebab-case filename. Write to `docs/development/specs/`. Include
-frontmatter with `name`, `type: spec`, `status: draft`, `for` (project/epic/story
-slug), `adrs: []`. Body uses the seven sections above. Always show before
-writing.
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Use the frontmatter and body sections from the Schema above. Always show before writing.
 
 ## Failure Modes
 

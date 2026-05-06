@@ -1,18 +1,26 @@
----
-name: epic
-description: >
-  Create, update, and refine epics — themed groups of related stories that deliver
-  a coherent capability. Internal skill called by plan and survey; never invoked
-  directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Epic
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create, update, and refine epics — themed containers for related stories. An epic is big enough to need breakdown into stories, small enough to complete within a milestone or two.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "OAuth2 provider integration"
+type: epic
+status: draft  # draft | ready | in_progress | complete
+parent: project-oauth2-migration
+children:
+  - story-google-oauth-flow
+  - story-github-oauth-flow
+workstream: workstream-backend-auth
+milestone: milestone-m2-multi-provider
+---
+```
+
+Body: scope, acceptance criteria at the epic level.
 
 ## What Makes a Good Epic
 
@@ -44,7 +52,7 @@ Read [the core foundation](../core/SKILL.md) for schemas and interaction guideli
 
 ### Write the artifact
 
-Generate a kebab-case filename. Write to `docs/development/epics/`. Include
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Include
 frontmatter with `name`, `type: epic`, `status: draft`, `parent` (project),
 `children: []`, `workstream`, `milestone`. Body: scope, epic-level ACs, links to
 spec if one exists. Always show before writing.

@@ -1,19 +1,34 @@
----
-name: project
-description: >
-  Create, update, and refine projects — bounded deliverables that coordinate the work
-  of one or more workstreams toward a set of milestones. Internal skill called by
-  plan and survey; never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Project
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create, update, and refine projects — the primary coordination unit for
 development work.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "OAuth2 migration"
+type: project
+status: scoping  # scoping | planning | in_progress | complete | abandoned
+parent: null
+children:
+  - epic-oauth2-provider-integration
+  - epic-token-management
+workstreams:
+  - workstream-backend-auth
+  - workstream-frontend-auth
+milestones:
+  - milestone-m1-google-oauth-login
+  - milestone-m2-multi-provider
+from_discovery: idea-modern-auth-flow
+---
+```
+
+Body: project overview, goals, constraints, team. Adjacent artifacts (specs,
+ADRs, epics, workstreams, milestones) live at their own canonical paths and
+link via slugs in frontmatter — projects are a single file, not a directory.
 
 ## What Makes a Good Project
 
@@ -56,7 +71,7 @@ back via the plan skill for decomposition. The project's `workstreams` and
 
 ### Write the artifact
 
-Generate a kebab-case filename. Write to `docs/development/projects/`. Include
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Include
 frontmatter with `name`, `type: project`, `status: scoping`, `parent: null`,
 `children: []`, `workstreams: []`, `milestones: []`, `from_discovery` if applicable. Body: overview, goals, constraints, team, non-goals. Always show before
 writing.

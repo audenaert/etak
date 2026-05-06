@@ -1,20 +1,29 @@
----
-name: task
-description: >
-  Create and update tasks — engineering-frame units of technical work that enable
-  or support a story or epic. Tasks are optional and complement stories; they
-  don't duplicate them. Internal skill called by plan and build; never invoked
-  directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Task
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update tasks — units of **technical work** that enable or
 support a story or epic. Tasks describe changes to the *system*; stories describe
 changes to the *user's experience*.
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+
+## Schema
+
+```yaml
+---
+name: "Add Google OAuth callback handler to auth router"
+type: task
+status: todo
+parent: story-user-can-sign-in-with-google   # or an epic slug, for cross-story work
+workstream: workstream-backend-auth
+---
+```
+
+Body sections:
+
+1. **What changes** — concretely, at the level of files and interfaces
+2. **Why** — which story or epic this enables, or what technical constraint it lifts
+3. **Approach** — one-paragraph sketch; full design belongs in a spec
+4. **Open questions** — anything that needs resolving before or during the work
 
 ## The Engineering Frame
 
@@ -98,28 +107,7 @@ the body which stories depend on it.
 
 ### Write the artifact
 
-Generate a kebab-case filename describing the technical change. Write to
-`docs/development/tasks/`. Frontmatter:
-
-```yaml
----
-name: "Add Google OAuth callback handler to auth router"
-type: task
-status: todo
-parent: story-user-can-sign-in-with-google   # or an epic slug, for cross-story work
-workstream: workstream-backend-auth
----
-```
-
-Body sections:
-
-1. **What changes** — concretely, at the level of files and interfaces
-2. **Why** — which story or epic this enables, or what technical constraint it
-   lifts
-3. **Approach** — one-paragraph sketch; full design belongs in a spec
-4. **Open questions** — anything that needs resolving before or during the work
-
-Always show before writing.
+Generate a kebab-case filename describing the technical change and write to the canonical path in the artifacts registry. Use the frontmatter and body sections from the Schema above. Always show before writing.
 
 ## Failure Modes
 
@@ -129,7 +117,7 @@ Always show before writing.
   persona and outcome — should be promoted.
 - **Task that's really a spike.** It says "investigate X" or "figure out how to
   Y." Spikes are a separate artifact with a time-box and decision criteria. Use
-  [../spike/SKILL.md](../spike/SKILL.md).
+  [spike.md](spike.md).
 - **Ceremonial decomposition.** Six tasks under a one-PR story. Delete the tasks;
   just implement.
 - **Orphan task.** No parent story or epic. Either wire up or — if it's really

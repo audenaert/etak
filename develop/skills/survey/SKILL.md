@@ -7,15 +7,15 @@ when_to_use: >
   "where are we", "what's next", "what's blocked", "what's ready", "catch me up",
   "what should I work on", "state of development", "what's in flight", "look at
   the backlog", "what's stale"
-model: sonnet
-effort: medium
 allowed-tools: Read, Glob, Grep
 ---
 
 # Survey
 
-Read [the core foundation](../_internal/core/SKILL.md) for the development graph
-model, schemas, and interaction guidelines.
+Read [model.md](../artifacts/model.md) for the work-graph rules
+(typed links, lifecycles, readiness) and
+[guidelines.md](../artifacts/guidelines.md) for interaction posture
+(including the signal-priority list this skill leans on heavily).
 
 ## Your Stance
 
@@ -36,10 +36,10 @@ read them. You surface patterns; you don't prescribe actions.
 
 **How to respond:** Read the development graph. Present a concise summary, not a
 data dump. Lead with what's changed or what needs attention. Use the signal
-priority from the core guidelines: stalled in-progress stories → ready stories
-without a spec when the approach isn't obvious → stories with vague ACs → open
-spikes past their time-box → drafts that have stories building against them →
-integration contracts not acknowledged.
+priority from [guidelines.md](../artifacts/guidelines.md): stalled in-progress
+stories → ready stories without a spec when the approach isn't obvious →
+stories with vague ACs → open spikes past their time-box → drafts that have
+stories building against them → integration contracts not acknowledged.
 
 End with a specific recommendation: "The most impactful thing you could pick up
 right now is..."

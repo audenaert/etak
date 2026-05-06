@@ -1,19 +1,30 @@
----
-name: milestone
-description: >
-  Create and update milestones — sequenced project checkpoints that are thin,
-  end-to-end, and demo-able. Internal skill called by plan; never invoked directly
-  by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Milestone
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update milestones — sequenced project checkpoints that are
 thin, end-to-end, and demo-able.
 
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
+## Schema
+
+```yaml
+---
+name: "M1: Google OAuth login working end-to-end"
+type: milestone
+milestone_type: value  # value | integration | foundation
+project: project-oauth2-migration
+status: planned  # planned | in_progress | complete
+target_date: null
+workstream_deliverables:
+  - workstream: workstream-backend-auth
+    delivers: "Google OAuth endpoint, token issuance"
+  - workstream: workstream-frontend-auth
+    delivers: "Login button, token storage, auth state"
+demo_criteria: "User can click 'Sign in with Google' and land on authenticated dashboard"
+---
+```
+
+Body: what this milestone proves, what it enables, what it defers.
 
 ## What Makes a Good Milestone
 
@@ -56,7 +67,7 @@ Later milestones add capability. They should build on M1, not replace it.
 
 ### Write the artifact
 
-Generate a kebab-case filename. Write to `docs/development/milestones/`. Include
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Include
 frontmatter with `name`, `type: milestone`, `milestone_type`, `project`,
 `status: planned`, `target_date` (optional), `workstream_deliverables` (list of
 `{workstream, delivers}`), `demo_criteria`. Body: what it proves, what it enables,

@@ -115,7 +115,7 @@ docs/development/
   milestones/
 ```
 
-Same shape as discovery artifacts: markdown body with YAML frontmatter. The authoritative schema for every type is in [`develop/skills/_internal/core/references/schemas.md`](../../develop/skills/_internal/core/references/schemas.md).
+Same shape as discovery artifacts: markdown body with YAML frontmatter. The authoritative schema for each type lives in the corresponding per-type reference under [`develop/skills/artifacts/`](../../develop/skills/artifacts/) (e.g., `spec.md`, `adr.md`). Cross-cutting concerns — common fields, typed links, status lifecycles — are in [`model.md`](../../develop/skills/artifacts/model.md).
 
 ## The graph is a model, not a map
 

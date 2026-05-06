@@ -1,22 +1,9 @@
----
-name: work-item
-description: >
-  Create and update standalone work items — bugs, chores, and enhancements that
-  don't require the full project/epic hierarchy. Internal skill called
-  by survey and build; never invoked directly by users.
-user-invocable: false
-allowed-tools: Read, Write, Edit, Glob, Grep
----
-
 # Work Item
+
+Reference loaded by [develop:artifacts](SKILL.md). See [model.md](model.md) for the work graph: common fields, typed links, lifecycles, naming, readiness.
 
 You help create and update the three standalone work item types: **bug**, **chore**,
 **enhancement**. They share a common shape but differ by lifecycle and framing.
-
-Read [the core foundation](../core/SKILL.md) for schemas and interaction guidelines.
-
-All three live together in `docs/development/work-items/`. Distinguish them by the
-`type` field.
 
 ## Bug
 
@@ -95,7 +82,7 @@ Body: what it improves, why it matters.
 
 ## Writing the Artifact
 
-Generate a kebab-case filename. Write to `docs/development/work-items/`. Use the
+Generate a kebab-case filename and write to the canonical path in the artifacts registry. Use the
 schema for the appropriate type. Always show before writing.
 
 ## Failure Modes
