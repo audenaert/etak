@@ -8,8 +8,6 @@ when_to_use: >
   "scope this", "break this down", "decompose", "what are the workstreams",
   "sequence the milestones", "what are the dependencies", "pre-mortem",
   "what could go wrong", "plan the rollout", "how should we phase this"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -19,14 +17,17 @@ You help engineers turn fuzzy ambitions into executable plans. That means
 scoping (what are we doing), decomposing (into what parallel parts), sequencing
 (in what order) and stress-testing (what could go wrong).
 
-Read [the core foundation](../_internal/core/SKILL.md) for the development graph,
-schemas, and interaction guidelines. Key internal skills you'll call:
-[project](../_internal/project/SKILL.md),
-[epic](../_internal/epic/SKILL.md),
-[story](../_internal/story/SKILL.md),
-[workstream](../_internal/workstream/SKILL.md),
-[milestone](../_internal/milestone/SKILL.md),
-[spike](../_internal/spike/SKILL.md).
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an
+artifact — its registry has canonical paths and links to per-type guides.
+Relevant per-type references for plan work:
+[project.md](../artifacts/project.md),
+[epic.md](../artifacts/epic.md),
+[story.md](../artifacts/story.md),
+[workstream.md](../artifacts/workstream.md),
+[milestone.md](../artifacts/milestone.md),
+[spike.md](../artifacts/spike.md). For shared concerns (typed links,
+lifecycles, readiness), see [model.md](../artifacts/model.md); for
+interaction posture, see [guidelines.md](../artifacts/guidelines.md).
 
 ## Your Stance
 
@@ -59,7 +60,8 @@ Turning an idea or ask into a project or epic.
 - **Name constraints.** Deadlines, dependencies, team capacity, compliance.
 - **Trace the `from_discovery` link** when present. Compliance benefits.
 
-Invoke the appropriate internal skill to write the artifact (project/epic).
+Consult [project.md](../artifacts/project.md) or [epic.md](../artifacts/epic.md)
+for the schema, then write to the canonical path defined in the artifacts registry.
 
 ### 2. Decompose
 
@@ -74,8 +76,8 @@ Breaking a project into parallel workstreams and epics.
 - **Identify the epics within each workstream.** Not all ready, but identified.
 - **One owner per workstream.** Can defer, but should be named before M1.
 
-Invoke [workstream](../_internal/workstream/SKILL.md) and
-[epic](../_internal/epic/SKILL.md) to write artifacts.
+Consult [workstream.md](../artifacts/workstream.md) and
+[epic.md](../artifacts/epic.md) for the schemas, then write the artifacts.
 
 ### 3. Sequence
 
@@ -91,7 +93,7 @@ Ordering work into milestones that sequence delivery.
 - **Integration points.** Where do streams meet? Name those specifically —
   they're the risk.
 
-Invoke [milestone](../_internal/milestone/SKILL.md) to write artifacts.
+Consult [milestone.md](../artifacts/milestone.md) for the schema, then write the artifacts.
 
 ### 4. Pre-mortem
 
@@ -108,7 +110,7 @@ Stress-testing the plan before it's committed.
   planning, not pessimism.
 
 Capture the pre-mortem in the project or milestone body under a **Risks**
-section. If a risk warrants investigation, spawn a [spike](../_internal/spike/SKILL.md).
+section. If a risk warrants investigation, consult [spike.md](../artifacts/spike.md) and create a spike.
 
 ## Common Patterns
 

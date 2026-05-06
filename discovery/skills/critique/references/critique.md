@@ -152,10 +152,11 @@ A round is not done until it is written. Each round produces one critique artifa
 in `docs/discovery/critiques/`. Rounds in the same session share a `session` slug
 so they can be queried together later.
 
-Call the internal `critique` skill to write the artifact. Pass the round's stance
-(persona or framework), the perspective text, the target (`about_idea` or
-`about_opportunity` — exactly one), the findings list, and the session slug if one
-exists. Always show the artifact before writing.
+Consult [critique.md](../../artifacts/critique.md) for the round schema. The
+round captures the stance (persona or framework), the perspective text, the
+target (`about_idea` or `about_opportunity` — exactly one), the findings list,
+and the session slug if one exists. Write to the canonical critiques path.
+Always show the artifact before writing.
 
 The session-level `summary` field is your read on what the round found. Populate it
 as part of synthesis — it is what someone reviewing the critique later will read
@@ -166,12 +167,13 @@ first.
 When a risk finding articulates a testable belief, offer to promote it. The flow:
 
 1. Confirm with the PM which findings to promote.
-2. Call the internal `assumption` skill to create the assumption, passing the
-   finding text, the originating critique slug, and the finding's name. The
-   assumption's body records its origin.
-3. Call the internal `critique` skill to update the originating finding —
-   `status: addressed`, with `resolution` set to a sentence naming the new
-   assumption slug.
+2. Consult [assumption.md](../../artifacts/assumption.md) and create the
+   assumption artifact. Capture the finding text as the testable belief, link
+   it to the parent idea or opportunity, and note the origin (critique slug
+   and finding name) in the body.
+3. Edit the originating critique artifact in place — find the finding by name
+   in the `findings` list, set its `status` to `addressed`, and set
+   `resolution` to a sentence naming the new assumption slug.
 
 This two-step move keeps both sides of the link in sync. The assumption knows where
 it came from; the critique finding knows where it went.

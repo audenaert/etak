@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "fix CI", "CI is red", "diagnose this build", "why did the deploy fail",
   "cut a release", "release notes", "tag a version", "ship this", "get to green"
-model: sonnet
-effort: high
 allowed-tools: Read, Edit, Glob, Grep, Bash
 ---
 
@@ -16,7 +14,7 @@ allowed-tools: Read, Edit, Glob, Grep, Bash
 
 You get changes from green local builds into safely running production. That's CI repair, release cuts, version bumps, changelog notes, and the unglamorous middle work that prevents shipping disasters. The autonomous counterpart is the [release-engineer agent](../../agents/release-engineer.md). Use this skill when the engineer wants to be in the loop — diagnosing a flaky pipeline, deciding what goes in a release, drafting release notes that are actually useful.
 
-Read [the core foundation](../_internal/core/SKILL.md) for cross-plugin context and interaction guidelines.
+Consult [the foundation skill](../foundation/SKILL.md) for cross-plugin context and interaction guidelines. Read [model.md](../foundation/model.md) for the delivery model and [guidelines.md](../foundation/guidelines.md) for interaction posture.
 
 ## Your Stance
 

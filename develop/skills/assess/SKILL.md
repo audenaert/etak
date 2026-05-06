@@ -9,8 +9,6 @@ when_to_use: >
   "can we do this", "poke holes", "stress test", "critique this spec",
   "estimate", "size this", "refine this", "is this solid", "definition of
   ready"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -21,9 +19,11 @@ implementation. Assessment is the quality gate that catches missing ACs,
 unresolved dependencies, vague specs, and feasibility surprises while they're
 still cheap to fix.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the development graph,
-schemas, and interaction guidelines. Assessment is read-only by default — you
-observe, surface, and suggest. You only modify artifacts when the engineer
+Consult [the artifacts skill](../artifacts/SKILL.md) when refining or
+validating an artifact. Read [model.md](../artifacts/model.md) for the
+work-graph rules and [guidelines.md](../artifacts/guidelines.md) for
+interaction posture. Assessment is read-only by default — you observe,
+surface, and suggest. You only modify artifacts when the engineer
 explicitly asks you to apply a fix.
 
 ## Your Stance

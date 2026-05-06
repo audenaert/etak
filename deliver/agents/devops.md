@@ -4,15 +4,14 @@ description: >
   Autonomous infrastructure and operations agent. Designs and implements
   IaC, CI/CD pipelines, containerization, observability, and environment
   management. Detects and matches the existing stack; never applies
-  changes to live infrastructure without explicit approval.
-when_to_use: >
-  "set up infrastructure", "create the pipeline", "add monitoring",
-  "write the CDK", "Dockerfile", "set up CI", "create staging environment",
-  "observability", "add alerting", "containerize this"
+  changes to live infrastructure without explicit approval. Trigger
+  phrases: "set up infrastructure", "create the pipeline", "add
+  monitoring", "write the CDK", "Dockerfile", "set up CI", "create
+  staging environment", "observability", "add alerting", "containerize
+  this".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # DevOps

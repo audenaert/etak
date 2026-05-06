@@ -19,7 +19,7 @@ read a database dump. Lead with the summary table, then the tree. When the space
 large, summarize and offer to drill in rather than flooding the conversation.
 
 **Every display carries a recommendation.** After showing the graph, say where you'd
-focus and why. Use the signal priority order from the core guidelines: stale experiments,
+focus and why. Use the signal priority order from [`guidelines.md`](../../artifacts/guidelines.md): stale experiments,
 high-risk untested assumptions, unsounded ideas, sparse opportunity spaces, validated
 ideas ready to scope. Present 1-3 recommendations, leading with the single most
 impactful action.

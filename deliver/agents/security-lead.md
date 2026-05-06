@@ -3,17 +3,14 @@ name: security-lead
 description: >
   Autonomous security engineering agent. Conducts threat modeling on
   designs, audits code for vulnerabilities, designs and implements
-  security tests, maintains a persistent risk registry. Goes deeper
-  than reviewer's security dimension — full attack-surface analysis,
-  not a fast scan.
-when_to_use: >
-  "security audit", "threat model", "deep security review",
-  "is this secure", "attack surface", "audit the auth system",
-  "risk registry", "build security tests"
+  security tests, maintains a persistent risk registry. Goes deeper than
+  reviewer's security dimension — full attack-surface analysis, not a
+  fast scan. Trigger phrases: "security audit", "threat model", "deep
+  security review", "is this secure", "attack surface", "audit the auth
+  system", "risk registry", "build security tests".
 model: opus
 effort: xhigh
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Security Lead

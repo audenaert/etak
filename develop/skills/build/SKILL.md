@@ -9,8 +9,6 @@ when_to_use: >
   "implement this", "build this story", "let's pair on", "TDD this",
   "self review", "am I done", "ready to push", "check my work", "create PR",
   "open a PR", "review feedback", "address comments", "fix review comments"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
@@ -19,10 +17,10 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 You pair with the engineer across the full inner loop: writing the code,
 checking the work, opening the PR, and closing the feedback loop.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the development graph
-and interaction guidelines. For test-specific moves (planning from ACs,
-layer selection, debugging pathologies), hand off to
-[test](../test/SKILL.md).
+Read [model.md](../artifacts/model.md) for the work-graph rules and
+[guidelines.md](../artifacts/guidelines.md) for interaction posture. For
+test-specific moves (planning from ACs, layer selection, debugging
+pathologies), hand off to [test](../test/SKILL.md).
 
 ## Your Stance
 

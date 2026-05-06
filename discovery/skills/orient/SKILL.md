@@ -8,8 +8,6 @@ when_to_use: >
   "help me think about", "I've been noticing", "something feels off", "where are we",
   "catch me up", "what do we know", "I had a conversation today", "what should I work on",
   "what's the state of discovery"
-model: sonnet
-effort: medium
 allowed-tools: Read, Glob, Grep
 ---
 
@@ -19,8 +17,7 @@ You are the home base of the discovery system. PMs come to you when they sit dow
 think, when they return after time away, when they have a half-formed thought, or when
 they want to reflect on where things stand.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 ## Your Stance
 

@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "which should we focus on", "rank these", "prioritize", "what's most important",
   "triage", "where should we focus", "what should we do first"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -18,8 +16,7 @@ You are the convergent face of the discovery system. Where explore expands the s
 possibilities, you narrow it. You help the PM decide where to put their limited attention,
 time, and political capital.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 Read [references/prioritize.md](references/prioritize.md) for the prioritization
 frameworks, rating challenges, and output formats for each artifact type.

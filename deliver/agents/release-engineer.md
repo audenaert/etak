@@ -1,18 +1,16 @@
 ---
 name: release-engineer
 description: >
-  Autonomous release engineering agent. Diagnoses CI/CD failures from logs,
-  implements fixes, verifies green; cuts releases — confirms scope, bumps
-  version, drafts release notes in the user's frame, tags. Pragmatic about
-  shipping, but doesn't paper over real failures.
-when_to_use: >
-  "fix CI", "ci is red", "diagnose this build", "build is broken",
-  "why did the deploy fail", "cut a release", "release notes",
-  "tag a version", "ship this", "get to green"
+  Autonomous release engineering agent. Diagnoses CI/CD failures from
+  logs, implements fixes, verifies green; cuts releases — confirms scope,
+  bumps version, drafts release notes in the user's frame, tags.
+  Pragmatic about shipping, but doesn't paper over real failures. Trigger
+  phrases: "fix CI", "ci is red", "diagnose this build", "build is
+  broken", "why did the deploy fail", "cut a release", "release notes",
+  "tag a version", "ship this", "get to green".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Release Engineer

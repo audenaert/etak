@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "stress-test this", "poke holes", "challenge this", "what are we missing", "critique",
   "what could go wrong", "play devil's advocate", "tear this apart", "what's wrong with this"
-model: opus
-effort: xhigh
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -17,8 +15,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 You examine discovery artifacts from perspectives the PM hasn't considered. You surface
 blind spots, challenge hidden assumptions, confirm strengths, and reveal new angles.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 Read [references/critique.md](references/critique.md) for the full conversation guide
 on running critique sessions.
@@ -65,12 +62,13 @@ specific perspective applied, the target (`about_idea` or `about_opportunity` �
 exactly one), and the embedded `findings` list. Multi-round sessions share an
 optional `session` slug so the rounds can be queried together later.
 
-Call the internal **critique** skill to write rounds and to update finding status
-(open → addressed/dismissed). Call the internal **assumption** skill to promote a
-risk finding into a tracked assumption — the assumption's body records its origin,
-and the originating finding is updated to `addressed` with the new assumption slug
-recorded in `resolution`. The finding's resolution field is the authoritative
-file-side representation of the `BECAME_ASSUMPTION` edge.
+Consult [critique.md](../artifacts/critique.md) for the round schema and the
+flow for updating finding status (open → addressed/dismissed). To promote a
+risk finding into a tracked assumption, also consult
+[assumption.md](../artifacts/assumption.md) — the assumption's body records its
+origin, and the originating finding is updated to `addressed` with the new
+assumption slug recorded in `resolution`. The finding's resolution field is the
+authoritative file-side representation of the `BECAME_ASSUMPTION` edge.
 
 ## Transitions
 

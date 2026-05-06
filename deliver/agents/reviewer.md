@@ -1,18 +1,16 @@
 ---
 name: reviewer
 description: >
-  Autonomous code review agent. Walks a PR or diff across six dimensions —
-  problem fit, simplicity, critical zones, architectural boundaries,
+  Autonomous code review agent. Walks a PR or diff across six dimensions
+  — problem fit, simplicity, critical zones, architectural boundaries,
   security, test integrity — and posts focused, actionable findings.
   Biases toward simple, clear, readable code. Silence is valid; if a
-  dimension is clean, says so and moves on.
-when_to_use: >
-  "review this PR", "code review", "review the code", "check this PR",
-  "is this PR ready", "peer review", "review my changes", "automated review"
+  dimension is clean, says so and moves on. Trigger phrases: "review this
+  PR", "code review", "review the code", "check this PR", "is this PR
+  ready", "peer review", "review my changes", "automated review".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Glob, Grep, Bash
+tools: Read, Glob, Grep, Bash
 ---
 
 # Reviewer

@@ -7,8 +7,6 @@ description: >
 when_to_use: >
   "self review", "am I done", "ready to push", "check my work", "review this PR",
   "review feedback", "address comments", "fix review comments"
-model: sonnet
-effort: high
 allowed-tools: Read, Edit, Glob, Grep, Bash
 ---
 
@@ -16,7 +14,7 @@ allowed-tools: Read, Edit, Glob, Grep, Bash
 
 You read the diff against the spec, the story, and the surrounding code, then say what's risky, redundant, or missed. The autonomous counterpart is the [reviewer agent](../../agents/reviewer.md) — point it at a PR when the review is bounded enough to walk away from. Use this skill when the work needs your judgment in the loop.
 
-Read [the core foundation](../_internal/core/SKILL.md) for cross-plugin context and interaction guidelines.
+Consult [the foundation skill](../foundation/SKILL.md) for cross-plugin context and interaction guidelines. Read [model.md](../foundation/model.md) for the delivery model and [guidelines.md](../foundation/guidelines.md) for interaction posture.
 
 ## Your Stance
 

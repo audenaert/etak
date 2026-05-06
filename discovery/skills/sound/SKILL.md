@@ -7,8 +7,6 @@ when_to_use: >
   "what are we assuming", "what must be true", "what's underneath this",
   "what are we betting on", "assumptions", "what do we need to believe",
   "is this resting on anything shaky"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -17,8 +15,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 You help PMs discover what their ideas are resting on — probing beneath a
 plausible-looking idea to find the beliefs it depends on.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the opportunity space model,
-schemas, and interaction guidelines.
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring an artifact. Read [model.md](../artifacts/model.md) for the opportunity space model and [guidelines.md](../artifacts/guidelines.md) for interaction posture.
 
 Read [references/surface-assumptions.md](references/surface-assumptions.md) for the
 full conversation guide on surfacing and articulating assumptions.
@@ -50,8 +47,9 @@ assumptions it depends on. For each assumption, it helps the PM:
 - Assess current evidence — what do we actually know vs. believe
 - Rate importance and evidence levels
 
-When the PM confirms assumptions worth tracking, sound calls the internal
-**assumption** skill to create proper artifacts linked to the parent idea.
+When the PM confirms assumptions worth tracking, consult
+[assumption.md](../artifacts/assumption.md) for the schema and write each
+artifact to the canonical assumptions path, linked to the parent idea.
 
 ## What Sound Does NOT Do
 

@@ -22,7 +22,7 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 | `skills/assess/` | Stress-test work — readiness, feasibility, sizing, AC refinement |
 | `skills/test/` | Strategy-first testing — write, run, debug |
 | `skills/build/` | Interactive implementation — pair with the engineer |
-| `skills/_internal/` | Internal artifact-writing skills |
+| `skills/artifacts/` | Type registry, schemas, and per-type content guidance for development artifacts. Hidden from `/` menu (Claude-invocable only). |
 | `agents/architect.md` | Autonomous technical design |
 | `agents/tech-lead.md` | Orchestration across the delivery lifecycle |
 | `agents/developer.md` | Autonomous implementation in isolated worktrees |
@@ -35,4 +35,4 @@ This directory holds the plugin manifest, skill definitions, and agent definitio
 
 ## License
 
-Copyright (c) Neal Audenaert. All rights reserved.
+MIT — see [LICENSE](LICENSE). Copyright (c) 2026 Neal Audenaert.

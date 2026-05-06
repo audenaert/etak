@@ -168,8 +168,9 @@ Meet people where they are.
 
 ## Transitions
 
-- PM wants to save items from the session --> call internal artifact skills (objective,
-  opportunity, idea) to write to the graph
+- PM wants to save items from the session --> consult the per-type references in
+  the artifacts skill (objective.md, opportunity.md, idea.md) and write to the
+  canonical paths
 - PM wants to choose among generated options --> suggest **prioritize**
 - PM wants to stress-test a specific idea --> suggest **critique**
 - PM wants to examine what an idea assumes --> suggest **sound**

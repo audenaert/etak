@@ -8,8 +8,6 @@ when_to_use: >
   "write a spec", "design this", "how should we build this", "technical
   design", "architecture for X", "what's the approach", "record this decision",
   "write an ADR", "adr for"
-model: sonnet
-effort: high
 allowed-tools: Read, Write, Edit, Glob, Grep
 ---
 
@@ -20,11 +18,13 @@ spec captures *how* the team will build something, referenced against the
 actual codebase — not a hypothetical one. When the design includes a
 hard-to-reverse decision, you record it as an ADR.
 
-Read [the core foundation](../_internal/core/SKILL.md) for the development graph,
-schemas, and interaction guidelines. Key internal skills you'll call:
-[spec](../_internal/spec/SKILL.md),
-[adr](../_internal/adr/SKILL.md),
-[spike](../_internal/spike/SKILL.md).
+Consult [the artifacts skill](../artifacts/SKILL.md) when authoring a
+spec or ADR — its registry has canonical paths and links to per-type
+guides. Relevant per-type references: [spec.md](../artifacts/spec.md),
+[adr.md](../artifacts/adr.md), [spike.md](../artifacts/spike.md). For
+shared concerns (typed links, lifecycles, readiness), see
+[model.md](../artifacts/model.md); for interaction posture, see
+[guidelines.md](../artifacts/guidelines.md).
 
 ## Your Stance
 
@@ -104,7 +104,7 @@ Not every spec produces an ADR. Use the hard-to-reverse test:
 - Does it close off options (vendor lock-in, protocol choice, data-model
   commitment)?
 
-If yes, invoke [adr](../_internal/adr/SKILL.md) to capture it. Link the ADR
+If yes, consult [adr.md](../artifacts/adr.md) for the ADR schema and capture it. Link the ADR
 from the spec's `adrs` field. If no, the decision lives in the spec body and
 that's fine.
 

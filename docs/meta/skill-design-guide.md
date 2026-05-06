@@ -27,12 +27,14 @@ If a skill or agent drifts from this posture — e.g., becomes a silent automato
 ├── .claude-plugin/plugin.json       # manifest (Claude Code plugin schema)
 ├── README.md                        # overview + relationship to other etak plugins
 ├── skills/
-│   ├── <skill>/
+│   ├── <skill>/                     # user-facing skills (auto-discoverable)
 │   │   ├── SKILL.md                 # the prompt (frontmatter + body)
 │   │   └── references/              # on-demand supporting docs
-│   └── _internal/
-│       ├── core/                    # shared foundation (schemas, guidelines)
-│       └── <artifact>/              # per-artifact writing skills
+│   └── artifacts/                   # the artifact knowledge layer (Claude-invocable, hidden from menu)
+│       ├── SKILL.md                 # type registry + path discipline + authoring flow
+│       ├── model.md                 # the work graph: common fields, typed links, lifecycles, naming, readiness
+│       ├── guidelines.md            # interaction posture
+│       └── <type>.md                # per-type content: schema + prose + moves + failure modes
 └── agents/
     └── <agent>.md                   # single-file agent (frontmatter + body)
 ```
@@ -40,7 +42,9 @@ If a skill or agent drifts from this posture — e.g., becomes a silent automato
 Conventions worth internalizing:
 
 - Plugin name in the manifest matches the directory name (e.g. directory `discovery/` ↔ name `discovery`) and the entry in `.claude-plugin/marketplace.json`.
-- User-facing skills live at the top of `skills/`. Internal skills (artifact writers, shared foundation) live under `skills/_internal/` and set `user-invocable: false`.
+- User-facing skills live directly under `skills/`. Every immediate subdirectory of `skills/` must contain a `SKILL.md` (the Claude Code plugin spec treats each one as a skill, and strict validators reject directories without one).
+- Artifact knowledge — type registry, per-type schemas and content guides — lives in `skills/artifacts/` as a single `user-invocable: false` skill with supporting files. The skill's `SKILL.md` body is the type registry (artifact name → canonical path → reference file → when to use). Per-type guidance is in sibling `<type>.md` files (each self-contained: schema + prose + moves + failure modes), loaded on demand. Cross-cutting concerns sit alongside as `model.md` (the work graph: common fields, typed links, lifecycles, naming, readiness) and `guidelines.md` (interaction posture).
+- The artifacts skill is loaded only when authoring a new artifact or resolving the type system. Skills doing simple reads (get/list/find against the artifact filesystem) should not load it.
 - A skill's `references/` directory is loaded on demand — put long-form guidance there, not in `SKILL.md`.
 
 ## Anatomy of a skill
@@ -196,11 +200,11 @@ Start from the minimum:
 
 **The forbidden combination:** `Write, Edit` on an agent whose body explicitly says "you do not modify the graph." That's a contradiction the installer can't catch but a careful reviewer should.
 
-### G9. The core skill is a table of contents
+### G9. The artifacts SKILL.md is a dispatcher, not a textbook
 
-`_internal/core/SKILL.md` should be navigation — what references exist, what artifact skills are available, how composition works. The substantive content lives in `references/`. If the core skill grows past ~40 lines, extract more into references.
+`skills/artifacts/SKILL.md` should be navigation: the type registry table (artifact → canonical path → reference file → when), the path-discipline rule, and the authoring flow. The substantive per-type content lives in sibling `<type>.md` files (each self-contained: schema + prose + moves + failure modes); cross-cutting concerns live in `model.md` and `guidelines.md`. Keep the SKILL.md body short — it loads every time the skill is invoked.
 
-Loading three big references on every skill invocation is wasteful. The core skill should let the model pull the specific reference it needs — `concept.md` for the model, `schemas.md` for writing artifacts, `guidelines.md` for interaction posture.
+Loading every per-type reference on every invocation is wasteful. The dispatcher should let the model pull only the specific reference it needs for the artifact at hand.
 
 ### G10. Ground in the material before proposing
 

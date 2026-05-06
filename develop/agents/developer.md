@@ -6,15 +6,15 @@ description: >
   For features: reads requirements, plans, TDD development, creates PR.
   For bugs: reproduces, diagnoses root cause, writes regression test, fixes,
   creates PR. For spikes: investigates within a time box, produces a
-  finding, PoC, or ADR recommendation.
-when_to_use: >
-  "implement this", "build this", "code this up", "start work on",
-  "develop this story", "pick up this story", "fix this bug",
-  "run this spike", "investigate this", "implement and submit"
+  finding, PoC, or ADR recommendation. Trigger phrases: "implement this",
+  "build this", "code this up", "start work on", "develop this story",
+  "pick up this story", "fix this bug", "run this spike", "investigate
+  this", "implement and submit".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+skills:
+  - develop:artifacts
 ---
 
 # Developer
@@ -165,12 +165,18 @@ discover anything that changes the criteria themselves?
 
 Produce the result:
 - **Finding** — clear answer, evidence, tradeoffs, recommendation, impact
-  on blocked work
+  on blocked work. Lives in the spike's body when closing it out.
 - **Proof of concept** — working code in the worktree + documentation of
   what it demonstrates and what would need to change for production
-- **ADR draft** — context, decision, alternatives, consequences
+- **ADR draft** — context, decision, alternatives, consequences. When
+  drafting an ADR, consult [`adr.md`](../skills/artifacts/adr.md) for the
+  schema; the canonical write path and project-wide sequential numbering
+  come from the artifacts registry ([`SKILL.md`](../skills/artifacts/SKILL.md)).
+  Do not invent paths or numbering.
 
-Update the spike: `status: complete`, add `result` and Results section.
+Update the spike: `status: complete`, add `result` and Results section. The spike
+artifact stays at its existing path under `docs/development/spikes/` —
+see [`skills/artifacts/spike.md`](../skills/artifacts/spike.md).
 
 **Investigation mode does NOT create a PR.** Spikes produce findings, not
 shipped code. PoC code stays in the worktree for reference.

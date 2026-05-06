@@ -5,14 +5,12 @@ description: >
   match the current state of the codebase — API docs, architectural
   diagrams, end-user guides, screenshots. Detects existing conventions
   before writing. Reports what was updated and what needs manual action.
-when_to_use: >
-  "update the docs", "document this feature", "API docs are stale",
-  "take screenshots", "update the user guide", "doc audit",
-  "documentation review", "docs for this PR"
+  Trigger phrases: "update the docs", "document this feature", "API docs
+  are stale", "take screenshots", "update the user guide", "doc audit",
+  "documentation review", "docs for this PR".
 model: sonnet
 effort: high
-context: fork
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Tech Writer
