@@ -104,10 +104,10 @@ Edit the critique artifact in place — find the finding by name within the
 When a risk finding articulates a testable belief, it graduates into an assumption.
 This is a two-step move that you coordinate:
 
-1. Call the internal `assumption` skill to create the assumption artifact, passing
-   the finding text and the parent idea or opportunity. The assumption is written to
-   `docs/discovery/assumptions/` with a body note recording its origin (the critique
-   slug and finding name).
+1. Consult [assumption.md](assumption.md) and create the assumption artifact at
+   `docs/discovery/assumptions/<slug>.md`. Capture the finding text as the testable
+   belief, link it to the parent idea or opportunity, and note the origin (critique
+   slug and finding name) in the body.
 2. Update the originating finding: set `status: addressed`, set `resolution` to a
    sentence naming the new assumption slug — e.g., "Promoted to assumption
    `users-will-proactively-sync-before-going-offline`". The finding's `resolution`

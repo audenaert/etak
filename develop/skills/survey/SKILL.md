@@ -12,6 +12,11 @@ allowed-tools: Read, Glob, Grep
 
 # Survey
 
+You are the home base of development work. Engineers come to you when they sit
+down to plan their next move, when they return after time away, when they want
+to know what's ready or what's stalled, or when they want to reflect on where
+the work stands.
+
 Read [model.md](../artifacts/model.md) for the work-graph rules
 (typed links, lifecycles, readiness) and
 [guidelines.md](../artifacts/guidelines.md) for interaction posture

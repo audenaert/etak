@@ -134,8 +134,9 @@ single testable belief underlying a lot of your thinking."
 
 ## Creating Artifacts
 
-When the PM confirms assumptions worth tracking, create assumption artifacts using
-the internal **assumption** skill. Each artifact gets:
+When the PM confirms assumptions worth tracking, consult
+[assumption.md](../../artifacts/assumption.md) for the schema and write each
+artifact to the canonical assumptions path. Each artifact gets:
 - A clear testable belief as the name
 - The appropriate category
 - Importance and evidence ratings

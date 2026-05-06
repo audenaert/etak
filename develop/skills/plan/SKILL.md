@@ -60,7 +60,8 @@ Turning an idea or ask into a project or epic.
 - **Name constraints.** Deadlines, dependencies, team capacity, compliance.
 - **Trace the `from_discovery` link** when present. Compliance benefits.
 
-Invoke the appropriate internal skill to write the artifact (project/epic).
+Consult [project.md](../artifacts/project.md) or [epic.md](../artifacts/epic.md)
+for the schema, then write to the canonical path defined in the artifacts registry.
 
 ### 2. Decompose
 

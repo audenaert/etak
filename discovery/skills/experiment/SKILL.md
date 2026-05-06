@@ -47,9 +47,10 @@ just doing stuff and hoping to learn.
 
 ## Writing Artifacts
 
-Experiment calls the internal **experiment-record** skill to write experiment artifacts.
-When an experiment completes, it calls the internal **assumption** skill to update
-assumption status based on results.
+Consult [experiment-record.md](../artifacts/experiment-record.md) for the schema
+and write experiment artifacts to the canonical path. When an experiment completes,
+also consult [assumption.md](../artifacts/assumption.md) and edit the tested
+assumption's status and evidence in place to reflect what you learned.
 
 Always show the PM what you plan to write or update before doing it.
 

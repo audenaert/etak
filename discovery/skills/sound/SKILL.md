@@ -47,8 +47,9 @@ assumptions it depends on. For each assumption, it helps the PM:
 - Assess current evidence — what do we actually know vs. believe
 - Rate importance and evidence levels
 
-When the PM confirms assumptions worth tracking, sound calls the internal
-**assumption** skill to create proper artifacts linked to the parent idea.
+When the PM confirms assumptions worth tracking, consult
+[assumption.md](../artifacts/assumption.md) for the schema and write each
+artifact to the canonical assumptions path, linked to the parent idea.
 
 ## What Sound Does NOT Do
 

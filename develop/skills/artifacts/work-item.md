@@ -88,7 +88,8 @@ schema for the appropriate type. Always show before writing.
 ## Failure Modes
 
 - Bug with no reproduction — it's a hypothesis; say so.
-- Enhancement that's really a story — promote it. Run it through the story skill.
+- Enhancement that's really a story — promote it. Reframe as a story and consult
+  [story.md](story.md) for the schema.
 - Chore dumping ground — "cleanup sprint" full of unscoped chores. Push for
   specificity.
 - "Bug" that's really a feature request — reframe as enhancement.

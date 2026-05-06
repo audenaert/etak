@@ -1,10 +1,11 @@
 ---
 name: foundation
 description: >
-  Shared foundation for delivery skills — delivery model (the six phases),
-  cross-plugin context (how delivery work consumes development and discovery
-  artifacts), and interaction posture. Load when starting delivery work; for
-  ongoing posture see guidelines.md directly.
+  Loaded by deliver skills for the delivery model and interaction posture.
+  Consult model.md for the six phases, skill ↔ agent pairing, and cross-plugin
+  context (how delivery consumes development and discovery artifacts). Consult
+  guidelines.md for ongoing interaction posture: thinking partner, ground in
+  reality, signals to surface, anti-patterns, cross-plugin fallbacks.
 user-invocable: false
 allowed-tools: Read, Glob, Grep
 ---

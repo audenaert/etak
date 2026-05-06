@@ -45,11 +45,12 @@ producing opportunities, ideas, and sub-opportunities across different stances.
 
 Explore generates options but does not own artifact creation. When the PM wants to save
 something from a brainstorming session -- capture an idea, define an opportunity, record
-an objective -- call the appropriate internal artifact skill:
+an objective -- consult the matching per-type reference and write to the canonical path
+defined in the artifacts registry:
 
-- **objective** (../artifacts/objective) -- when the PM identifies a new strategic goal
-- **opportunity** (../artifacts/opportunity) -- when a brainstormed opportunity is worth keeping
-- **idea** (../artifacts/idea) -- when a brainstormed idea should be saved as a draft
+- [objective.md](../artifacts/objective.md) -- when the PM identifies a new strategic goal
+- [opportunity.md](../artifacts/opportunity.md) -- when a brainstormed opportunity is worth keeping
+- [idea.md](../artifacts/idea.md) -- when a brainstormed idea should be saved as a draft
 
 Always confirm before saving: "Want me to save these as discovery artifacts? I'll create
 files for: [list]." Show the artifact content before writing it to the graph.
