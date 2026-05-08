@@ -74,6 +74,7 @@ Breaking a project into parallel workstreams and epics.
   others — API shape, data contract, protocol. "We'll figure it out" is where
   parallel plans die.
 - **Identify the epics within each workstream.** Not all ready, but identified.
+- **Stories under epics emerge from specs.** When an epic has a spec, follow the [Spec-driven story creation](#spec-driven-story-creation) pattern below. When it doesn't yet, defer story creation until the spec exists — guessing stories without design grounding produces vague ACs that need rework once the spec lands.
 - **One owner per workstream.** Can defer, but should be named before M1.
 
 Consult [workstream.md](../artifacts/workstream.md) and
@@ -126,6 +127,26 @@ the project.
 The engineer says "this epic is getting big." Look at its stories. Are there
 themes that could split into two epics? Is one story actually three stories?
 Often the answer is there in the existing artifacts; plan surfaces it.
+
+### Spec-driven story creation
+
+The architect has produced a spec for an epic; you need to create the stories that implement it. The spec describes *how to build*; you extract *what to build for whom*.
+
+Process:
+
+1. **Read the spec — especially scenarios and use cases.** The spec describes user actions in scenarios ("when a user creates an idea, the CLI...") and use cases that motivate the design. These are your source. The spec does NOT contain `## Story N` sections — that's an architect-bounds violation. You're inferring stories from the design narrative.
+
+2. **Identify user-facing units.** Each distinct user goal that the design serves is a candidate story. Group related goals if they form one vertical slice; split if they're independent.
+
+3. **Pick the right granularity.** A story is one vertical slice of user value — typically one PR's worth, with 3–5 testable ACs. If you're writing 20 ACs, split. If you're writing "user clicks button," it's too small. See [story.md](../artifacts/story.md) for the full sizing rules.
+
+4. **Draft ACs from the spec's behavior description.** The spec says "when X happens, the system does Y" — translate to Given/When/Then form. Don't invent ACs; ground them in the spec's described behavior. If a behavior the spec doesn't address turns out to matter, that's a signal to feed back to the architect, not to silently fill in.
+
+5. **Cross-link via `from_spec`.** Each story's frontmatter gets `from_spec: <spec-slug>`. The spec is not modified — stories link back to it, not the reverse. Tooling queries "stories under this spec" without bidirectional metadata.
+
+6. **Parent under the existing epic.** Most specs are epic-scoped (`for: <epic-slug>` in the spec frontmatter). Stories you extract typically share that parent. If the spec spans multiple epics or implies a new one, that's a sign the spec or the epic structure needs revisiting — surface this rather than silently creating cross-cutting stories.
+
+7. **Story status.** Drafted stories start at `status: draft`. They become `ready` after AC review (you, tech-lead, or `/assess ready`).
 
 ### Pre-mortem during review
 
