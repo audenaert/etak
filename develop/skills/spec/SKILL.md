@@ -161,3 +161,4 @@ Accepted ADRs are effectively immutable — if the decision changes, write a
   than you'd think. Not every change needs a design doc.
 - **Amending an accepted ADR.** Write a new one that supersedes. Keeps the
   audit trail honest.
+- **Spec doubling as a story list.** When the spec contains formal story sections (persona + AC blocks named "Story N"), the architect has overstepped — story creation belongs to tech-lead. Surface the boundary; either extract the stories or trim the spec to design-only content.
