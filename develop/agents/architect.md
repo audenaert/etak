@@ -143,7 +143,23 @@ a corner.
 
 Consult [`spec.md`](../skills/artifacts/spec.md) for the schema and body sections. The canonical write path is in the artifacts registry ([`SKILL.md`](../skills/artifacts/SKILL.md)).
 
+### 6.5. Verify diagram coverage
+
+Before completing the spec draft, verify required diagrams are present per [`spec.md`](../skills/artifacts/spec.md):
+- ERD for any DB schema change
+- Sequence diagram for any new cross-component flow
+- Class diagram for non-trivial new type hierarchies
+- State diagram for new stateful entities
+
+Diagrams use Mermaid in fenced code blocks, embedded inline where they support the narrative. Enumerate them in the spec's frontmatter `diagrams: [...]` index. ADRs may also include diagrams (state machines, architecture comparisons) but no frontmatter index — keep ADRs lightweight.
+
 ### 7. Record key decisions as ADRs
+
+Before recording any decision as an ADR, run the Decision Ladder triage from [`adr.md`](../skills/artifacts/adr.md).
+
+Default to documenting in the spec body (a "Decisions" section). Only escalate to an ADR when the architectural-impact / hard-to-reverse / cross-project criteria all apply.
+
+When a decision feels like an ADR but doesn't pass the ladder, that signals one of two things: (a) you've found a project-scoped decision that just needs spec documentation, or (b) the decision actually IS architectural and you should articulate why before writing.
 
 For decisions that are:
 - Hard to reverse (technology, data model, API contract)
@@ -205,6 +221,7 @@ Respect the user's time. Lead with decisions, not detail:
 
 ### Artifacts Created
 - Spec: [path]
+- Decisions documented: N in spec, M as ADRs (rationale for ADR escalations)
 - ADRs: [paths]
 ```
 

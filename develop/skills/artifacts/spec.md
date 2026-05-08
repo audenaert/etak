@@ -14,6 +14,10 @@ type: spec
 status: draft  # draft | review | approved | superseded
 for: project-oauth2-migration
 adrs: []
+diagrams:
+  - kind: erd | sequence | class | state | architecture
+    title: "..."
+    anchor: "#..."   # heading anchor where the diagram lives in the body
 ---
 ```
 
@@ -40,6 +44,13 @@ Body sections (recommended):
 - **Surfaces open questions** — honest about what isn't settled yet.
 - **Records consequences** — NFR implications, future flexibility, what this
   closes off.
+- **Diagrams are mandatory where they apply, embedded in narrative.**
+  - **ERD** — required for any DB schema change. Place at the top of the Data Model section.
+  - **Sequence diagrams** — required for any new cross-component flow. Place after the prose narrative of the flow.
+  - **Class diagrams** — required for non-trivial new type hierarchies. Place where the types are introduced.
+  - **State diagrams** — when a stateful entity is being designed. Place where the entity is introduced.
+  
+  All diagrams use Mermaid in fenced code blocks (no inline images). Embed in the section where they support the prose; do not collect them in a separate "Diagrams" section. Enumerate them in the frontmatter `diagrams: [...]` index so reviewers can verify presence and jump via anchor.
 
 ## Moves
 
@@ -96,3 +107,6 @@ Generate a kebab-case filename and write to the canonical path in the artifacts 
   resolve the questions or convert to a spike.
 - Spec for something a grep + short ADR would handle — don't over-spec routine
   work.
+- **Spec missing required diagrams.** DB schema change without an ERD; cross-component flow without a sequence diagram. Verify presence via the frontmatter `diagrams` index.
+- **Diagrams in a separate "Diagrams" section disconnected from prose.** Embed inline; the prose explains intent and the diagram makes it concrete.
+- **Project-scoped decisions in ADRs.** Project-scoped technical choices belong in the spec's Decisions section. ADRs are for architectural impact (cross-project, hard-to-reverse). See [adr.md](adr.md) for the Decision Ladder.
