@@ -74,6 +74,7 @@ Breaking a project into parallel workstreams and epics.
   others — API shape, data contract, protocol. "We'll figure it out" is where
   parallel plans die.
 - **Identify the epics within each workstream.** Not all ready, but identified.
+- **Stories under epics emerge from discovery, via story mapping.** When an epic exists but stories don't, the source is `docs/discovery/`, not the spec. Follow the [Story mapping from discovery](#story-mapping-from-discovery) pattern. Stories that come from technical guesses without discovery grounding produce vague ACs and rework.
 - **One owner per workstream.** Can defer, but should be named before M1.
 
 Consult [workstream.md](../artifacts/workstream.md) and
@@ -126,6 +127,44 @@ the project.
 The engineer says "this epic is getting big." Look at its stories. Are there
 themes that could split into two epics? Is one story actually three stories?
 Often the answer is there in the existing artifacts; plan surfaces it.
+
+### Story mapping from discovery
+
+Stories come from discovery, not from specs or design docs. When you (or tech-lead) need to create stories for an epic, the source is `docs/discovery/` — objectives, opportunities, and ideas the discovery work has validated.
+
+Process:
+
+1. **Read the discovery artifacts.** Start with the parent objective, then the opportunity it serves, then the idea(s) under that opportunity. Discovery has already framed what users need — your job is to translate that into vertical slices of value.
+
+2. **Identify the user journey.** What does the user do, in order, to satisfy the discovery's promised outcome? Sketch the path — entry point, key actions, completion. This is the spine of the mapping.
+
+3. **Break the journey into vertical slices.** Each slice is one self-contained step that produces user value in isolation. "User can sign in with Google" is a slice. "OAuth handshake completes" is the same slice from the other side — pick the user-frame version.
+
+4. **Triage MVP vs later.** Not every slice ships in the first milestone. Mark which slices are required for the discovery's minimum-viable promise; defer the rest. Deferred slices stay in the backlog as `status: draft` stories.
+
+5. **Draft each slice as a story.** Use [story.md](../artifacts/story.md)'s shape: persona-frame user story, 3–5 testable ACs, `from_discovery: <idea-slug>` cross-link. Don't invent ACs — ground them in the discovery's evidence and the user's path.
+
+6. **Parent under epics.** If the discovery is broad, multiple epics may emerge — group stories that share a common theme. If the discovery is narrow, one epic holds them all.
+
+When discovery is incomplete or absent, story mapping isn't ready. That's a signal to do discovery work first, not to invent stories from technical context.
+
+### Spec → tasks (technical decomposition)
+
+When an architect's spec implies discrete engineering changes — usually because the design is complex enough that "implement the story" isn't a single PR's worth of work — break the spec into tasks.
+
+Process:
+
+1. **Read the spec.** Especially the design narrative, data model changes, and integration points. The spec describes *how* — your job is to atomize that into engineering changes a developer can pick up.
+
+2. **Identify the engineering changes.** Each task is one technical change: a schema migration, a new module, a refactor of an existing component, a CI configuration update. Tasks are bounded by what one developer does in a single focused session.
+
+3. **Order tasks by dependency.** A task that depends on another's output should follow it. Surface dependencies in the task's frontmatter or body.
+
+4. **Draft each task.** Use [task.md](../artifacts/task.md)'s shape. Tasks contain enough technical detail that a developer can work independently — file paths, code patterns to follow, test expectations. The spec is referenced; the task doesn't re-document the design.
+
+5. **Parent tasks under stories.** Tasks live inside stories (or directly inside an epic for non-user-facing work like infrastructure). The story's ACs verify the user-facing outcome; the tasks verify the engineering pieces.
+
+When the spec is simple enough that "implement the story" IS one PR's work, skip task decomposition. Direct implementation against the story's ACs is honest. Don't decompose for ceremony.
 
 ### Pre-mortem during review
 
