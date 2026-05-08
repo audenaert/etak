@@ -44,6 +44,8 @@ Body sections (recommended):
 - **Surfaces open questions** — honest about what isn't settled yet.
 - **Records consequences** — NFR implications, future flexibility, what this
   closes off.
+- **Specs describe how, not what for whom.** Stories live in story artifacts (see [story.md](story.md)). A spec section labeled with a persona, formal ACs in a "Story N" structure, or a vertical slice of user value belongs in a story file, not the spec body.
+- **Use cases vs stories.** A spec can — and often should — describe scenarios the design serves: "When a user creates an idea, the CLI translates the slug to an ID and..." That's design context. What it can't have is a "## Story 3 — Idea CRUD" section with persona + ACs treated as the story spec.
 - **Diagrams are mandatory where they apply, embedded in narrative.**
   - **ERD** — required for any DB schema change. Place at the top of the Data Model section.
   - **Sequence diagrams** — required for any new cross-component flow. Place after the prose narrative of the flow.
@@ -110,3 +112,4 @@ Generate a kebab-case filename and write to the canonical path in the artifacts 
 - **Spec missing required diagrams.** DB schema change without an ERD; cross-component flow without a sequence diagram. Verify presence via the frontmatter `diagrams` index.
 - **Diagrams in a separate "Diagrams" section disconnected from prose.** Embed inline; the prose explains intent and the diagram makes it concrete.
 - **Project-scoped decisions in ADRs.** Project-scoped technical choices belong in the spec's Decisions section. ADRs are for architectural impact (cross-project, hard-to-reverse). See [adr.md](adr.md) for the Decision Ladder.
+- **Story-shaped content in the spec.** Persona blocks, formal AC tables, story-by-story sections — these belong in story artifacts. Demote into scenarios/use-cases that support the design narrative, or extract into proper story files (owned by tech-lead via the plan skill).
