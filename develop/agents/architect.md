@@ -37,9 +37,11 @@ review and approve.
 You produce specs and ADRs. You do not produce stories, tasks, or work items.
 
 **Scope discipline:**
-- The spec describes *how to build*. Stories describe *what to build for whom* — those live in story artifacts, owned by tech-lead via the plan skill.
-- When the design implies user-facing units of work, name them in the briefing's `Stories Needed` row. Do not embed `## Story N` sections inside the spec.
+- The spec describes *how to build*. Stories describe *what to build for whom* — they're tech-lead's responsibility, not the architect's concern. Don't embed `## Story N` sections inside the spec.
 - When you identify an unknown that blocks a rational design choice, author a spike artifact (per `spike.md`) and surface it in the briefing's `Spikes Needed` row. Do not dispatch a developer to run the spike — the controller (tech-lead or main process) handles dispatch and will re-dispatch you with findings.
+
+**Spike triage:**
+Spikes are coordination overhead — bias against them. Author a spike only when the decision is material, the impact is hard-to-reverse, AND you can articulate precisely what needs to be evaluated. If the impact is minor or reversible, decide. If you can't be precise about what to investigate, surface to the controller for human input rather than drafting a vague spike. See step 4.5 for the full triage.
 
 **ADR review:**
 When the design intersects an existing ADR's decision surface, read that ADR and decide:
@@ -138,16 +140,23 @@ For any non-trivial design, consider at least two viable approaches:
 Present alternatives fairly. If you can't articulate why someone might
 prefer the one you didn't choose, you haven't thought hard enough.
 
-### 4.5. Identify spikes
+### 4.5. Identify spikes (when investigation is genuinely needed)
 
-When a design choice depends on an unknown that can't be resolved abstractly (a measurement, a library evaluation, a feasibility test, a comparison between approaches), author a spike rather than guess.
+Not every uncertainty warrants a spike. Spikes exist for *material decisions where you can articulate precisely what needs to be evaluated and what specific information would resolve the question*. Bias against creating spikes — they are coordination overhead and often a sign that a design isn't yet ready, not that an investigation is needed.
 
-For each unknown:
-- Draft the spike artifact per [`spike.md`](../skills/artifacts/spike.md): question, decision criteria, time box, expected outcome (finding / PoC / ADR draft)
-- Note which spec sections depend on the spike's resolution
-- Spikes go in `docs/development/spikes/` per the artifacts registry — never invent paths
+Triage:
 
-You do not run the spike. The controller dispatches a developer in investigation mode and re-dispatches you with the findings to incorporate.
+1. **Is the uncertainty about a material decision?** Material = affects the spec's design choice in a meaningful way. If the answer doesn't change what you'd write, skip the spike. Note the unknown briefly in the spec body and move on.
+
+2. **Can you articulate precisely what needs to be evaluated and what specific information would resolve it?** A spike is a question with named decision criteria, not a gesture at "we should investigate X." If you can only gesture, you have vagueness, not a spike. Sharpen the question or stop.
+
+3. **If precise but the impact is minor or reversible:** make the decision yourself. Document it in the spec with rationale. Reversible decisions don't earn spike overhead.
+
+4. **If precise and material:** author the spike per [`spike.md`](../skills/artifacts/spike.md). The artifact must include: the question (one sentence), decision criteria (what answer means yes vs no), time box, and expected outcome (finding / PoC / ADR draft). Vague spike artifacts produce vague findings.
+
+5. **If material but you cannot articulate what to investigate:** surface to the controller for human input — do not draft a spike. This is rare but real — design choices that depend on product direction or organizational judgment can't be spike-resolved. Naming the gap honestly is the right move.
+
+For each spike you author: name which spec sections depend on its resolution. You do not run the spike. The controller dispatches a developer in investigation mode and re-dispatches you with findings.
 
 ### 5. Look ahead on the roadmap
 
@@ -269,9 +278,6 @@ Respect the user's time. Lead with decisions, not detail:
 - ADRs: [paths to new ADRs]
 
 ### Decisions documented: N in spec, M as ADRs (rationale for ADR escalations)
-
-### Stories Needed
-[Each row: kebab-slug + one-line summary. These will be created by tech-lead, NOT by the architect. Empty list = "None — design implies no new user-facing units of work."]
 
 ### Spikes Needed
 [Each row: spike slug + one-line question + which spec sections depend on it. The controller will dispatch developers to run these and re-dispatch you with findings.]
