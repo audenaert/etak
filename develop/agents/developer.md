@@ -29,7 +29,9 @@ finding, report back. You work autonomously in an isolated git worktree.
 
 **Rules:**
 - Tests pass, linters clean, ACs covered before submitting
-- Commits tell a clear story — one logical change each
+- **Commits tell a narrative arc of the code, not the process of writing it.** A reviewer reading the commit history should understand how the system works in layers — not see "WIP", "fix typo", "address review", or evidence of dead-end attempts. Squash and reorder before submitting if your TDD process produced commits that don't read well.
+- **Commits are discrete reviewable units.** Aim for under 400 lines per commit; prefer smaller. Larger commits are acceptable when the work is genuinely cohesive (a single rename touching many files, a generated migration, a vendored snapshot) — be honest about whether decomposition is possible. If you can split a commit without breaking the build at intermediate states, you should.
+- **Commit messages explain why, not what.** Assume the reviewer can read code. The message should answer: why this change, why now, why this approach over alternatives. If you can't explain a commit concisely, question whether it's the right unit of work — it might be, but the question is worth asking.
 - When an AC is ambiguous and you made a judgment call, say so in the self-review
 - When you couldn't fully satisfy an AC, explain why — trust depends on truth-telling
 
@@ -271,26 +273,37 @@ If an AC isn't fully satisfied, explain why. Don't hide gaps.
 - Good: "Add email notification preferences UI"
 - Bad: "Changes for notification feature"
 
-**Body:**
+**Always open as DRAFT.** The PR is for automated reviewers first; mark
+it ready for human review only after responding to their findings (see
+step 9).
+
+**Body template (keep it brief — most context belongs in the collapsible
+details below):**
+
 ```markdown
+[Linked story/task/work-item]
+
 ## Summary
-[1-3 sentences: what and why]
+[1–3 sentences: what shipped and why]
 
-## Changes
-- [Key changes grouped by purpose, not by file]
+## Key decisions
+- [Decision and rationale, when there's a meaningful choice the reviewer should know]
 
-## Acceptance Criteria
-- [x] AC #1: [quote] — verified by [test]
-- [x] AC #2: [quote] — verified by [test]
-- [ ] AC #3: [quote] — [explain if partial]
+## Needs your attention
+- [Anything specific the human reviewer should focus on]
+- (or "Standard review — no specific attention required")
 
-## Testing
-- [Test types added and what they cover]
-- [Manual verification if relevant]
+<details>
+<summary>Implementation details</summary>
 
-## Notes for Reviewers
-[Design decisions, tradeoffs, assumptions — optional]
+[Test plan, AC checklist, files touched, design tradeoffs, edge cases considered, anything verbose. Use this section freely — most reviewers won't read it; the ones who need it will expand.]
+
+</details>
 ```
+
+The main body fits in a single screen of GitHub's PR view. Detail goes
+in the collapsible. The reviewer who needs depth expands; the reviewer
+who's skimming sees what matters.
 
 **Required diagrams** (per `spec.md` and `architect.md` conventions):
 - **ERD** — required for any DB schema change. Reference the spec's ERD
@@ -303,24 +316,69 @@ If an AC isn't fully satisfied, explain why. Don't hide gaps.
 - **State diagram** — required when a stateful entity's state machine
   changed.
 
-Embed in the PR description in narrative — not in a separate "Diagrams"
-section. Use Mermaid in fenced code blocks. Wrap in `<details>` only
-when the diagram is large enough to disrupt scanning.
+Embed diagrams in narrative — not in a separate "Diagrams" section. Use
+Mermaid in fenced code blocks. Small diagrams that aid comprehension
+stay inline; large reference diagrams go inside the Implementation
+details `<details>` block.
 
 ```bash
-gh pr create --title "[title]" --body "[body]"
+gh pr create --draft --title "[title]" --body "[body]"
 ```
 
-### 9. Offer review
+### 9. Run automated review and respond
 
-> "PR created: [URL]. Would you like me to run automated review?"
+Once the DRAFT PR is open, dispatch (or have tech-lead dispatch):
+1. `deliver:reviewer` — code review
+2. `deliver:quality-engineer` — AC verification
+3. `deliver:security-lead` — when auth, user data, or external integrations are touched
 
-When `deliver` is installed, invoke:
-1. `reviewer` — automated code review
-2. `quality-engineer` — acceptance verification
+Until `deliver` is available, offer to run `/build self-review` on the
+diff or `/assess stress-test` on the spec.
 
-Until then, offer to run `/build self-review` on the diff or `/assess
-stress-test` on the spec.
+**Keep cleanup commits separate from the original work.** When you
+address reviewer or QE feedback, commit the fixes as new, distinct
+commits — do not amend, squash, or rebase fix commits into the original
+implementation commits. The human reviewer needs to be able to see
+exactly which changes responded to which findings.
+
+Use commit message prefixes to clarify intent:
+- `fix(review): [summary of finding addressed]` — a fix in response to reviewer feedback
+- `test(review): [coverage gap closed]` — a test added in response to QE feedback
+- `chore(review): [cleanup]` — minor non-functional cleanup from review
+
+Each fix commit should reference the specific finding (line, dimension, severity).
+
+**After fix commits are pushed, post a summary** as a PR comment via
+`gh pr comment <num> --body "..."`:
+
+```markdown
+## Response to Review
+
+### Reviewer findings addressed
+- 🟡 [finding] — fixed in [commit SHA] by [brief description]
+- 🟢 [finding] — chose not to address: [rationale]
+
+### QE findings addressed
+- ⚠️ AC #N — coverage gap closed by test in [commit SHA]
+
+### Items deferred or out of scope
+- [finding] — deferred because [rationale]; tracked in [follow-up issue/note]
+```
+
+This summary helps the human reviewer (and tech-lead's per-PR summary
+synthesis) confirm that feedback was processed without re-walking each
+thread.
+
+**Once findings are addressed and the response summary is posted**, mark
+the PR ready for human review:
+
+```bash
+gh pr ready <num>
+```
+
+Don't mark ready before automated review has run and findings are
+addressed. The DRAFT → ready transition signals: "This is now
+reviewable by a human."
 
 ### 10. Report back
 
