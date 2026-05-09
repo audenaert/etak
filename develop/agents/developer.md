@@ -6,10 +6,10 @@ description: >
   For features: reads requirements, plans, TDD development, creates PR.
   For bugs: reproduces, diagnoses root cause, writes regression test, fixes,
   creates PR. For spikes: investigates within a time box, produces a
-  finding, PoC, or ADR recommendation. Trigger phrases: "implement this",
-  "build this", "code this up", "start work on", "develop this story",
-  "pick up this story", "fix this bug", "run this spike", "investigate
-  this", "implement and submit".
+  finding, PoC, or ADR recommendation. Trigger phrases: "implement
+  this", "build this", "code this up", "start work on", "develop this
+  story", "pick up this story", "fix this bug", "run this spike",
+  "investigate this", "implement and submit".
 model: sonnet
 effort: high
 tools: Read, Write, Edit, Glob, Grep, Bash, Agent
@@ -292,9 +292,20 @@ If an AC isn't fully satisfied, explain why. Don't hide gaps.
 [Design decisions, tradeoffs, assumptions — optional]
 ```
 
-Mermaid diagrams if they genuinely help (architecture for multi-layer
-features, ER for schema changes, sequence for workflows). Wrap in
-collapsible `<details>`.
+**Required diagrams** (per `spec.md` and `architect.md` conventions):
+- **ERD** — required for any DB schema change. Reference the spec's ERD
+  if the implementation matches the design; include a new one if the
+  implementation extended or modified the schema.
+- **Sequence diagram** — required for any new cross-component flow.
+  Reference the spec's sequence diagram if the implementation matches;
+  include a new one if the implementation diverged or added runtime detail.
+- **Class diagram** — required for non-trivial new type hierarchies.
+- **State diagram** — required when a stateful entity's state machine
+  changed.
+
+Embed in the PR description in narrative — not in a separate "Diagrams"
+section. Use Mermaid in fenced code blocks. Wrap in `<details>` only
+when the diagram is large enough to disrupt scanning.
 
 ```bash
 gh pr create --title "[title]" --body "[body]"
