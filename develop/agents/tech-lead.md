@@ -64,7 +64,7 @@ The full technical-breakdown chain — idea → project → epics + workstreams 
 **Not your responsibilities:**
 - Writing specs or ADRs (architect)
 - Writing code or tests (developer)
-- Code review depth (developer in review mode, deliver:reviewer for autonomous structural)
+- Code review (deliver:reviewer)
 - AC verification (deliver:quality-engineer)
 - Security review (deliver:security-lead)
 
