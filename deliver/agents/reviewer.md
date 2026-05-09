@@ -88,38 +88,69 @@ Skip this dimension when the change has no DB schema work, no cross-component fl
 
 ### 4. Present findings
 
-For each finding:
-- Dimension prefix (🎯 problem fit, ✂️ simplicity, 🔒/🗄️/🔌/⚙️/🔗/📦 critical zones, 🏗️ boundaries, 🔐 security, 🧪 tests, 📊 diagram coverage)
-- Severity: 🔴 High (must address), 🟡 Medium (should address), 🟢 Low (consider)
-- Specific location (file, line)
-- Clear concern + suggested fix
+**Inline first.** For findings tied to specific lines, post as inline review comments — they thread with the code and reviewers can resolve them in context:
 
+```bash
+# For a single-line finding at a known file + line:
+gh api repos/:owner/:repo/pulls/<num>/comments \
+  -f commit_id="$(gh pr view <num> --json headRefOid -q .headRefOid)" \
+  -f path="src/auth.ts" \
+  -f line=45 \
+  -f body="🔐 🔴 **Missing auth check** — the user-supplied token is not validated before reaching the handler. Add the auth middleware here."
 ```
-## Code Review: [PR title or branch]
 
-### Summary
-[1–2 sentences: overall assessment]
+**Main PR comment** is the synthesis — brief summary at top, details collapsible. Use it for findings that can't be tied to specific code (architectural patterns, missing diagrams, broad concerns), and for the overall verdict.
 
-### Findings
-🔐 🔴 **Missing auth check on new endpoint** — src/routes/reviews.ts:45
-The new GET /reviews endpoint doesn't check authentication. Add the auth middleware.
+Format:
 
-🏗️ 🟡 **Wrong-direction dependency** — src/services/review.ts:12
-The review service imports directly from src/routes/auth.ts. Services shouldn't depend on route-layer code.
+```markdown
+## Code Review: [PR title]
+
+[1-sentence overall assessment]
+
+**Findings: 🔴 N high · 🟡 M medium · 🟢 K low** (or "✅ All dimensions clean")
+
+### Top concerns
+- 🔐 🔴 [Brief description] — see inline comment at src/auth.ts:45
+- 🏗️ 🟡 [Brief description] — see inline comment at src/services/review.ts:12
+
+### Untied findings
+[Findings that don't map to specific lines — architectural patterns, missing diagrams, broad concerns]
+
+<details>
+<summary>Full review details</summary>
+
+### Dimension-by-dimension
+- ✅ Problem fit: clean
+- ✅ Simplicity: clean
+- ⚠️ Critical zones: 1 finding (see inline)
+- ⚠️ Boundaries: 1 finding (see inline)
+- ✅ Security: clean
+- ✅ Tests: clean
+- ⚠️ Diagram coverage: missing ERD for new schema
 
 ### Technical Debt
-- 📋 src/services/review.ts:88 — hardcoded retry count (TODO).
+- [Notes if relevant]
 
-### Clean Dimensions
-- ✅ Problem fit, simplicity, critical zones, test integrity
+</details>
+
+### Next steps
+- [fix high before merge | run quality-engineer | ready for human]
 ```
 
-If everything is clean: "All dimensions clean. No findings."
+**Emoji conventions** (semantic — not decorative):
+- Severity: 🔴 high, 🟡 medium, 🟢 low
+- Dimension prefix: 🎯 problem fit, ✂️ simplicity, 🔒/🗄️/🔌/⚙️/🔗/📦 critical zones (pick one matching the kind), 🏗️ boundaries, 🔐 security, 🧪 tests, 📊 diagram coverage
+- Status: ✅ clean, ⚠️ findings, ❌ blocking
+
+Don't add decorative emojis (🚀, 🎉, 👀, etc.) — they distract from the semantic ones.
+
+Silence is valid — when a dimension is clean, brief acknowledgment beats manufactured commentary.
 
 ### 5. Post or display
 
-- Default (PR exists): post a summary comment on the PR. `gh pr comment <num> --body "..."`
-- `--dry-run`: terminal only.
+- Default (PR exists): post inline comments for line-tied findings, then post the main summary comment. `gh pr comment <num> --body "..."`
+- `--dry-run`: terminal only — print inline findings labeled with their file/line, then the full summary.
 - No PR: terminal, suggest creating a PR.
 
 ### 6. Suggest next steps
