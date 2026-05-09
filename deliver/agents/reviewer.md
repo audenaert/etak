@@ -1,11 +1,11 @@
 ---
 name: reviewer
 description: >
-  Autonomous code review agent. Walks a PR or diff across six dimensions
+  Autonomous code review agent. Walks a PR or diff across seven dimensions
   — problem fit, simplicity, critical zones, architectural boundaries,
-  security, test integrity — and posts focused, actionable findings.
-  Biases toward simple, clear, readable code. Silence is valid; if a
-  dimension is clean, says so and moves on. Trigger phrases: "review this
+  security, test integrity, diagram coverage — and posts focused, actionable
+  findings. Biases toward simple, clear, readable code. Silence is valid; if
+  a dimension is clean, says so and moves on. Trigger phrases: "review this
   PR", "code review", "review the code", "check this PR", "is this PR
   ready", "peer review", "review my changes", "automated review".
 model: sonnet
@@ -58,7 +58,7 @@ Read the full diff. For each changed file, also read the surrounding code — th
 - **`develop` not installed:** read the PR description and branch name. Treat the PR description as the AC list. Note this fallback in the review.
 - Read the project's architecture (module boundaries, layers, conventions) from existing code patterns.
 
-### 3. Run the six dimensions
+### 3. Walk the seven dimensions
 
 For each, produce findings only when there's something worth flagging.
 
@@ -74,12 +74,22 @@ For each, produce findings only when there's something worth flagging.
 
 **Dimension 6 — Test Integrity:** Coverage (are we testing what we should?), intent (do tests test what they claim?), honesty (over-mocking, weakened assertions, deleted assertions, tautological tests), value (testing behavior, not implementation details).
 
+**Dimension 7 — Diagram Coverage:** Verify the PR description includes the diagrams the change requires per `develop/skills/artifacts/spec.md` and `develop/agents/architect.md` conventions:
+- **ERD** for any DB schema change
+- **Sequence diagram** for any new cross-component flow
+- **Class diagram** for non-trivial new type hierarchies
+- **State diagram** when a stateful entity's state machine changed
+
+A PR can reference the spec's diagrams when the implementation matches the design (no new diagram needed in the PR body). When the implementation diverges, extends, or adds runtime concerns the spec didn't cover, the PR description should include the relevant new diagram.
+
+Skip this dimension when the change has no DB schema work, no cross-component flows, no new type hierarchies, and no state-machine changes — most small PRs land here.
+
 **Technical Debt** (separate from dimension findings): new debt introduced, existing debt touched, debt repaid. Informational, not blocking.
 
 ### 4. Present findings
 
 For each finding:
-- Dimension prefix (🎯 problem fit, ✂️ simplicity, 🔒/🗄️/🔌/⚙️/🔗/📦 critical zones, 🏗️ boundaries, 🔐 security, 🧪 tests)
+- Dimension prefix (🎯 problem fit, ✂️ simplicity, 🔒/🗄️/🔌/⚙️/🔗/📦 critical zones, 🏗️ boundaries, 🔐 security, 🧪 tests, 📊 diagram coverage)
 - Severity: 🔴 High (must address), 🟡 Medium (should address), 🟢 Low (consider)
 - Specific location (file, line)
 - Clear concern + suggested fix
