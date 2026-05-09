@@ -109,27 +109,48 @@ For ACs marked ⚠️ or ❌ where the gap is missing test coverage (not missing
 
 ### 8. Post or display the result
 
-If a PR exists:
+**Inline first.** For per-AC findings that map to specific test files or implementation files, post as inline review comments at those locations:
+
+```bash
+gh api repos/:owner/:repo/pulls/<num>/comments \
+  -f commit_id="$(gh pr view <num> --json headRefOid -q .headRefOid)" \
+  -f path="src/notifications/retry.ts" \
+  -f line=42 \
+  -f body="❌ AC #3 — retry logic not implemented. This path returns early on failure without retrying. Test notification-failure.spec.ts confirms the gap."
+```
+
+**Main PR comment** is the verification synthesis — brief verdict at top, details collapsible:
 
 ```bash
 gh pr comment <num> --body "$(cat <<'EOF'
 ## QE Verification: [story name or PR title]
 
-### AC Coverage
-✅ AC #1 — verified by E2E test notification-flow.spec.ts:12
-✅ AC #2 — verified by integration test preferences.test.ts:28
-❌ AC #3 — no test for email-service-failure scenario
+**Verdict: 2 of 3 ACs satisfied** — almost done
 
-### Tests Written
-- Added notification-failure.spec.ts — tests retry on delivery failure (AC #3)
-- Result: ❌ FAILS — retry logic not implemented. Implementation gap found.
+### AC coverage
+- ✅ AC #1 — verified by notification-flow.spec.ts:12
+- ✅ AC #2 — verified by preferences.test.ts:28
+- ❌ AC #3 — see inline finding at src/notifications/retry.ts:42
+
+### Tests written to close gaps
+- notification-failure.spec.ts — covers AC #3 (❌ FAILS — reveals implementation gap)
+
+<details>
+<summary>Per-AC details and observations</summary>
+
+### Stress-tested cases
+- Empty notification list — covered by unit test
+- Disabled user receiving notification — not covered, recommend adding
 
 ### Observations
-- No test for disabled user receiving notifications
 - Email template not tested for mobile rendering
+- Mocks in preferences.test.ts don't reach the DB layer; AC #2 evidence is indirect
 
-### Verdict
-2/3 ACs satisfied. AC #3 needs implementation work.
+### Test layer notes
+- AC #1 covered by E2E — strongest evidence
+- AC #2 covered by unit test with mocked service — integration test preferred
+
+</details>
 EOF
 )"
 ```

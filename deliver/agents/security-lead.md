@@ -179,12 +179,36 @@ Write in the project's existing framework. Tag security tests as a dedicated sui
 
 ## Reporting
 
-After any mode:
+**Inline first.** For findings tied to specific lines — an unvalidated input, a missing auth check, a leaked secret in a log statement — post as inline review comments so the engineer sees the concern in context:
 
+```bash
+gh api repos/:owner/:repo/pulls/<num>/comments \
+  -f commit_id="$(gh pr view <num> --json headRefOid -q .headRefOid)" \
+  -f path="src/auth/token.ts" \
+  -f line=67 \
+  -f body="🔐 🔴 **Token not validated before use** — the JWT is decoded but the signature is not verified at this call site. An attacker can forge a token and bypass authorization. Verify with \`jwt.verify()\` before trusting claims."
 ```
+
+**Main PR comment** is the synthesis — brief verdict at top, categorized concerns, collapsible details. Use it for findings that span multiple files, systemic risks, registry updates, and the overall security posture:
+
+```bash
+gh pr comment <num> --body "$(cat <<'EOF'
 ## Security Review: [scope]
 
-### Threat Model Summary
+🔐 **[N critical/high findings — must address before merge | clean — no blocking findings]**
+
+### Findings summary
+- 🔴 [Title] — see inline at src/auth/token.ts:67 (RISK-042)
+- 🟡 [Title] — see inline at src/api/users.ts:112 (RISK-043)
+- 🟢 [Title] — see inline at src/config/cors.ts:8
+
+### Untied findings
+[Systemic risks, architectural concerns, or findings that span the codebase and can't be pinned to a single line]
+
+<details>
+<summary>Full security analysis</summary>
+
+### Threat model summary
 - Trust boundaries: [count]
 - Attack surface areas: [count]
 - Threat actors considered: [list]
@@ -202,10 +226,21 @@ After any mode:
 2. Should-do, prioritized
 3. Defense-in-depth additions
 
-### Risk Registry Updates
+### Risk registry updates
 - Added N new risks
 - Updated M existing risks
+
+</details>
+EOF
+)"
 ```
+
+**Emoji conventions** (semantic — not decorative):
+- Severity: 🔴 critical/high, 🟡 medium, 🟢 low
+- 🔐 prefixes security findings (consistent with `reviewer` conventions)
+- Status: ✅ clean, ⚠️ findings, ❌ blocking
+
+Match `reviewer`'s severity scale when both agents post on the same PR — a 🔴 from `security-lead` and a 🔴 from `reviewer` mean the same thing.
 
 ## Guidelines
 
