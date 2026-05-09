@@ -57,7 +57,7 @@ The full technical-breakdown chain — idea → project → epics + workstreams 
 - **Spike orchestration** — when an architect's briefing surfaces spikes, dispatch developer in investigation mode, then re-dispatch architect with findings (automatic; only escalate to user on critical blockers).
 - **Task decomposition** — when an architect's spec implies multiple discrete engineering changes, invoke plan skill's [Spec → tasks](../skills/plan/SKILL.md#spec--tasks-technical-decomposition) pattern.
 - **Developer dispatch** — for ready stories/tasks, in feature/bug/spike mode as appropriate.
-- **Per-PR review cycle** — dispatch developer (peer-review mode) + quality-engineer + security-lead (when warranted); dispatch developer (resolve) on findings; use judgment on re-review.
+- **Per-PR review cycle** — dispatch deliver:reviewer + quality-engineer + security-lead (when warranted); dispatch developer (resolve) on findings; use judgment on re-review.
 - **Per-PR summary** — synthesize agent reports; post to PR; surface decisions and critical questions for human review.
 - **Pre-mortem** — invoke plan skill's [Pre-mortem](../skills/plan/SKILL.md#4-pre-mortem) move on the project plan before committing to it.
 
@@ -189,7 +189,7 @@ For each ready story/task, run the cycle:
 
 1. **Dispatch developer** in feature mode (or bug-fix / investigation as appropriate) — they implement, test, create PR
 2. **After PR is created, dispatch reviewer + verifier in parallel:**
-   - **`developer` in peer-review mode** — peer technical review on the PR
+   - **`deliver:reviewer`** — autonomous code review across six dimensions (problem fit, simplicity, critical zones, architectural boundaries, security, test integrity); posts findings on the PR
    - **`quality-engineer`** (deliver) — AC verification
    - **`security-lead`** (deliver) — only when auth, user data, or external integrations are touched
 3. **Wait for all to return.** Read each report for findings, judgment calls, deviations from spec/brief, and assumptions made by the agent.
@@ -222,7 +222,7 @@ Template:
 - (or "None — ready for human approval")
 
 ### Review coverage
-- Peer review (developer): [N findings: X high, Y medium, Z low — addressed in fix-dev]
+- Code review (deliver:reviewer): [N findings: X high, Y medium, Z low — addressed in fix-dev]
 - QE verification: [AC verdict — N/M ACs satisfied; coverage gaps closed by tests written]
 - Security review: [conducted: findings summary | not warranted because: ...]
 
@@ -260,10 +260,9 @@ offer to operate at epic or milestone level first.
 
 **When `deliver` is not installed:**
 The per-PR cycle's reviewer + verifier dispatches degrade gracefully:
-- `developer` in peer-review mode runs from `develop` (always available)
-- `quality-engineer` and `security-lead` are unavailable — note in the per-PR summary: "QE verification deferred (deliver not installed); risk accepted by user." The user can install deliver to enable these checks.
+- All three review agents (`reviewer`, `quality-engineer`, `security-lead`) live in `deliver`. Without it, the per-PR cycle has no automated review pass — note in the per-PR summary: "Code review and QE verification deferred (deliver not installed); risk accepted by user." The user can install deliver to enable these checks.
 
-Do not refuse to operate without deliver. Tech-lead is useful in develop-only setups; the trade-off is reduced verification depth.
+Do not refuse to operate without deliver. Tech-lead is useful in develop-only setups; the trade-off is reduced verification depth — the user manually reviews PRs in this mode.
 
 ### 8. Check in at cadence
 
